@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+body, h1, h2, h3, h4, h5, h6, ul, li, p, ol, dl, dt, dd, form, fieldset, legend {
+	margin: 0; padding: 0; 
+
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size: inherit;
+	font-weight:inherit;
+}
+em, i, address {
+	font-style: inherit;
+}
+strong, b {
+	font-weight: inherit;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+a:visited {
+	color:inherit;
+}
+ul, li, ol {
+	list-style: none;
+}
+.blind, hr, legend {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+}
+
+.clearfix:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+select, button {
+	color:inherit;
+}
+
+table {
+	border-spacing:0px;/* 셀과 셀사이 간격 */
+	border-collapse:collapse; /* 겹치는 셀 합치기 */
+	width:100%;
+}
+
+fieldset {
+	border:none;
+}
+button{
+	border:none;
+	cursor:pointer;
+}

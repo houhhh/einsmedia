@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+
+// 말줄임 
+
+@mixin abbr($w:100%) {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: $w;
+}
+
+@mixin flex($a:stretch, $j:flex-start, $wrap:nowrap) {
+    display: flex;
+    align-items: $a;
+    justify-content: $j;
+    flex-wrap: $wrap;
+    -ms-display: flex;
+    -ms-align-items: $a;
+    -ms-justify-content: $j;
+    -ms-flex-wrap: $wrap;
+
+    @content;
+}
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @content;
+
+}
+
+@mixin radius($r) {
+    border-radius: $r;
+    -ms-border-radius: $r;
+
+}
+
+@mixin circle($size) {
+    // 픽셀로 들어감 px 
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    -ms-border-radius: 50%;
+    display: block;
+}
+
+@mixin navIcon($n, $x, $y, $x2, $y2) {
+    &:nth-child(#{$n}) a {
+        &.active .navIcon {
+            background-position: $x2 $y2;
+        }
+
+        .navIcon {
+            background-position: $x $y;
+        }
+    }
+}
+@mixin snsIcon($n, $x, $y) {//이미지 넘버링 삽입
+    &:nth-child(#{$n}) a {
+        background-position:$x $y;
+    }
+}
+
+@mixin baseWidth($w:1160px, $mg:auto) {
+    max-width: $w;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: $mg;
+    margin-right: $mg;
+}
+
+@mixin circle2($s, $c) { // 
+    width:$s;
+    height:$s;
+    border-radius:50%; // radius 변수를 넣었을때 래디우스는 50으로 따로 지정
+    display:block; // 블럭이랑 컬러도 같이 넣으면 따로 css 에서 넣을 필요없음
+    background-color:$c; 
+
+}
+@mixin circle3($s:30px, $c:black, $t:#fff) { // 
+    width:$s;
+    height:$s;
+    border-radius:50%; //radius 변수를 넣었을때 래디우스는 50으로 따로 지정
+    display:block; //block이랑 컬러도 같이 넣으면 따로 css 에서 넣을 필요없음
+    background-color:$c;
+    color:$t; 
+    @content; //@content자식요소안의 속성 추가 - css 에서 {}아래에 열어서 속성 넣을수 있음
+
+}
