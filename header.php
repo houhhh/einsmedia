@@ -31,6 +31,29 @@
             <a href="#"><span class="lines"></span></a>
         </div>
     </nav>
+    <div class="contact">
+        <ul class="sns">
+            <li>
+                <a href="#">
+                   <span class="blind">Twitter</span> 
+                </a>    
+            </li>
+            <li>
+                <a href="#">
+                   <span class="blind">Facebook</span> 
+                </a>    
+            </li>
+            <li>
+                <a href="#">
+                   <span class="blind">Naver</span> 
+                </a>    
+            </li>
+        </ul>
+        <div class="btnAd">
+            <a href="#"><span class="blind">ad</span></a>
+
+        </div>
+    </div>
 </header>
 <section class="mainSlide">
     <div class="mainTitle">
