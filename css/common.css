@@ -1,2 +1,2 @@
-
+body,h1,h2,h3,h4,h5,h6,ul,li,p,ol,dl,dt,dd,form,fieldset,legend{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}em,i,address{font-style:inherit}strong,b{font-weight:inherit}a{text-decoration:none;color:inherit}a:visited{color:inherit}ul,li,ol{list-style:none}.blind,hr,legend{position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;margin:-1px;overflow:hidden}.clearfix:after{content:"";display:block;clear:both}select,button{color:inherit}table{border-spacing:0px;border-collapse:collapse;width:100%}fieldset{border:none}button{border:none;cursor:pointer}.mainTop .mainNav ul li a{font-weight:100;font-size:30px}
 /*# sourceMappingURL=common.css.map */
