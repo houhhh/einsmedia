@@ -49,10 +49,29 @@
                 </a>    
             </li>
         </ul>
-        <div class="btnAd">
-            <a href="#"><span class="blind">ad</span></a>
-
+        <div class="btnRed">
+            <ul class="subNav">
+                <li>
+                    <a href="#">
+                        <span></span>
+                        <i>광고문의</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span></span>
+                        <i>상품안내</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span></span>
+                        <i>회사소개서</i>
+                    </a>
+                </li>
+            </ul>
         </div>
+        <button id="btn_top" class="btn_top">TOP</button> 
     </div>
 </header>
 
