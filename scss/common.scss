@@ -3,16 +3,33 @@ $url : '../images/';
 @import 'reset', 'mixin';
 
 
-.mainTop {
-    .mainNav {
-        ul {
-            li {
-                a {
-                    font-weight:100;
-                    font-size:30px;
-                }
-            }
-        }
-    } 
-}
+
+body {
+    height:100%;
+    min-width:320px;
     
+    
+}
+
+.mainSlide01 { 
+    width:1645px;
+    height:1000px;
+    display:block;
+    &:before {
+        content:'';
+        display:block;
+        background:url($url + "mainBG_01.jpg") no-repeat center center/ cover;
+        width:1645px;
+        height:100vh;
+    }
+}
+.mainTop {
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    padding-top:40px;
+    display:block;
+    color:#f2f2f2;
+
+}
