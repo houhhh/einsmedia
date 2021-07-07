@@ -6,7 +6,7 @@ $url : '../images/';
 
 body {
     height:100%;
-    min-width:320px;
+    min-width:320px;// 바디에는 전체 넓이값이 없는 것 같음
     
     
 }
@@ -15,7 +15,7 @@ body {
     width:1645px;
     height:1000px;
     display:block;
-    &:before {
+    &:before { //스크립트가 작동하는 것같아 정보를 얻는데 많이 헷갈림 가로 세로 정보든 여러가지로...
         content:'';
         display:block;
         background:url($url + "mainBG_01.jpg") no-repeat center center/ cover;
@@ -23,13 +23,4 @@ body {
         height:100vh;
     }
 }
-.mainTop {
-    width:100%;
-    position:fixed;
-    top:0;
-    left:0;
-    padding-top:40px;
-    display:block;
-    color:#f2f2f2;
-
-}
+@import 'header';

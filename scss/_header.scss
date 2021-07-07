@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+
+.mainTop { //헤더의 높이값 정보를 찾기 쉽지 않음 높이가 80인거 같은데 css 창에는 높이 값 자체가 없음 
+    
+    width:100px;
+    height:100px;
+    position:fixed;
+    top:0;
+    left:0;
+    color:#f2f2f2;
+    .navBar {
+        .logo {
+            width:180px;
+            padding:20px 30px 20px 0;
+            a {
+                display:block;
+                background:url($url + 'mainLogo.png') no-repeat;
+                width:100px;
+                height:20px;
+            }
+        }
+    }
+}

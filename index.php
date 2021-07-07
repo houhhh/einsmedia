@@ -2,7 +2,7 @@
 <title>einsmedia</title>
 </header><!-- 헤더는 왜 시작 헤더와 종료헤더가 각각 다른 페이지에 있어야 하는지?--> 
 <body>
-    <?php include "./header.php"; ?>
+    <?php include './header.php'; ?>
     <section class="mainSlide01">
         <div class="mainTitle">
             <h2>
@@ -187,6 +187,39 @@
                 <p>
                     광고 성과 분석, 사용자 유입과 이탈에 대한<br>
                     추적관리를 통한 다양한 전력 도출
+                </p>
+            </li>
+            <li>
+                <a href="#" class="solution01">
+                    <h4>자동입찰 솔루션<h4>
+                    <span class="arrow"></span> <!-- 포지션으로 배치 -->
+                    <!-- 바로 아래 여기에 보더라인 만들어야함 -->
+                </a>
+                <p>
+                    빠른 목표 순위 도달, 보다 저렴한 입찰가 운용,<br>
+                    목표 순위 유지를 통한 효율적 운영
+                </p>
+            </li>
+            <li>
+                <a href="#" class="solution01">
+                    <h4>커머스 리포트솔루션<h4>
+                    <span class="arrow"></span> <!-- 포지션으로 배치 -->
+                    <!-- 바로 아래 여기에 보더라인 만들어야함 -->
+                </a>
+                <p>
+                    광고 효과에 대한 신속한 공유 및 진행중인 광고에 대한<br>
+                    효율 최적화, 문제 발생 시 빠른 해결
+                </p>
+            </li>
+            <li>
+                <a href="#" class="solution01">
+                    <h4>검색 리포트솔루션<h4>
+                    <span class="arrow"></span> <!-- 포지션으로 배치 -->
+                    <!-- 바로 아래 여기에 보더라인 만들어야함 -->
+                </a>
+                <p>
+                    네이버, 카카오 등 검색 광고 진행 결과 피드백을<br>
+                    일간/주간/월간 원하는 포맷으로 제공 가능
                 </p>
             </li>
         </ul>
