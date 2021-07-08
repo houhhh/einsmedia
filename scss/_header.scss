@@ -3,21 +3,38 @@
 
 .mainTop { //헤더의 높이값 정보를 찾기 쉽지 않음 높이가 80인거 같은데 css 창에는 높이 값 자체가 없음 
     
-    width:100px;
-    height:100px;
+    width:100%;
+    padding-top:40px;
     position:fixed;
     top:0;
     left:0;
     color:#f2f2f2;
     .navBar {
+        width:100%;
+        height:80px;
+        // position:relative;
+        padding:0 80px;
+        display:flex;
         .logo {
             width:180px;
             padding:20px 30px 20px 0;
+            // position:absolute;
             a {
                 display:block;
-                background:url($url + 'mainLogo.png') no-repeat;
-                width:100px;
-                height:20px;
+                background:url($url + 'mainLogo.png') no-repeat center center/ contain;
+                width:150px;
+                height:40px;
+            }
+        }
+        .mainNav {
+            display:block;
+            height:20px;
+            width:100%;
+            
+            ul {
+                display:flex;
+                position:absolute;
+                
             }
         }
     }
