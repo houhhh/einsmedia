@@ -32,16 +32,28 @@
             padding:10px 0;
             width:800px;
             font-size:18px;
-            
+            position:relative;
+            margin:auto 0; //여러번 처음 시도햇는데 안됐었는데 한참후에 하니 또 됨 세로정렬
             ul {
-                display:flex;
-                margin:auto 0;
+                // display:flex;
+                @include flex($a:stretch);
+                
                 // position:absolute;
                 li {
                     padding:0 25px;
                     
                     display:block;
                 }
+            }
+            .btnHam {
+                display:block;
+                background:red;
+                width:40px;
+                height:30px;
+                position:absolute;
+                top:0;
+                right:0;
+                
             }
         }
     }
