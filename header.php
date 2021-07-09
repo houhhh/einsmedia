@@ -27,10 +27,10 @@
                 </li>
                 
             </ul>
-            <div class="btnHam">
-                <a href="#"><span class="lines"></span></a>
-            </div>
         </nav>
+        <div class="btnHam">
+            <a href="#"><span class="lines"></span></a>
+        </div>
     </div>
     
     <div class="contact">

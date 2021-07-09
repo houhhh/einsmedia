@@ -12,13 +12,14 @@
     .navBar {
         width:100%;
         height:80px;
-        // position:relative;
+        position:relative;
         padding:0 80px;
         display:flex;
-        justify-content:space-between;
+        
         .logo {
             width:180px;
             padding:20px 30px 20px 0;
+            margin-right:510px;
             // position:absolute;
             a {
                 display:block;
@@ -28,11 +29,12 @@
             }
         }
         .mainNav {
-            display:block;
+            display:flex;
             padding:10px 0;
-            width:800px;
+            // width:700px;
             font-size:18px;
             position:relative;
+            
             margin:auto 0; //여러번 처음 시도햇는데 안됐었는데 한참후에 하니 또 됨 세로정렬
             ul {
                 // display:flex;
@@ -41,20 +43,31 @@
                 // position:absolute;
                 li {
                     padding:0 25px;
-                    
                     display:block;
+                    a {
+                        margin:auto 0;
+                        line-height:50px;
+                    }
+                }
+            } 
+        }
+        .btnHam {
+            display:block;
+            background:red;
+            height:80px;
+            width:100px;
+            position:absolute;
+            top:0;
+            right:200px;//Q.왜 우측값을 줘야 화면에서 보여지는지 모르겠음
+            a {
+                .line {
+                    display:block;
+                    height:3px;
+                    width:80px;
+                    background:#f2f2f2
                 }
             }
-            .btnHam {
-                display:block;
-                background:red;
-                width:40px;
-                height:30px;
-                position:absolute;
-                top:0;
-                right:0;
-                
-            }
+            
         }
     }
 }
