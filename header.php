@@ -29,7 +29,9 @@
             </ul>
         </nav>
         <div class="btnHam">
-            <a href="#"><span class="lines"></span></a>
+            <a href="#">
+                <span class="lines"></span>
+            </a>
         </div>
     </div>
     

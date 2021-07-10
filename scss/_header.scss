@@ -46,25 +46,55 @@
                     display:block;
                     a {
                         margin:auto 0;
-                        line-height:50px;
+                        line-height:50px; // a 요소는 가로정렬 line-height로 
                     }
                 }
             } 
         }
         .btnHam {
-            display:block;
-            background:red;
-            height:80px;
-            width:100px;
             position:absolute;
             top:0;
-            right:200px;//Q.왜 우측값을 줘야 화면에서 보여지는지 모르겠음
+            right:200px;//Q.왜 우측값을 줘야 화면에서 보여지는지 모르겠음 width값이 없어서 화면밖으로 넘어가는가?
+            
+            
             a {
-                .line {
+                display:block;
+                height:80px;
+                width:100px;
+                
+                
+                .lines {
+                    position:relative;
                     display:block;
-                    height:3px;
-                    width:80px;
-                    background:#f2f2f2
+                    height:4px;
+                    width:40px;
+                    right:0;
+                    top:38px;
+                    background-color:#f2f2f2;
+                    
+                    
+                    &:before {
+                        content:'';
+                        position:absolute;
+                        display:inline-block;
+                        width:40px;
+                        height:4px;
+                        left:0;
+                        top:13px;
+                        background-color:#f2f2f2;
+                    }
+                    &:after {
+                        content:'';
+                        position:absolute;
+                        display:block;
+                        height:4px;
+                        width:40px;
+                        background-color:#f2f2f2;
+                        left:0;
+                        top:-13px;
+                        
+                    }
+                    
                 }
             }
             
