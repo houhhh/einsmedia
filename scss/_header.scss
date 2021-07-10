@@ -9,6 +9,7 @@
     top:0;
     left:0;
     color:#f2f2f2;
+    z-index:2;
     .navBar {
         width:100%;
         height:80px;
@@ -19,7 +20,7 @@
         .logo {
             width:180px;
             padding:20px 30px 20px 0;
-            margin-right:510px;
+            margin-right:360px;
             // position:absolute;
             a {
                 display:block;
@@ -42,7 +43,7 @@
                 
                 // position:absolute;
                 li {
-                    padding:0 25px;
+                    padding:0 30px;
                     display:block;
                     a {
                         margin:auto 0;
@@ -54,7 +55,7 @@
         .btnHam {
             position:absolute;
             top:0;
-            right:200px;//Q.왜 우측값을 줘야 화면에서 보여지는지 모르겠음 width값이 없어서 화면밖으로 넘어가는가?
+            right:210px;//Q.왜 우측값을 줘야 화면에서 보여지는지 모르겠음 width값이 없어서 화면밖으로 넘어가는가?
             
             
             a {
@@ -68,7 +69,7 @@
                     display:block;
                     height:4px;
                     width:40px;
-                    right:0;
+                    right:-35px;
                     top:38px;
                     background-color:#f2f2f2;
                     
@@ -98,6 +99,28 @@
                 }
             }
             
+        }
+    }
+}
+.mainSlide01 {
+    position:relative;
+    z-index:1;
+    .mainTitle {
+        position:absolute;//Q,relative를 부모인 mainSlide에 주고 싶은데 주게되면 헤더 메뉴가 사라짐 그래서 z-index로 순번 정해줌
+        color:#f2f2f2;
+        top:350px;
+        left:0;
+        padding-left:170px;
+        h2 {
+            font-size:86px;
+            font-weight:600;
+            height:200px;
+            
+        }
+        h3 {
+            margin-top:34px;
+            font-size:24px;
+            font-weight:400;
         }
     }
 }
