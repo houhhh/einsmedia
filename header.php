@@ -5,10 +5,11 @@
                 <span class="blind">einsmedia</span>
             </a>
         </h1>
-        <nav class="mainNav">
+        <nav class="mainNav on">
             <ul>
                 <li>
-                    <a href="#">Business</a>
+                    <a href="#">Business</a> <!-- 내부메뉴는 클래스를 어디다 줘야하는가? -->
+                    
                 </li>
                 <li>
                     <a href="#">Why EINS</a>
@@ -56,7 +57,7 @@
                     </a>
                 </li>
             </ul>
-            
+
             <button id="btn_top" class="btn_top">TOP</button>
         </div>
          

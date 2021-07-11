@@ -14,6 +14,7 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
+            /* font-family: 'Noto Sans KR', sans-serif;  추후 사용 위해*/ 
         }
     </style>
    

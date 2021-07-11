@@ -7,7 +7,7 @@
         <div class="mainTitle">
             <h2>
                 More than advertising<br>
-                expert 'einsmedia'
+                expert 'einsmedia'<!-- 폰트가 조금 다른거 같음-->
             </h2>
             <h3>사용자와 클라이언트를 연결해 주는 No1디지털 마케팅 그룹</h3>
         </div>

@@ -16,11 +16,12 @@
         position:relative;
         padding:0 80px;
         display:flex;
-        
+        justify-content:space-between;// 미디어 쿼리가 들어가기전 가로를 줄였을때 밀리도록 수정
+                                    //Q.하지만 반대로 창크기를 가로로 늘였을때 제한이 없음 
         .logo {
             width:180px;
             padding:20px 30px 20px 0;
-            margin-right:360px;
+            // margin-right:360px;
             // position:absolute;
             a {
                 display:block;
@@ -29,13 +30,13 @@
                 height:40px;
             }
         }
-        .mainNav {
+        .mainNav {  
             display:flex;
             padding:10px 0;
             // width:700px;
             font-size:18px;
             position:relative;
-            
+            padding-right:250px;
             margin:auto 0; //여러번 처음 시도햇는데 안됐었는데 한참후에 하니 또 됨 세로정렬
             ul {
                 // display:flex;
