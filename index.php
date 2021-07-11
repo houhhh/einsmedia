@@ -11,6 +11,28 @@
             </h2>
             <h3>사용자와 클라이언트를 연결해 주는 No1디지털 마케팅 그룹</h3>
         </div>
+
+        <!-- sns start -->
+        <div class="contact">
+        <ul class="sns">
+            <li>
+                <a href="#">
+                   <span class="blind">Twitter</span> 
+                </a>    
+            </li>
+            <li>
+                <a href="#">
+                   <span class="blind">Facebook</span> 
+                </a>    
+            </li>
+            <li>
+                <a href="#">
+                   <span class="blind">Naver</span> 
+                </a>    
+            </li>
+        </ul>
+        
+    </div>
     </section> <!-- slide01 end -->
 
     <section class="mainSlide02">

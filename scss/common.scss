@@ -15,6 +15,7 @@ body {
     width:1645px;
     height:1000px;
     display:block;
+    position:relative;
     &:before { //스크립트가 작동하는 것같아 정보를 얻는데 많이 헷갈림 가로 세로 정보든 여러가지로...
         content:'';
         display:block;
@@ -22,5 +23,33 @@ body {
         width:1645px;
         height:100vh;
     }
+    //sns start
+    .contact {
+        background:red;
+        width:200px;
+        height:50px;
+        position:absolute;
+        bottom:100px;
+        left:50px;
+    }
+    .mainTitle {
+        position:absolute;//Q,relative를 부모인 mainSlide에 주고 싶은데 주게되면 헤더 메뉴가 사라짐 그래서 z-index로 순번 정해줌
+        color:#f2f2f2;
+        top:350px;
+        left:0;
+        padding-left:170px;
+        h2 {
+            font-size:86px;
+            font-weight:600;
+            height:200px;
+            
+        }
+        h3 {
+            margin-top:34px;
+            font-size:24px;
+            font-weight:400;
+        }
+    }
 }
+
 @import 'header';

@@ -33,26 +33,8 @@
                 <span class="lines"></span>
             </a>
         </div>
-    </div>
-    
-    <div class="contact">
-        <ul class="sns">
-            <li>
-                <a href="#">
-                   <span class="blind">Twitter</span> 
-                </a>    
-            </li>
-            <li>
-                <a href="#">
-                   <span class="blind">Facebook</span> 
-                </a>    
-            </li>
-            <li>
-                <a href="#">
-                   <span class="blind">Naver</span> 
-                </a>    
-            </li>
-        </ul>
+          <!-- top manu end -->
+
         <div class="btnRed">
             <ul class="subNav">
                 <li>
@@ -74,8 +56,14 @@
                     </a>
                 </li>
             </ul>
+            
+            <button id="btn_top" class="btn_top">TOP</button>
         </div>
-        <button id="btn_top" class="btn_top">TOP</button> 
+         
+        <!-- bottom red btn end -->
+
     </div>
+    
+    
 </header>
 
