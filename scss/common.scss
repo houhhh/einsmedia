@@ -9,45 +9,45 @@ body {
     
 }  
 
-.mainSlide01 { 
-    width:1645px;
-    height:1000px;
-    display:block;
-    position:relative;
-    &:before { //스크립트가 작동하는 것같아 정보를 얻는데 많이 헷갈림 가로 세로 정보든 여러가지로...
-        content:'';
-        display:block;
-        background:url($url + "mainBG_01.jpg") no-repeat center center/ cover;
-        width:1645px;
-        height:100vh;
-    }
+.blankSpace {
+    flex:1; 
+}
+
+@import 'header';
+
+.mainSlide01 {  
+    height:100vh;
+    background:url($url + "mainBG_01.jpg") no-repeat center center/ cover; 
     //sns start
-    .contact {
+  
+       
+    .sns { //!.기존사이트는 뭘썻는지 몰라서 참고가 힘듬, 플렉스로 처리해서 li에 margin auto로 처리함
+        display:flex;
+        justify-content:space-between; 
         width:130px;
         position:absolute;
-        bottom:130px;
-        left:50px;
-        margin-left:30px;
-        .sns { //!.기존사이트는 뭘썻는지 몰라서 참고가 힘듬, 플렉스로 처리해서 li에 margin auto로 처리함
-            display:flex;
-            height:40px;
-            justify-content:space-between;
-            
-            li { // 아이콘 가로 세로 정렬 필요함
-                margin:auto 0;
-                @include snsIcon2(1, 16px, 16px, "twitter.png", 16px);
-                @include snsIcon2(2, 8px, 19px, "facebook.png", 8px);
-                @include snsIcon2(3, 16px, 16px, "naver.png", 14px);
-                // background:red;
-                &:nth-child(2) a {
-                    margin-top:-2px;
+        bottom:28px;
+        left:28px; 
+        
+        li { // 아이콘 가로 세로 정렬 필요함
+           
+            @include snsIcon2(1, 16px, 16px, "twitter.png", 16px);
+            @include snsIcon2(2, 8px, 19px, "facebook.png", 8px);
+            @include snsIcon2(3, 16px, 16px, "naver.png", 14px);
+            // background:red;
+            &:nth-child(2) a {
+                margin-top:-2px;
+            }
+
+            a {
+                transition:opacity 0.4s;
+                &:hover {
+                    opacity:0.5;
                 }
             }
-            
-            
-        }
-            
+        }          
     }
+
     .mainTitle {
         position:absolute;//Q,relative를 부모인 mainSlide에 주고 싶은데 주게되면 헤더 메뉴가 사라짐 그래서 z-index로 순번 정해줌
         color:#f2f2f2;
@@ -68,4 +68,4 @@ body {
     }
 }
 
-@import 'header';
+@import 'footer';
