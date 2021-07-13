@@ -1,8 +1,87 @@
-<?php include './fixheader.php'; ?>
-<title>einsmedia</title> <!--http://einsmedia.co.kr/-->
-</head><!-- 헤더는 왜 시작 헤더와 종료헤더가 각각 다른 페이지에 있어야 하는지?--> 
-<body>
-    <?php include './header.php'; ?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta htt-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>einsmedia</title>  
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;900&display=swap" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+    <script src="https://kit.fontawesome.com/9b4d07ff5a.js" crossorigin="anonymous"></script>
+</head> 
+<body> 
+    <header class="mainTop">
+        <div class="navBar">
+            <h1 class="logo">
+                <a href="/">
+                    <span class="blind">einsmedia</span>
+                </a>
+            </h1>
+            <nav class="mainNav on">
+                <ul>
+                    <li>
+                        <a href="#">Business</a> <!-- 내부메뉴는 클래스를 어디다 줘야하는가? -->
+                        
+                    </li>
+                    <li>
+                        <a href="#">Why EINS</a>
+                    </li>
+                    <li>
+                        <a href="#">Solution</a>
+                    </li>
+                    <li>
+                        <a href="#">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#">Company</a>
+                    </li>
+                    <li>
+                        <a href="#">People</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+            <div class="btnHam">
+                <a href="#">
+                    <span class="lines"></span>
+                </a>
+            </div>
+              <!-- top manu end -->
+    
+            <div class="btnRed">
+                <ul class="subNav">
+                    <li>
+                        <a href="#">
+                            <span></span>
+                            <i>광고문의</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span></span>
+                            <i>상품안내</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span></span>
+                            <i>회사소개서</i>
+                        </a>
+                    </li>
+                </ul>
+    
+                <button id="btn_top" class="btn_top">TOP</button>
+            </div>
+             
+            <!-- bottom red btn end -->
+    
+        </div> 
+    </header>
+
+
     <section class="mainSlide01">
         <div class="mainTitle">
             <h2>
