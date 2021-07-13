@@ -10,19 +10,31 @@
     left:0;
     color:#f2f2f2;
     z-index:2;
+<<<<<<< HEAD
     .navBar {
         height:80px;
+=======
+    .navBar { 
+        height:80px; 
+>>>>>>> 91254a09af4b390f547e14d20a40d33674050479
         padding:0 80px;
         display:flex;
         justify-content:space-between;// 미디어 쿼리가 들어가기전 가로를 줄였을때 밀리도록 수정
+        align-items:center;
                                     //Q.하지만 반대로 창크기를 가로로 늘였을때 제한이 없음 
+<<<<<<< HEAD
         align-items:center;
         .logo {
             outline:1px solid red;
+=======
+        .logo { 
+            
+>>>>>>> 91254a09af4b390f547e14d20a40d33674050479
             // margin-right:360px;
             // position:absolute;
             a {
                 display:block;
+<<<<<<< HEAD
                 background:url($url + 'mainLogo.png') no-repeat center center/contain;// 슬러쉬 앞뒤로 띄워쓰기 안됨
                 width:150px;
                 height:40px;
@@ -33,25 +45,45 @@
             font-size:18px;
              //여러번 처음 시도햇는데 안됐었는데 한참후에 하니 또 됨 세로정렬
             outline:1px solid red;
+=======
+                background:url($url + 'mainLogo.png') no-repeat center center/contain;
+                width:150px; 
+                height:40px;
+            }
+        }
+        .mainNav {   
+            font-size:18px;  
+>>>>>>> 91254a09af4b390f547e14d20a40d33674050479
             ul {
                 // display:flex;
                 @include flex($a:stretch);
                 
                 // position:absolute;
+<<<<<<< HEAD
                 li {
                     margin-left:25px;
                     &:first-child {
+=======
+                li { 
+                    margin-left:25px;
+                    &:first-child{
+>>>>>>> 91254a09af4b390f547e14d20a40d33674050479
                         margin-left:0;
                     }
                     a {
                         display:block;
+<<<<<<< HEAD
                         padding:20px 0;
                          // a 요소는 가로정렬 line-height로 마진오토는 블럭요소에만 됨
+=======
+                        padding:20px 0;  
+>>>>>>> 91254a09af4b390f547e14d20a40d33674050479
                     }
                 }
             } 
         }
         .btnHam {
+<<<<<<< HEAD
             //Q.왜 우측값을 줘야 화면에서 보여지는지 모르겠음 width값이 없어서 화면밖으로 넘어가는가?
             position:relative;
             outline:1px solid red;
@@ -60,11 +92,20 @@
                 display:block;
                 height:26px;
                 width:35px;
+=======
+            position:relative;   
+            padding-left:40px;
+            a {
+                display:block;
+                width:35px;
+                height:26px;
+>>>>>>> 91254a09af4b390f547e14d20a40d33674050479
                 position:relative;
                 
                 .lines {
                     position:absolute;
                     left:0;
+<<<<<<< HEAD
                     display:block;
                     width:100%;
                     height:3px;
@@ -77,12 +118,28 @@
                     &:nth-child(3) {
                         bottom:0;
                     }
+=======
+                    width:100%;
+                    height:3px; 
+                    display:block;
+                    background-color:#f2f2f2; 
+
+                    &:nth-child(2) {
+                        top:calc(50% - 1.5px);
+                    }
+
+                    &:nth-child(3) {
+                        bottom:0;
+                    }
+                    
+>>>>>>> 91254a09af4b390f547e14d20a40d33674050479
                     // &:before, &:after {
                     //     content:'';
                     //     position:absolute;
                     //     display:block;
                     //     width:100%;
                     //     height:100%;
+<<<<<<< HEAD
                     //     left:0;
                     //     top:13px;
                     //     background-color:#f2f2f2;
@@ -92,6 +149,16 @@
                     //     top:13px;
                     // }
                     // &:after {
+=======
+                    //     left:0; 
+                    //     background-color:#f2f2f2;
+                    // }
+                    
+                    // &:before { 
+                    //     top:13px; 
+                    // }
+                    // &:after { 
+>>>>>>> 91254a09af4b390f547e14d20a40d33674050479
                     //     top:-13px;
                         
                     // }
@@ -99,7 +166,11 @@
                 }
             }
             
+<<<<<<< HEAD
         } // ham btn end
+=======
+        } // ham btn end 
+>>>>>>> 91254a09af4b390f547e14d20a40d33674050479
         
     }
 }

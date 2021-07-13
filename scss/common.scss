@@ -10,15 +10,13 @@ body {
 }  
 
 .blankSpace {
-    flex:1;
-    
+    flex:1; 
 }
 
 @import 'header';
 
 .mainSlide01 { 
     height:100vh;
-    position:relative;
     background:url($url + "mainBG_01.jpg") no-repeat center center/ cover;
     // &:before { //스크립트가 작동하는 것같아 정보를 얻는데 많이 헷갈림 가로 세로 정보든 여러가지로...
     //     content:'';
@@ -46,17 +44,16 @@ body {
             &:nth-child(2) a {
                 margin-top:-2px;
             }
+
             a {
-                transition:all 0.4s;
+                transition:opacity 0.4s;
                 &:hover {
                     opacity:0.5;
                 }
             }
-        }
-        
-        
+        }          
     }
-    
+
     .mainTitle {
         position:absolute;//Q,relative를 부모인 mainSlide에 주고 싶은데 주게되면 헤더 메뉴가 사라짐 그래서 z-index로 순번 정해줌
         color:#f2f2f2;
