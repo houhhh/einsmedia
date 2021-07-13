@@ -11,110 +11,96 @@
     color:#f2f2f2;
     z-index:2;
     .navBar {
-        
         height:80px;
-        position:relative;
         padding:0 80px;
         display:flex;
         justify-content:space-between;// 미디어 쿼리가 들어가기전 가로를 줄였을때 밀리도록 수정
                                     //Q.하지만 반대로 창크기를 가로로 늘였을때 제한이 없음 
+        align-items:center;
         .logo {
-            width:180px;
-            padding:20px 30px 20px 0;
+            outline:1px solid red;
             // margin-right:360px;
             // position:absolute;
             a {
                 display:block;
-                background:url($url + 'mainLogo.png') no-repeat center center/ contain;
+                background:url($url + 'mainLogo.png') no-repeat center center/contain;// 슬러쉬 앞뒤로 띄워쓰기 안됨
                 width:150px;
                 height:40px;
             }
         }
         .mainNav {  
-            display:flex;
-            padding:10px 0;
             // width:700px;
             font-size:18px;
-            position:relative;
-            padding-right:250px;
-            margin:auto 0; //여러번 처음 시도햇는데 안됐었는데 한참후에 하니 또 됨 세로정렬
+             //여러번 처음 시도햇는데 안됐었는데 한참후에 하니 또 됨 세로정렬
+            outline:1px solid red;
             ul {
                 // display:flex;
                 @include flex($a:stretch);
                 
                 // position:absolute;
                 li {
-                    padding:0 30px;
-                    display:block;
+                    margin-left:25px;
+                    &:first-child {
+                        margin-left:0;
+                    }
                     a {
-                        margin:auto 0;
-                        line-height:50px; // a 요소는 가로정렬 line-height로 
+                        display:block;
+                        padding:20px 0;
+                         // a 요소는 가로정렬 line-height로 마진오토는 블럭요소에만 됨
                     }
                 }
             } 
         }
         .btnHam {
-            position:absolute;
-            top:0;
-            right:210px;//Q.왜 우측값을 줘야 화면에서 보여지는지 모르겠음 width값이 없어서 화면밖으로 넘어가는가?
-            
-            
+            //Q.왜 우측값을 줘야 화면에서 보여지는지 모르겠음 width값이 없어서 화면밖으로 넘어가는가?
+            position:relative;
+            outline:1px solid red;
+            padding-left:40px;
             a {
                 display:block;
-                height:80px;
-                width:100px;
-                
+                height:26px;
+                width:35px;
+                position:relative;
                 
                 .lines {
-                    position:relative;
+                    position:absolute;
+                    left:0;
                     display:block;
-                    height:4px;
-                    width:40px;
-                    right:-35px;
-                    top:38px;
+                    width:100%;
+                    height:3px;
                     background-color:#f2f2f2;
                     
+                    &:nth-child(2) {
+                        top:calc(50% - 1.5px);
+
+                    }
+                    &:nth-child(3) {
+                        bottom:0;
+                    }
+                    // &:before, &:after {
+                    //     content:'';
+                    //     position:absolute;
+                    //     display:block;
+                    //     width:100%;
+                    //     height:100%;
+                    //     left:0;
+                    //     top:13px;
+                    //     background-color:#f2f2f2;
+                    // }
                     
-                    &:before {
-                        content:'';
-                        position:absolute;
-                        display:inline-block;
-                        width:40px;
-                        height:4px;
-                        left:0;
-                        top:13px;
-                        background-color:#f2f2f2;
-                    }
-                    &:after {
-                        content:'';
-                        position:absolute;
-                        display:block;
-                        height:4px;
-                        width:40px;
-                        background-color:#f2f2f2;
-                        left:0;
-                        top:-13px;
+                    // &:before {
+                    //     top:13px;
+                    // }
+                    // &:after {
+                    //     top:-13px;
                         
-                    }
+                    // }
                     
                 }
             }
             
-        } // ham btn end 
-        .btnRed { //진짜 어려움... a 태그영역의 세분화가 헤깔림
-            @include circle(70px);
-            background:red;
-            bottom:80px;
-            right:80px;
-            position:fixed;
-            .btn_top {
-                position:absolute;
-                bottom:-30px;
-                right:15px;
-                
-            }
-            
-        }
+        } // ham btn end
+        
     }
 }
 
