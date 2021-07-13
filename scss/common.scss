@@ -10,8 +10,7 @@ body {
 }  
 
 .mainSlide01 { 
-    width:1645px;
-    height:1000px;
+    height:100vh;
     display:block;
     position:relative;
     background:url($url + "mainBG_01.jpg") no-repeat center center/ cover;
