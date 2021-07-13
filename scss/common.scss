@@ -1,15 +1,13 @@
 @charset "utf-8";
 $url : '../images/';
-@import 'reset', 'mixin';
-
-
+@import 'reset', 'mixin'; 
 
 body {
     height:100%;
     min-width:320px;// 바디에는 전체 넓이값이 없는 것 같음
+    font-family: 'Montserrat', sans-serif;
     
-    
-}
+} 
 
 .mainSlide01 { 
     width:1645px;
