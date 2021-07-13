@@ -16,13 +16,14 @@ body {
     height:1000px;
     display:block;
     position:relative;
-    &:before { //스크립트가 작동하는 것같아 정보를 얻는데 많이 헷갈림 가로 세로 정보든 여러가지로...
-        content:'';
-        display:block;
-        background:url($url + "mainBG_01.jpg") no-repeat center center/ cover;
-        width:1645px;
-        height:100vh;
-    }
+    background:url($url + "mainBG_01.jpg") no-repeat center center/ cover;
+    // &:before { //스크립트가 작동하는 것같아 정보를 얻는데 많이 헷갈림 가로 세로 정보든 여러가지로...
+    //     content:'';
+    //     display:block;
+    //     background:url($url + "mainBG_01.jpg") no-repeat center center/ cover;
+    //     width:1645px;
+    //     height:100vh;
+    // }
     //sns start
     .contact {
         width:130px;

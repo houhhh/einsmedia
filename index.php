@@ -1,6 +1,6 @@
 <?php include './fixheader.php'; ?>
 <title>einsmedia</title> <!--http://einsmedia.co.kr/-->
-</header><!-- 헤더는 왜 시작 헤더와 종료헤더가 각각 다른 페이지에 있어야 하는지?--> 
+</head><!-- 헤더는 왜 시작 헤더와 종료헤더가 각각 다른 페이지에 있어야 하는지?--> 
 <body>
     <?php include './header.php'; ?>
     <section class="mainSlide01">
