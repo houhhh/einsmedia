@@ -1,0 +1,25 @@
+### 일반 익스텐션
+* korean
+* Material Theme
+* Material Icon
+* rainbow csv
+
+### 파이썬 익스텐션
+* Python
+* 설정(cmd + ,) > format > Python 선택(Default formatter) > 그밑에 Format On Save 체크하기!
+* 새파일 만들고, test.py로 저장을 누르면 하단에 Formatter autopep8 is not installed, install? 이라는
+팝업이 뜨면, Use Black을 눌러준다!!
+* formatter autopep8 : pep8 자동화 설정 툴 그러나 우리는 black 을 사용할 것임!
+( 들여쓰기등... 따옴표...여백등 맞춰줌 )
+
+
+* flake8 : 함수 등이 호출되지 않아도 문법 오류 검사
+
+
+* pylance : 자동완성
+* Visual studio IntelliCode : 자동완성
+* indent-rainbow : indent 마다 다른 색을 칠해주는 extension
+
+### OOP(Object Oriented Programing)는 프로그램을 Real
+
+Chart.js ( https://www.chartjs.org/ )
