@@ -10,42 +10,37 @@
     left:0;
     color:#f2f2f2;
     z-index:2;
-<<<<<<< HEAD
-    .navBar {
-        height:80px;
-=======
-    .navBar { 
-        height:80px; 
->>>>>>> 91254a09af4b390f547e14d20a40d33674050479
+    .navBar { //!.position:relative를 주면 width가 오토가되기 때문에 width값이 굳이 필요없다. 그런데 relative상태에서 패팅까지 주면 width:auto(100%) + padding값이 되므로 넘치게된다.
+        height:80px; // 높이만 주고 가로값은 어디에 기준하는가?
         padding:0 80px;
         display:flex;
+        //!.flex:1 은 flex-grow:1 과같다 flex의 기본값은 flex: 0 1 auto인데 
+        //flex-grow:0 , flex-shrink:1 , flex-basis:auto 을 뜻한다. 여기서 flex:1 을 선언하면 flex:0 1 auto 에서 첫번째 값을 1을 썻으므로 나지머 두개는 기본값 1 auto 로 들어간다
         justify-content:space-between;// 미디어 쿼리가 들어가기전 가로를 줄였을때 밀리도록 수정
-        align-items:center;
-                                    //Q.하지만 반대로 창크기를 가로로 늘였을때 제한이 없음 
-<<<<<<< HEAD
-        align-items:center;
-        .logo {
-            outline:1px solid red;
-=======
+        align-items:center;//!.align-items란? 정렬됨 !.flex상태에서만 먹히고 
+        //align-item은 포지션을 옮겨주는것이 아니라 자식요소의 영역을 할당해주는 것에 가깝다 그러므로 
+        //center는 자식의 컨텐츠 요소만큼(크기를 갖고 있는 a)의 크기로 중앙에 할당해서 배치시키고 flex-strart 자식요소 크기만큼의 영역을 맨위에 배치 flex-end는 아래에 배치하고 
+        //stretch 는 자식의 요소를 align-items가 들어있는 부모의 영역만큼 자식의 컨텐츠요소 영역을 확장시켜 꽉채워준다. 그렇게 되면 자식요소는 안에서 영역이 남아돌아서 놀게되는데 가장 맨위로 배치된것처럼 보인다. 제일 하위 자식인 a요소가 크기를 갖고 있기때문에 align-items로 인해 변형되는 logo태그는 크기가 굳이 없어도 된다 
+        //좋은예시 - https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container
+
+        //!.align-items키워드 
+        //align-items: normal;
+        //align-items: stretch;
+
+        //* 위치 정렬 * 
+        //* align-items는 왼쪽과 오른쪽 값을 취하지 않습니다 * 
+        //align-items: center;  * 중앙에 아이템을 포장 * 
+        //align-items: start;  * 처음부터 팩 아이템 * 
+        //align-items: end;  * 마지막부터 포장 아이템 * 
+        //align-items: flex-start;  * 처음부터 플렉스 아이템 포장 * 
+        //align-items: flex-end;  * 끝에서 플렉스 아이템 포장 * 
+        
         .logo { 
             
->>>>>>> 91254a09af4b390f547e14d20a40d33674050479
             // margin-right:360px;
             // position:absolute;
             a {
-                display:block;
-<<<<<<< HEAD
-                background:url($url + 'mainLogo.png') no-repeat center center/contain;// 슬러쉬 앞뒤로 띄워쓰기 안됨
-                width:150px;
-                height:40px;
-            }
-        }
-        .mainNav {  
-            // width:700px;
-            font-size:18px;
-             //여러번 처음 시도햇는데 안됐었는데 한참후에 하니 또 됨 세로정렬
-            outline:1px solid red;
-=======
+                display:block;//!.이 경우는 logo의 부모에서 align items를 써서 정열해서 따로 로고에서 패딩으로 정렬할 필요 없는 상황
                 background:url($url + 'mainLogo.png') no-repeat center center/contain;
                 width:150px; 
                 height:40px;
@@ -53,93 +48,59 @@
         }
         .mainNav {   
             font-size:18px;  
->>>>>>> 91254a09af4b390f547e14d20a40d33674050479
+            outline:1px solid red;
             ul {
-                // display:flex;
+                //기본적으로 li 나 li 안의 요소들이 width 값이 정해져 있으면 반응형사이트가 됏을때 줄어들게되면 줄바꿈이 일어나기때문에 width값은 없도록 해서 자연스럽게 줄어들게 만듬
                 @include flex($a:stretch);
                 
                 // position:absolute;
-<<<<<<< HEAD
-                li {
-                    margin-left:25px;
-                    &:first-child {
-=======
                 li { 
                     margin-left:25px;
-                    &:first-child{
->>>>>>> 91254a09af4b390f547e14d20a40d33674050479
+                    &:first-child {
                         margin-left:0;
                     }
                     a {
                         display:block;
-<<<<<<< HEAD
-                        padding:20px 0;
+                        padding:20px 0;//!.margin:auto는 블럭요소에만 먹힘 하지만 a는 display:block을 넣기전엔 기본적으로 인라인 요소
                          // a 요소는 가로정렬 line-height로 마진오토는 블럭요소에만 됨
-=======
-                        padding:20px 0;  
->>>>>>> 91254a09af4b390f547e14d20a40d33674050479
                     }
                 }
             } 
         }
-        .btnHam {
-<<<<<<< HEAD
-            //Q.왜 우측값을 줘야 화면에서 보여지는지 모르겠음 width값이 없어서 화면밖으로 넘어가는가?
+        .btnHam {//!.navBar가 flex가 들어있고 align-items:center가 먹혀있기때문에 btnHam의 안읭 요소와 함께 중앙 정렬 배치 됨
+            //기본적인 구조는 : 위치를 잡아줄 부모 > 그 위치안에 정확한 기능역할과 사이즈 영역을 대신할 자식 > 기능은 없지만 세부적인 비쥬얼 요소
             position:relative;
             outline:1px solid red;
-            padding-left:40px;
+            padding-left:40px;//a에는 영향 주지 않음 
             a {
                 display:block;
                 height:26px;
                 width:35px;
-=======
-            position:relative;   
-            padding-left:40px;
-            a {
-                display:block;
-                width:35px;
-                height:26px;
->>>>>>> 91254a09af4b390f547e14d20a40d33674050479
                 position:relative;
                 
-                .lines {
+                .lines {//span은 인라인요소라서 블럭이 필요
                     position:absolute;
                     left:0;
-<<<<<<< HEAD
-                    display:block;
-                    width:100%;
-                    height:3px;
-                    background-color:#f2f2f2;
-                    
-                    &:nth-child(2) {
-                        top:calc(50% - 1.5px);
-
-                    }
-                    &:nth-child(3) {
-                        bottom:0;
-                    }
-=======
-                    width:100%;
+                    width:100%;//a 안에 있는 width:35px 만큼 늘어나게 하는게 자연스러움
                     height:3px; 
                     display:block;
                     background-color:#f2f2f2; 
 
-                    &:nth-child(2) {
-                        top:calc(50% - 1.5px);
+                    &:nth-child(2) { 
+                        top:calc(50% - 1.5px);//중앙에 배치하기위해 calc 사용 (a의 전체 높이 35px 에서 반을 나눈 50%에서 line의 높이 3px의 반을 ㅌ해야 중앙에 위치 왜냐면 3px의 반을 하지 않으면 a 크기의 절반의 바로 아래에 위치하기때문에 line 3px의 절반만큼 올려야한다. 
+                        
                     }
 
                     &:nth-child(3) {
-                        bottom:0;
+                        bottom:0;//제일 아래에 배치해야하니 bottom 사용
                     }
                     
->>>>>>> 91254a09af4b390f547e14d20a40d33674050479
-                    // &:before, &:after {
+                    // &:before, &:after {   // before , after써서 햄버거 만들기 
                     //     content:'';
                     //     position:absolute;
                     //     display:block;
                     //     width:100%;
                     //     height:100%;
-<<<<<<< HEAD
                     //     left:0;
                     //     top:13px;
                     //     background-color:#f2f2f2;
@@ -149,16 +110,6 @@
                     //     top:13px;
                     // }
                     // &:after {
-=======
-                    //     left:0; 
-                    //     background-color:#f2f2f2;
-                    // }
-                    
-                    // &:before { 
-                    //     top:13px; 
-                    // }
-                    // &:after { 
->>>>>>> 91254a09af4b390f547e14d20a40d33674050479
                     //     top:-13px;
                         
                     // }
@@ -166,11 +117,7 @@
                 }
             }
             
-<<<<<<< HEAD
         } // ham btn end
-=======
-        } // ham btn end 
->>>>>>> 91254a09af4b390f547e14d20a40d33674050479
         
     }
 }

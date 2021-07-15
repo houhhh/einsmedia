@@ -5,20 +5,18 @@ $url : '../images/';
 body {
     height:100%;
     min-width:320px;// 바디에는 전체 넓이값이 없는 것 같음
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;//!.font-family 는 css 바디에 쓰기
     
 }  
 
-.blankSpace {
-    flex:1; 
-}
+
 
 @import 'header';
 
 .mainSlide01 { 
-    height:100vh;
-    background:url($url + "mainBG_01.jpg") no-repeat center center/ cover;
-    // &:before { //스크립트가 작동하는 것같아 정보를 얻는데 많이 헷갈림 가로 세로 정보든 여러가지로...
+    height:100vh;//!.vh는 샤용하는 현재 디바이스의 높이를 말함 (사용하는 디바이스 높이에 맞게 조절됨)
+    background:url($url + "mainBG_01.jpg") no-repeat center center/ cover;//이미지는 따로 before나 after에 넣을필요없이 mainslide자체에 넣어줌
+    // &:before {
     //     content:'';
     //     display:block;
     //     background:url($url + "mainBG_01.jpg") no-repeat center center/ cover;
@@ -26,13 +24,14 @@ body {
     //     height:100vh;
     // }
     //sns start
-    .sns { //!.기존사이트는 뭘썻는지 몰라서 참고가 힘듬, 플렉스로 처리해서 li에 margin auto로 처리함
-        display:flex;
+    .sns {//@.20210713_B - 1:15:43 
+        display:flex;//!.플렉스로 했기때문에 마진오토는 안되고 align-items로 한다
         justify-content:space-between;
         width:130px;
-        position:absolute;
+        position:absolute;//!.absolute는 원래 위치와 상관없이 위치를 지정할 수 있다. 단, 가장 가까운 상위 요소를 기준으로 위치가 결정 된다.
+                        //!.relative는 
         bottom:48px;
-        left:28px;
+        left:28px; 
         
         
         li { // 아이콘 가로 세로 정렬 필요함
