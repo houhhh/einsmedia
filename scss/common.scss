@@ -39,7 +39,7 @@ body {
         
         li { // 아이콘 가로 세로 정렬 필요함
             
-            @include snsIcon2(1, 16px, 16px, "twitter.png", 16px);
+            @include snsIcon2(1, 16px, 16px, "twitter.png", 16px);//!.a 태그에 이미지가 들어간 것임 mixin을 참고
             @include snsIcon2(2, 8px, 19px, "facebook.png", 8px);
             @include snsIcon2(3, 16px, 16px, "naver.png", 14px);
             // background:red;
@@ -49,7 +49,7 @@ body {
 
             a {
                 transition:opacity 0.4s;
-                &:hover {
+                &:hover {//!.hover
                     opacity:0.5;
                 }
             }
@@ -60,6 +60,7 @@ body {
         position:relative;//Q,relative를 부모인 mainSlide에 주고 싶은데 주게되면 헤더 메뉴가 사라짐 그래서 z-index로 순번 정해줌
         color:#f2f2f2;
         top:calc(50% - 120px);//!.50%를주면 중앙으로 오지 않는데 거기서 120px을 빼서 중앙에 배치
+                            //Q.top:50% 을 줘도 왜 중앙 배치가 되지 않나?
         max-width:1350px;
         margin:0 auto;//!.width값이 위체처럼 있어야 먹힘 
 
