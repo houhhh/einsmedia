@@ -78,4 +78,57 @@ body {
     }
 }
 
+.mainSlide02 {
+    height:100vh;
+    background-color:#fff;
+    padding:0 60px;
+    .mainTitle {
+        line-height:48px;
+        display:flex;
+        height:100px;
+        background:#f2f2f2;
+        align-items:center;
+        margin-top:200px;//!.부모가 몇개 안되기때문에 본사이트에선 전체를 감싸고 세로정렬은 padding으로 잡고 안쪽엔 relative를 넣었지만 여기선 부모가 하나라서 마진으로 설정
+        h2 {
+            width:50%;
+            font-size:36px;
+            font-weight:700;
+            letter-spacing:-0.035em;
+            position:relative;
+            &:after {
+                content:'';
+                display:block;
+                background-color:red;
+                position:absolute;
+                bottom:11px;
+                right:557px;
+                @include circle(7px);
+            }
+        }
+        p {
+            font-size:16.5px;
+            font-weight:600px;
+            line-height:28px;
+            padding:0 0 0 80px;
+            position:relative;
+            &:before {
+                content:'';
+                position:absolute;
+                top:10px;
+                left:0;
+                display:block;
+                background-color:black;
+                height:4px;
+                width:50px;
+            }
+        }
+    }
+    .grayCard {
+        background-color:#6e6e6e
+        li {
+            height:178px;
+        }
+    }
+}
+
 @import 'footer';
