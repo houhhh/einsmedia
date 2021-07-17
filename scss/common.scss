@@ -56,7 +56,7 @@ body {
         }          
     }
 
-    .mainTitle {
+    .mainTitle {//!.메인 타이틀 중앙 정렬
         position:relative;//Q,relative를 부모인 mainSlide에 주고 싶은데 주게되면 헤더 메뉴가 사라짐 그래서 z-index로 순번 정해줌
         color:#f2f2f2;
         top:calc(50% - 120px);//!.50%를주면 중앙으로 오지 않는데 거기서 120px을 빼서 중앙에 배치
