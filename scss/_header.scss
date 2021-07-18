@@ -48,7 +48,6 @@
         }
         .mainNav {   
             font-size:18px;  
-            outline:1px solid red;
             ul {
                 //기본적으로 li 나 li 안의 요소들이 width 값이 정해져 있으면 반응형사이트가 됏을때 줄어들게되면 줄바꿈이 일어나기때문에 width값은 없도록 해서 자연스럽게 줄어들게 만듬
                 @include flex($a:stretch);
@@ -70,7 +69,6 @@
         .btnHam {//!.navBar가 flex가 들어있고 align-items:center가 먹혀있기때문에 btnHam의 안읭 요소와 함께 중앙 정렬 배치 됨
             //기본적인 구조는 : 위치를 잡아줄 부모 > 그 위치안에 정확한 기능역할과 사이즈 영역을 대신할 자식 > 기능은 없지만 세부적인 비쥬얼 요소
             position:relative;
-            outline:1px solid red;
             padding-left:40px;//a에는 영향 주지 않음 
             a {
                 display:block;
