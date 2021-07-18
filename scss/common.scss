@@ -130,6 +130,7 @@ body {
         display:flex;
         justify-content:space-between;//!.플렉스를 박스 넓이 끝까지 배치하기 위해선 필요
         flex-wrap:wrap;//1.플렉스를 줄넘김하기 위해 사용
+        
         li { //!,flex이론 - https://jeonghwan-kim.github.io/dev/2020/03/09/flex.html
             // padding:4px 10px 0 22px;
             width:calc( ( 100% - 50px ) / 3); ///!.flex참고 - 20201206_B (43:30)
@@ -140,6 +141,12 @@ body {
             //Q.왜 박스 코너쪽 사이사이들은 색이 약할까?
             background-color:#f9f9f9;//눈부셔서 넣음
             @include radius($r:10px);
+            @include panelIcon(1, 40px, 35px, 'ic_list_01.png', -4px, 0, cover);
+            @include panelIcon(2, 40px, 35px, 'ic_list_01.png', -40px, 0, cover);
+            @include panelIcon(3, 40px, 35px, 'ic_list_01.png', -80px, 0, cover);
+            @include panelIcon(4, 40px, 35px, 'ic_list_01.png', -120px, 0, cover);
+            @include panelIcon(5, 40px, 35px, 'ic_list_01.png', -160px, 0, cover);
+            @include panelIcon(6, 40px, 35px, 'ic_list_01.png', -200px, 0, cover);
             &:nth-child(1) { //Q.한번에 쓸 방법은?
                 margin-top:0;
             }
@@ -167,14 +174,16 @@ body {
                 bottom:36px;
                 width:0px;
                 height:0px;
-                border:5px solid transparent;
-                border-left-color:black;
+                border:5px solid transparent;//!.화살표 넣기
+                border-left-color:black;//.화살표 넣기
             }
+            
             .cardList {
                 display:block;
                 width:100%;
                 height:100%;
                 padding:35px 30px;
+                position:relative;
                 h4 {
                     font-size:18px;
                     font-weight:700;
@@ -182,6 +191,19 @@ body {
                 }
                 i {
                     font-size:14px;
+                }
+                .cardIcon {
+                    display:block;
+                    position:absolute;
+                    top:25px;
+                    right:85px;
+                    
+                    // &:before {
+                    //     content:'';
+                    //     display:block;
+                    //     width:40px;
+                    //     height:35px;
+                    // }
                 }
             }
         }
