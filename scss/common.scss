@@ -209,5 +209,103 @@ body {
         }
     }
 }
+// .mainSlide03 {
+//     height:100vh;
+//     // background:url($url + "business_01.jpg") no-repeat center center/cover;
+//     outline:1px solid blue;
+        
+//     .innerWidth {//mainSlide02 은 innerWidth 없이 겉으로 잘 나오는거 같아서 운이 좋았음
+//         max-width:1350px;
+//         margin:0 auto;
+        
+//         .mainTitle {//div가 부족해서 하나 더있어야 겠다는걸 이제 느낌
+//             display:flex;
+//             background-color:green;
+//             height:100px;
+//             padding-top:350px;
+            
+//         }
+//     }
+// }
+.mainSlide03 { //!.mainSlide02 랑 같아서 html 클래스를 같게해서 같은 속성 적용되게 해봤지만 다른부분이 있어서 li가 없는 부분은 nth-child로 따로 선택     
+                // 적용이 어려웠음 그래서 그냥 속성 복사해서 아래로 붙여넣기 거기다 배경이미지라던지 글자 색상 다른게 많았음
+                //!.(중요)테이블 셀이 들어가야하거나 표가 들어가야 함
+    height:100vh;
+    background:url($url + "business_01.jpg") no-repeat center center/cover;
+    .innerWidth {
+        max-width:1350px;
+        margin:0 auto;
+        .mainTitle {
+            line-height:48px;
+            display:flex;
+            height:100px;
+            align-items:center;
+            padding-top:350px;
+            color:#fff;
+            h2 {
+                width:50%;
+                font-size:36px;
+                font-weight:700;
+                letter-spacing:-0.035em;
+                position:relative;
+                &:after {
+                    content:'';
+                    display:block;
+                    background-color:red;
+                    position:absolute;
+                    bottom:11px;
+                    right:437px;
+                    @include circle(7px);
+                }
+            }
+            p {
+                font-size:16.5px;
+                font-weight:600px;
+                line-height:28px;
+                padding:0 0 0 80px;
+                position:relative;
+                &:before {//!.position이 가능함 
+                    content:'';
+                    position:absolute;
+                    top:10px;
+                    left:0;
+                    display:block;
+                    background-color:#fff;
+                    height:2px;
+                    width:50px;
+                }
+            }
+        }
+        .slide03List {//오리지널 사이트에선 플롵로 옆으로 배열
+            display:flex;
+            margin-top:60px;
+            li {
+                display:block;
+                width:25%;
+                border:1px solid #fff;
+                &:nth-child(1) {
+                    border-right:0;
+                }
+                &:nth-child(2) {
+                    border-right:0;
+                }
+                &:nth-child(3) {
+                    border-right:0;
+                }
+                a {
+                    display:block;
+                    width:100%;
+                    height:510px;
+                }
+            }
+           .listIcon {
+               color:#fff;
+               font-size:24px;
+               
+               
+           } 
+        }
 
+    }
+}
 @import 'footer';

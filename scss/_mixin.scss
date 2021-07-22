@@ -72,14 +72,13 @@
     }
 }
 @mixin panelIcon($n, $w, $h, $a, $x, $y, $d) { // 내가 만든 mixin
-    &:nth-child(#{$n}) .cardList .cardIcon{
-        &:before { //Q.before는 줄바꿈으로 믹신에 넣어야 먹히는 이유?
-            content:'';
-            display:block;
-            width:$w;
-            height:$h;
-            background:url($url + $a) no-repeat $x $y/$d;//!.no-repeat 중요함 안빼먹기
-        }
+    &:nth-child(#{$n}) .cardList .cardIcon:before {
+        content:'';
+        display:block;
+        width:$w;
+        height:$h;
+        background:url($url + $a) no-repeat $x $y/$d;//!.no-repeat 중요함 안빼먹기
+        
     }
         
 }
