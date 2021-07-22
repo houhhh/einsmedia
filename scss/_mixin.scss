@@ -82,6 +82,16 @@
     }
         
 }
+@mixin slide03Icon($n, $w, $h, $a, $x, $y, $d) {
+    &:nth-child(#{$n}) a .midBox i {
+        display:block;
+        height:$h;
+        width:$w;
+        margin:0 auto;
+        background:url($url + $a) no-repeat $x $y;
+        background-size:$d;
+    }
+}
 
 @mixin baseWidth($w:1160px, $mg:auto) {
     max-width: $w;

@@ -282,7 +282,7 @@ body {
             li {
                 display:block;
                 width:25%;
-                border:1px solid #fff;
+                border:1px solid #6a6865;
                 &:nth-child(1) {
                     border-right:0;
                 }
@@ -292,18 +292,37 @@ body {
                 &:nth-child(3) {
                     border-right:0;
                 }
+                @include slide03Icon(1, 68px, 60px, "ic_list_02.png", 8px,  2px, 248px);
+                @include slide03Icon(2, 68px, 60px, "ic_list_02.png", -60px,  2px, 248px);
+                @include slide03Icon(3, 58px, 60px, "ic_list_02.png", -125px,  0px, 248px);
+                @include slide03Icon(4, 68px, 60px, "ic_list_02.png", -185px,  2px, 248px);
                 a {
                     display:block;
                     width:100%;
                     height:510px;
+                    padding:90px 48px 0;
+                    box-sizing:border-box;//Q.오리지널 사이트는 width 100%인데도 박스사이징 없어서 패딩때문에 넘치는일 없는데 왜 여기선 넘치나...
+                    .midBox {
+                        height:100%;
+                        // vertical-align:middle; !.table-cell에서만 작동
+                        .listIcon {
+                            display:block;
+                            margin:25px 0;
+                            font-weight:700;
+                            color:#fff;
+                            font-size:30px;
+                            text-align:center;//!.block요소에서만 먹음
+                        }
+                        p {
+                            color:#fff;
+                            opacity:.5;
+                            line-height:27px;
+                        }
+                        
+                    }
                 }
             }
-           .listIcon {
-               color:#fff;
-               font-size:24px;
-               
-               
-           } 
+        
         }
 
     }
