@@ -5,33 +5,64 @@ $url : '../images/';
 body {
     height:100%;
     min-width:320px;// 바디에는 전체 넓이값이 없는 것 같음
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;//!.font-family 는 css 바디에 쓰기
     
 }  
 
 .blankSpace {
-    flex:1; 
+    flex:1;
+    background:white;
 }
+
+.base {
+    width:100%;
+    max-width:1350px;
+    padding:0 25px;
+    margin:0 auto;
+}
+
+.section .inner,
+.mainSlide01 .mainTitle {
+    @extend .base; 
+    outline:1px solid red;
+}
+
+.mainSlide01, .mainSlide02, .mainSlide03,
+.mainSlide04, .mainSlide05,
+.mainSlide06, .mainSlide07 {
+    @include flexCenter;
+}
+
 
 @import 'header';
 
-.mainSlide01 {  
-    height:100vh;
-    background:url($url + "mainBG_01.jpg") no-repeat center center/ cover; 
+
+
+.mainSlide01 { 
+    height:100vh;//!.vh는 샤용하는 현재 디바이스의 높이를 말함 (사용하는 디바이스 높이에 맞게 조절됨)
+    background:url($url + "mainBG_01.jpg") no-repeat center center/cover;//이미지는 따로 before나 after에 넣을필요없이 mainslide자체에 넣어줌
+   
+    // &:before {
+    //     content:'';
+    //     display:block;
+    //     background:url($url + "mainBG_01.jpg") no-repeat center center/ cover;
+    //     width:1645px;
+    //     height:100vh;
+    // }
     //sns start
-  
-       
-    .sns { //!.기존사이트는 뭘썻는지 몰라서 참고가 힘듬, 플렉스로 처리해서 li에 margin auto로 처리함
-        display:flex;
-        justify-content:space-between; 
+    .sns {//@.20210713_B - 1:15:43 
+        display:flex;//!.플렉스로 했기때문에 마진오토는 안되고 align-items로 한다
+        justify-content:space-between;
         width:130px;
-        position:absolute;
-        bottom:28px;
+        position:absolute;//!.absolute는 원래 위치와 상관없이 위치를 지정할 수 있다. 단, 가장 가까운 상위 요소를 기준으로 위치가 결정 된다.
+                        //!.relative는 
+        bottom:48px;
         left:28px; 
         
+        
         li { // 아이콘 가로 세로 정렬 필요함
-           
-            @include snsIcon2(1, 16px, 16px, "twitter.png", 16px);
+            
+            @include snsIcon2(1, 16px, 16px, "twitter.png", 16px);//!.a 태그에 이미지가 들어간 것임 mixin을 참고
             @include snsIcon2(2, 8px, 19px, "facebook.png", 8px);
             @include snsIcon2(3, 16px, 16px, "naver.png", 14px);
             // background:red;
@@ -41,19 +72,15 @@ body {
 
             a {
                 transition:opacity 0.4s;
-                &:hover {
+                &:hover {//!.hover
                     opacity:0.5;
                 }
             }
         }          
     }
 
-    .mainTitle {
-        position:absolute;//Q,relative를 부모인 mainSlide에 주고 싶은데 주게되면 헤더 메뉴가 사라짐 그래서 z-index로 순번 정해줌
-        color:#f2f2f2;
-        top:350px;
-        left:0;
-        padding-left:170px;
+    .mainTitle {//!.메인 타이틀 중앙 정렬(flex가 없을 때 사용) 
+        color:#f2f2f2; 
         h2 {
             font-size:86px;
             font-weight:600;
@@ -68,4 +95,320 @@ body {
     }
 }
 
+.mainSlide02 { //!.오리지날 사이트는 안에 컨텐츠를 table-ceel 써서 vertical-align으로 잡아 놨음
+    height:100vh;
+    
+    background-color:#fff;
+    padding:0 60px; 
+    .mainTitle {
+        line-height:48px;
+        display:flex;
+        height:100px;
+        align-items:center; 
+        h2 {
+            width:50%;
+            font-size:36px;
+            font-weight:700;
+            letter-spacing:-0.035em;
+            position:relative;
+            &:after {
+                content:'';
+                display:block;
+                background-color:red;
+                position:absolute;
+                bottom:11px;
+                right:327px;
+                @include circle(7px);
+            }
+        }
+        p {
+            font-size:16.5px;
+            font-weight:600px;
+            line-height:28px;
+            padding:0 0 0 80px;
+            position:relative;
+            &:before {//!.position이 가능함 
+                content:'';
+                position:absolute;
+                top:10px;
+                left:0;
+                display:block;
+                background-color:black;
+                height:2px;
+                width:50px;
+            }
+        }
+    }
+    .grayCard {
+        margin-top:50px;
+        padding:25px 0;
+        display:flex;
+        justify-content:space-between;//!.플렉스를 박스 넓이 끝까지 배치하기 위해선 필요
+        flex-wrap:wrap;//1.플렉스를 줄넘김하기 위해 사용
+        
+        li { //!,flex이론 - https://jeonghwan-kim.github.io/dev/2020/03/09/flex.html
+            // padding:4px 10px 0 22px;
+            width:calc( ( 100% - 50px ) / 3); ///!.flex참고 - 20201206_B (43:30)
+            height:220px; 
+            box-shadow:0 0 10px rgba(1, 1, 1, 0.2);//!.box-shadow
+            position:relative;
+            //Q.왜 박스 코너쪽 사이사이들은 색이 약할까?
+            background-color:#f9f9f9;//눈부셔서 넣음
+            @include radius($r:10px);
+            @include panelIcon(1, 40px, 35px, 'ic_list_01.png', -4px, 0, cover);
+            @include panelIcon(2, 40px, 35px, 'ic_list_01.png', -40px, 0, cover);
+            @include panelIcon(3, 40px, 35px, 'ic_list_01.png', -80px, 0, cover);
+            @include panelIcon(4, 40px, 35px, 'ic_list_01.png', -120px, 0, cover);
+            @include panelIcon(5, 40px, 35px, 'ic_list_01.png', -160px, 0, cover);
+            @include panelIcon(6, 40px, 35px, 'ic_list_01.png', -200px, 0, cover);
+            // &:nth-child(1) {  
+            //     margin-top:0;
+            // }
+            // &:nth-child(2) {
+            //     margin-top:0;
+            // }
+            // &:nth-child(3) {
+            //     margin-top:0;
+            // }
+
+            &:nth-child(3) ~ li {
+                /* 3번째 li 뒤에있는 모든 li */
+                margin-top:25px;
+            }
+
+
+            &:before {
+                content:'';
+                display:block;
+                background-color:black;
+                height:2px;
+                width:43px;
+                position:absolute;
+                left:30px;
+                bottom:40px;
+            }
+            &:after {
+                content:'';
+                display:block;
+                position:absolute;
+                left:73px;
+                bottom:36px;
+                width:0px;
+                height:0px;
+                border:5px solid transparent;//!.화살표 넣기
+                border-left-color:black;//.화살표 넣기
+            }
+            
+            .cardList {
+                display:block;
+                width:100%;
+                height:100%;
+                padding:35px 30px;
+                position:relative;
+                h4 {
+                    font-size:18px;
+                    font-weight:700;
+                    margin-bottom:11px;
+                }
+                p {
+                    font-size:14px;
+                }
+                .cardIcon {
+                    display:block;
+                    position:absolute;
+                    top:25px;
+                    right:85px;
+                    
+                    // &:before {
+                    //     content:'';
+                    //     display:block;
+                    //     width:40px;
+                    //     height:35px;
+                    // }
+                }
+            }
+        }
+    }
+}
+// .mainSlide03 {
+//     height:100vh;
+//     // background:url($url + "business_01.jpg") no-repeat center center/cover;
+//     outline:1px solid blue;
+        
+//     .innerWidth {//mainSlide02 은 innerWidth 없이 겉으로 잘 나오는거 같아서 운이 좋았음
+//         max-width:1350px;
+//         margin:0 auto;
+        
+//         .mainTitle {//div가 부족해서 하나 더있어야 겠다는걸 이제 느낌
+//             display:flex;
+//             background-color:green;
+//             height:100px;
+//             padding-top:350px;
+            
+//         }
+//     }
+// }
+.mainSlide03 { //!.mainSlide02 랑 같아서 html 클래스를 같게해서 같은 속성 적용되게 해봤지만 다른부분이 있어서 li가 없는 부분은 nth-child로 따로 선택     
+                // 적용이 어려웠음 그래서 그냥 속성 복사해서 아래로 붙여넣기 거기다 배경이미지라던지 글자 색상 다른게 많았음
+                //!.(중요)테이블 셀이 들어가야하거나 표가 들어가야 함
+    height:100vh;
+    background:url($url + "business_01.jpg") no-repeat center center/cover;
+    
+       
+        .mainTitle {
+            line-height:48px;
+            display:flex;
+            height:100px;
+            align-items:center; 
+            color:#fff;
+            h2 {
+                width:50%;
+                font-size:36px;
+                font-weight:700;
+                letter-spacing:-0.035em;
+                position:relative;
+                &:after {
+                    content:'';
+                    display:block;
+                    background-color:red;
+                    position:absolute;
+                    bottom:11px;
+                    right:437px;
+                    @include circle(7px);
+                }
+            }
+            p {
+                font-size:16.5px;
+                font-weight:600px;
+                line-height:28px;
+                padding:0 0 0 80px;
+                position:relative;
+                &:before {//!.position이 가능함 
+                    content:'';
+                    position:absolute;
+                    top:10px;
+                    left:0;
+                    display:block;
+                    background-color:#fff;
+                    height:2px;
+                    width:50px;
+                }
+            }
+        }
+        .slide03List {//오리지널 사이트에선 플롵로 옆으로 배열
+            display:flex;
+            margin-top:60px;
+            li {
+                display:block;
+                width:25%;
+                border:1px solid #6a6865;
+                // &:nth-child(1) {
+                //     border-right:0;
+                // }
+                // &:nth-child(2) {
+                //     border-right:0;
+                // }
+                // &:nth-child(3) {
+                //     border-right:0;
+                // }
+
+                &:not(:last-child) {
+                    border-right:0;
+                }
+
+                /*
+
+                &:last-child ->마지막 li만 선택
+                &:not(:last-child) -> 마지막 li는 제외 
+                
+                */
+
+               
+
+
+
+                @include slide03Icon(1, 68px, 60px, "ic_list_02.png", 8px,  2px, 248px);
+                @include slide03Icon(2, 68px, 60px, "ic_list_02.png", -60px,  2px, 248px);
+                @include slide03Icon(3, 58px, 60px, "ic_list_02.png", -125px,  0px, 248px);
+                @include slide03Icon(4, 68px, 60px, "ic_list_02.png", -185px,  2px, 248px);
+                a {
+                    display:block; 
+                    height:510px;
+                    padding:38px 35px 0; 
+                    transition:0.4s;
+                    word-break:keep-all;
+                    position:relative;
+
+                    &:before, &:after {
+                        content:'';
+                        display:block;
+                        position:absolute;
+                        opacity:0;
+                        transition:opacity 0.5s, transform 0.5s ease-out 0.1s;
+                        transform:trnaslateX(0);
+                    }
+                     &:before {       
+                            height:2px;
+                            width:43px; 
+                            left:30px;
+                            bottom:40px;  
+                            background-color:#fff;
+                        }
+                     &:after { 
+                            left:73px;
+                            bottom:36px;
+                            width:0px;
+                            height:0px;
+                            border:5px solid transparent;//!.화살표 넣기
+                            border-left-color:#fff;//.화살표 넣기
+                        }
+
+                    &:hover {
+                        background:red;
+                        //Q.자식 태그를 더 써서 옵션을 넣을 순 없나?
+                        .midBox p {
+                            opacity:1;
+                        }
+
+                        &:before, &:after {
+                            opacity:1;
+                            transform:translateX(50px);
+                        }
+
+
+                       
+                       
+                    }
+                    .midBox {
+                        height:100%;
+                        // vertical-align:middle; !.table-cell에서만 작동
+                        .listIcon {
+                            display:block;
+                            margin:25px 0;
+                            font-weight:700;
+                            color:#fff;
+                            font-size:30px;
+                            text-align:center;//!.block요소에서만 먹음
+                        }
+                        p {
+                            color:#fff;
+                            opacity:.5;
+                            line-height:27px;
+                            word-break:keep-all; // 선택
+                            // white-space:nowrap; 
+                            // 멀티말줄임일 경우에는 줄바꿈을 허용해야 하므로 이부분 삭제
+                            overflow:hidden;
+                            text-overflow:ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 3; /* 라인수 */
+                            -webkit-box-orient: vertical; 
+                        }
+                        
+                    }
+                    
+                }
+            }
+        
+        } 
+}
 @import 'footer';

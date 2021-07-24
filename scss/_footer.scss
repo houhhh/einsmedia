@@ -1,65 +1,73 @@
 @charset "utf-8";
 
-.floatBtn {  
- 
+.floatBtn { //!.ul의 부모인 floatBtn은 위치만 잡아주도록 포지션만 넣어주고 운선순위 z-index만 넣어줌
+    // @include circle(70px);
+    // background:red;
+    // bottom:80px;
+    // right:80px;
+    // position:fixed;
+    // .btn_top {
+    //     position:absolute;
+    //     bottom:-30px;
+    //     right:15px;
+        
+    // }
+    
     position:fixed;
     right:20px;
     bottom:20px;
-    z-index:100;
-
-    .subNav {
+    z-index:100;//!.페이지와 무관하게 가장먼저 선택이 가능해야 하므로 100을 줘도 무방
+    .subNav {//위치는 floatBtn기준으로 정확하게 잡아주고 비주얼적인부분 넣어줌 
         background-color:red;
-        width:70px; 
+        width:70px;
         height:70px;
-        padding:20px 0; 
-        box-sizing:border-box;
+        padding:20px 0;
+        box-sizing:border-box;// 패딩값을 없애버림
         border-radius:35px;
-        overflow:hidden;
+        overflow:hidden;//이게 있어야 숨겨졌을때 메뉴들이 가려지게됨
         color:transparent;
-        text-align:center;
+        text-align:center;// 이미지와 텍스트 가로 정렬
         transition:height 0.4s, color 0.4s 0.2s;
-
-        // &.opened { javascript로 제어할때
+        
+        // &.opened { //자바 스크립트로 컨트롤할때 클래스를 줌 
         //     color:#fff;
         //     height:auto;
         // }
-
         &:hover {
             color:#fff;
-            height:250px;
+            height:240px;
         }
-
         li {
             margin-bottom:18px;
             &:last-child {
                 margin-bottom:0;
             }
         }
-
+        padding:20px 0;//?.이건 어디에 쓰이는고?
         img {
-            height:34px;
-            margin-top:-2px;
+            height:34px;//높이만 줘도 이미지 전체 크기 결정됨
+            margin-top:-2px;//이미지가 약간 여백이있어서 올림 
         }
-        
         p {
-            margin-top:3px;
+            margin-top:3px;//이미지와의 아래위 간격
             font-size:12px;
-        }  
-        
+        }
         a {
-            transition:all 0.5s;
+            transition:all 0.4s;
             &:hover {
                 color:rgba(255,255,255,0.5);
-                opacity:0.5;
+                opacity:0.6;//Q.위에 투명도가 있는데?
+                
             }
         }
+        
+        
+        
     }
 
-    .btnTop {
+    .btnTop {//a 태그임
         display:block;
-        height:20px;
-        margin-top:10px;
+        height:20px;// 이것도 마찬기지로 이미지 크기가 결정됨
         background:url($url + 'top_nav.png') no-repeat center center/contain;
     }
-    
 }
