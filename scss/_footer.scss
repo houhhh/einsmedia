@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+.floatBtn {  
+ 
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:100;
+
+    .subNav {
+        background-color:red;
+        width:70px; 
+        height:70px;
+        padding:20px 0; 
+        box-sizing:border-box;
+        border-radius:35px;
+        overflow:hidden;
+        color:transparent;
+        text-align:center;
+        transition:height 0.4s, color 0.4s 0.2s;
+
+        // &.opened { javascript로 제어할때
+        //     color:#fff;
+        //     height:auto;
+        // }
+
+        &:hover {
+            color:#fff;
+            height:250px;
+        }
+
+        li {
+            margin-bottom:18px;
+            &:last-child {
+                margin-bottom:0;
+            }
+        }
+
+        img {
+            height:34px;
+            margin-top:-2px;
+        }
+        
+        p {
+            margin-top:3px;
+            font-size:12px;
+        }  
+        
+        a {
+            transition:all 0.5s;
+            &:hover {
+                color:rgba(255,255,255,0.5);
+                opacity:0.5;
+            }
+        }
+    }
+
+    .btnTop {
+        display:block;
+        height:20px;
+        margin-top:10px;
+        background:url($url + 'top_nav.png') no-repeat center center/contain;
+    }
+    
+}
