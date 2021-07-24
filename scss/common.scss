@@ -302,6 +302,36 @@ body {
                     height:510px;
                     padding:90px 48px 0;
                     box-sizing:border-box;//Q.오리지널 사이트는 width 100%인데도 박스사이징 없어서 패딩때문에 넘치는일 없는데 왜 여기선 넘치나...
+                    transition:0.4s;
+                    &:hover {
+                        background:red;
+                        //Q.자식 태그를 더 써서 옵션을 넣을 순 없나?
+                        .midBox p {
+                            opacity:1;
+                        }
+                        // &:before {     !. 화샬표를 호버에 넣으려면 어떻게?
+                        //     content:'';
+                        //     display:block;
+                        //     background-color:#fff;
+                        //     height:2px;
+                        //     width:43px;
+                        //     position:absolute;
+                        //     left:30px;
+                        //     bottom:40px;
+                            
+                        // }
+                        // &:after {
+                        //     content:'';
+                        //     display:block;
+                        //     position:absolute;
+                        //     left:73px;
+                        //     bottom:36px;
+                        //     width:0px;
+                        //     height:0px;
+                        //     border:5px solid transparent;//!.화살표 넣기
+                        //     border-left-color:#fff;//.화살표 넣기
+                        // }
+                    }
                     .midBox {
                         height:100%;
                         // vertical-align:middle; !.table-cell에서만 작동
@@ -317,9 +347,11 @@ body {
                             color:#fff;
                             opacity:.5;
                             line-height:27px;
+
                         }
                         
                     }
+                    
                 }
             }
         
