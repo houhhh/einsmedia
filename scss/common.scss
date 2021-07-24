@@ -14,6 +14,28 @@ body {
     background:white;
 }
 
+.base {
+    width:100%;
+    max-width:1350px;
+    padding:0 25px;
+    margin:0 auto;
+}
+
+section .inner, 
+.mainSlide01 .mainTitle {
+   @extend .base;//위에 base 에 속성을 넣어놓고 익스텐드를 써서 base를 적으면 아래로 속성들이 들어옴 (섹션클레스의 inner 에 들어가게됨)
+   
+}
+
+
+.mainSlide01, .mainSlide02, .mainSlide03,
+.mainSlide04, .mainSlide05, 
+.mainSlide06, .mainSlide07 {
+    @include flexCenter;//!. 상하 중심 잡기
+    //mainTitle은 플렉스를 먹는순간 width 값이 사라지기때문에 자기가 가진 요소만큼만 나오기때문에 아이템이 되기때문에(width:auto가 사라져서 이게 블럭요소 기본 속성임) max-width:1350px에 width:100%추가
+    
+}
+
 @import 'header';
 
 .mainSlide01 { 
@@ -57,11 +79,10 @@ body {
     }
 
     .mainTitle {//!.메인 타이틀 중앙 정렬(flex가 없을 때 사용)
-        position:relative;//Q,relative를 부모인 mainSlide에 주고 싶은데 주게되면 헤더 메뉴가 사라짐 그래서 z-index로 순번 정해줌
+        //mainTitle은 플렉스를 먹는순간 width 값이 사라지기때문에 자기가 가진 요소만큼만 나오기때문에 아이템이 되기 때문에1(width:auto가 사라져서 이게 블럭요소 기본 속성임) max-width:1350px에 width:100%추가
         color:#f2f2f2;
-        top:calc(50% - 120px);//!.50%를주면 중앙으로 오지 않는데 거기서 120px을 빼서 중앙에 배치
+        //!.50%를주면 중앙으로 오지 않는데 거기서 120px을 빼서 중앙에 배치
                             //Q.top:50% 을 줘도 왜 중앙 배치가 되지 않나?
-        max-width:1350px;
         margin:0 auto;//!.width값이 위체처럼 있어야 먹힘 
 
         h2 {
@@ -80,7 +101,6 @@ body {
 
 .mainSlide02 { //!.오리지날 사이트는 안에 컨텐츠를 table-ceel 써서 vertical-align으로 잡아 놨음
     height:100vh;
-    max-width:1350px;
     background-color:#fff;
     padding:0 60px;
     margin:0 auto;
@@ -89,7 +109,6 @@ body {
         display:flex;
         height:100px;
         align-items:center;
-        padding-top:350px;
         h2 {
             width:50%;
             font-size:36px;
@@ -135,8 +154,8 @@ body {
             // padding:4px 10px 0 22px;
             width:calc( ( 100% - 50px ) / 3); ///!.flex참고 - 20201206_B (43:30)
             height:220px;
-            margin-top:25px;
-            box-shadow:0 0 10px rgba(1, 1, 1, 0.2);//!.box-shadow
+            // margin-top:25px;
+            box-shadow:0 0 10px 10px rgba(1, 1, 1, 0.2);//!.box-shadow
             position:relative;
             //Q.왜 박스 코너쪽 사이사이들은 색이 약할까?
             background-color:#f9f9f9;//눈부셔서 넣음
@@ -147,14 +166,17 @@ body {
             @include panelIcon(4, 40px, 35px, 'ic_list_01.png', -120px, 0, cover);
             @include panelIcon(5, 40px, 35px, 'ic_list_01.png', -160px, 0, cover);
             @include panelIcon(6, 40px, 35px, 'ic_list_01.png', -200px, 0, cover);
-            &:nth-child(1) { //Q.한번에 쓸 방법은?
-                margin-top:0;
-            }
-            &:nth-child(2) {
-                margin-top:0;
-            }
-            &:nth-child(3) {
-                margin-top:0;
+            // &:nth-child(1) { //Q.한번에 쓸 방법은? - 콤마를 넣어서 옆으로 적음
+            //     margin-top:0;
+            // }
+            // &:nth-child(2) {
+            //     margin-top:0;
+            // }
+            // &:nth-child(3) {
+            //     margin-top:0;
+            // }
+            &:nth-child(3) ~ li { //!.세번째 li 뒤에 있는 모든 li 를 선택하는 것임
+                margin-top:25px;
             }
             &:before {
                 content:'';
@@ -189,7 +211,7 @@ body {
                     font-weight:700;
                     margin-bottom:11px;
                 }
-                i {
+                p {
                     font-size:14px;
                 }
                 .cardIcon {
@@ -232,131 +254,150 @@ body {
                 //!.(중요)테이블 셀이 들어가야하거나 표가 들어가야 함
     height:100vh;
     background:url($url + "business_01.jpg") no-repeat center center/cover;
-    .innerWidth {
-        max-width:1350px;
-        margin:0 auto;
-        .mainTitle {
-            line-height:48px;
-            display:flex;
-            height:100px;
-            align-items:center;
-            padding-top:350px;
-            color:#fff;
-            h2 {
-                width:50%;
-                font-size:36px;
-                font-weight:700;
-                letter-spacing:-0.035em;
-                position:relative;
-                &:after {
-                    content:'';
-                    display:block;
-                    background-color:red;
-                    position:absolute;
-                    bottom:11px;
-                    right:437px;
-                    @include circle(7px);
-                }
-            }
-            p {
-                font-size:16.5px;
-                font-weight:600px;
-                line-height:28px;
-                padding:0 0 0 80px;
-                position:relative;
-                &:before {//!.position이 가능함 
-                    content:'';
-                    position:absolute;
-                    top:10px;
-                    left:0;
-                    display:block;
-                    background-color:#fff;
-                    height:2px;
-                    width:50px;
-                }
+    
+    margin:0 auto;
+    .mainTitle {
+        line-height:48px;
+        display:flex;
+        height:100px;
+        align-items:center;
+        color:#fff;
+        h2 {
+            width:50%;
+            font-size:36px;
+            font-weight:700;
+            letter-spacing:-0.035em;
+            position:relative;
+            &:after {
+                content:'';
+                display:block;
+                background-color:red;
+                position:absolute;
+                bottom:11px;
+                right:437px;
+                @include circle(7px);
             }
         }
-        .slide03List {//오리지널 사이트에선 플롵로 옆으로 배열
-            display:flex;
-            margin-top:60px;
-            li {
+        p {
+            font-size:16.5px;
+            font-weight:600px;
+            line-height:28px;
+            padding:0 0 0 80px;
+            position:relative;
+            &:before {//!.position이 가능함 
+                content:'';
+                position:absolute;
+                top:10px;
+                left:0;
                 display:block;
-                width:25%;
-                border:1px solid #6a6865;
-                &:nth-child(1) {
-                    border-right:0;
-                }
-                &:nth-child(2) {
-                    border-right:0;
-                }
-                &:nth-child(3) {
-                    border-right:0;
-                }
-                @include slide03Icon(1, 68px, 60px, "ic_list_02.png", 8px,  2px, 248px);
-                @include slide03Icon(2, 68px, 60px, "ic_list_02.png", -60px,  2px, 248px);
-                @include slide03Icon(3, 58px, 60px, "ic_list_02.png", -125px,  0px, 248px);
-                @include slide03Icon(4, 68px, 60px, "ic_list_02.png", -185px,  2px, 248px);
-                a {
+                background-color:#fff;
+                height:2px;
+                width:50px;
+            }
+        }
+    }
+    .slide03List {//오리지널 사이트에선 플롵로 옆으로 배열
+        display:flex;
+        margin-top:60px;
+        li {
+            // display:block; li는 블럭요소라 필요없음
+            width:25%;
+            border:1px solid #6a6865;
+            // &:nth-child(1) {
+            //     border-right:0;
+            // }
+            // &:nth-child(2) {
+            //     border-right:0;
+            // }
+            // &:nth-child(3) {
+            //     border-right:0;
+            // }
+            &:not(:last-child) {
+                //!.&:last-child > 마지막 li만 선택 
+                //&:not(:last-child) > akwlakr li 는 
+                border-right:0;//!.마지막꺼 제외하고 보더 넣기
+            }
+            @include slide03Icon(1, 68px, 60px, "ic_list_02.png", 8px,  2px, 248px);
+            @include slide03Icon(2, 68px, 60px, "ic_list_02.png", -60px,  2px, 248px);
+            @include slide03Icon(3, 58px, 60px, "ic_list_02.png", -125px,  0px, 248px);
+            @include slide03Icon(4, 68px, 60px, "ic_list_02.png", -185px,  2px, 248px);
+            a {
+                display:block;
+                // width:100%; 디스플레이 플럭으로 했기때문에 필요없음 
+                height:510px;
+                padding:90px 48px 0;
+                box-sizing:border-box;//Q.오리지널 사이트는 width 100%인데도 박스사이징 없어서 패딩때문에 넘치는일 없는데 왜 여기선 넘치나...
+                transition:0.4s;
+                position:relative;
+                &:before, &:after {
+                    content:'';
                     display:block;
-                    width:100%;
-                    height:510px;
-                    padding:90px 48px 0;
-                    box-sizing:border-box;//Q.오리지널 사이트는 width 100%인데도 박스사이징 없어서 패딩때문에 넘치는일 없는데 왜 여기선 넘치나...
-                    transition:0.4s;
-                    &:hover {
-                        background:red;
-                        //Q.자식 태그를 더 써서 옵션을 넣을 순 없나?
-                        .midBox p {
-                            opacity:1;
-                        }
-                        // &:before {     !. 화샬표를 호버에 넣으려면 어떻게?
-                        //     content:'';
-                        //     display:block;
-                        //     background-color:#fff;
-                        //     height:2px;
-                        //     width:43px;
-                        //     position:absolute;
-                        //     left:30px;
-                        //     bottom:40px;
-                            
-                        // }
-                        // &:after {
-                        //     content:'';
-                        //     display:block;
-                        //     position:absolute;
-                        //     left:73px;
-                        //     bottom:36px;
-                        //     width:0px;
-                        //     height:0px;
-                        //     border:5px solid transparent;//!.화살표 넣기
-                        //     border-left-color:#fff;//.화살표 넣기
-                        // }
+                    position:absolute;
+                    opacity:0;
+                    transition:opacity 0.5s, transform 0.5s ease-out 0.1s;//!. 오퍼시티라고 정확히 주면 리소스를 아낄수 있음 all을 쓰면 다 먹어서 리소스 크게 먹음 
+                    transform:translateX(0);
+                }
+                &:before {     //!. 화샬표를 호버에 넣으려면 어떻게?
+                    height:2px;
+                    width:43px;
+                    left:30px;
+                    bottom:40px;
+                    background-color:#fff;
+                }
+                &:after {
+                    left:73px;
+                    bottom:36px;
+                    width:0px;
+                    height:0px;
+                    border:5px solid transparent;//!.화살표 넣기
+                    border-left-color:#fff;//.화살표 넣기
+                }
+                
+                &:hover {
+                    background:red;
+                    
+                    //Q.자식 태그를 더 써서 옵션을 넣을 순 없나?
+                    .midBox p {
+                        opacity:1;
                     }
-                    .midBox {
-                        height:100%;
-                        // vertical-align:middle; !.table-cell에서만 작동
-                        .listIcon {
-                            display:block;
-                            margin:25px 0;
-                            font-weight:700;
-                            color:#fff;
-                            font-size:30px;
-                            text-align:center;//!.block요소에서만 먹음
-                        }
-                        p {
-                            color:#fff;
-                            opacity:.5;
-                            line-height:27px;
-
-                        }
-                        
+                    &:before, &:after {
+                        opacity:1;
+                        transform:translate(50px);
                     }
                     
                 }
+                .midBox {
+                    height:100%;
+                    // vertical-align:middle; !.table-cell에서만 작동
+                    .listIcon {
+                        display:block;
+                        margin:25px 0;
+                        font-weight:700;
+                        color:#fff;
+                        font-size:30px;
+                        text-align:center;//!.block요소에서만 먹음
+                    }
+                    p {
+                        color:#fff;
+                        opacity:.5;
+                        line-height:27px;
+                        word-break:keep-all;//deault normal이 기본값인데 keep-all은 띄어쓰기있는 곳에서만 줄이 바뀌도록 단어 보호한다.
+                        //normal-default 한글은 글자하나하나 줄넘김되고 영어는 삐져나간다. keep-all은 한글은 띄워쓰기해야 줄넘김 영어도 띄어쓰기하면 넘어감 break-all은 한글은 한글자마다 줄넘김 영어는 단어보호 안되면서 영어도 알파벳하나마다 줄넘김 됨 
+                        text-overflow:ellipsis;
+                        overflow:hidden;//텍스ㅡ 줄바꿈 안되게 nowrap을 하면 오버플로우 히든을 하고 text-overflow의 ellipsis로 점점점 을 줌 
+                        display: -webkit-box;//!.-webkit-line-clamp:3 쓰려면 display: -webkit-box를 써야함
+                        // white-space:nowrap;//!.텍스트 줄바꿈 허용하는 설정
+                        -webkit-line-clamp:3;// 세번째 줄에서 말줄임됨 숫자로 설정가능  그대신 줄바꿈 허용해야 whitd-space를 삭제해야 작동
+                        -webkit-box-orient: vertical;// display: -webkit-box;, -webkit-line-clamp:3;, -webkit-box-orient: vertical; 세가지는 세트라서 같이 써야함
+                    }
+                    
+                }
+                
             }
-        
         }
-
+    
     }
+
+    
 }
 @import 'footer';
