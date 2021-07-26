@@ -30,7 +30,7 @@ section .inner,
 
 .mainSlide01, .mainSlide02, .mainSlide03,
 .mainSlide04, .mainSlide05, .mainSlide04,
-.mainSlide06, .mainSlide07 .mainSlide05 {
+.mainSlide06, .mainSlide07, .mainSlide05, .mainSlide06 {
     @include flexCenter;//!. 상하 중심 잡기
     //mainTitle은 플렉스를 먹는순간 width 값이 사라지기때문에 자기가 가진 요소만큼만 나오기때문에 아이템이 되기때문에(width:auto가 사라져서 이게 블럭요소 기본 속성임) max-width:1350px에 width:100%추가
     
@@ -495,10 +495,17 @@ section .inner,
     .textList {
         width:100%;
         display:flex;
+        
         li {//Q.패딩이 있어도 inner 에 맞게 맞추던데 어떻게?
             width:100%;
             margin-top:80px;
             padding:30px 55px;
+            &:nth-child(1) {
+                padding-left:0;
+            }
+            &:nth-child(3) {
+                padding-right:0;
+            }
             h4 {
                 font-size:32px;
                 line-height:48px;
@@ -522,5 +529,9 @@ section .inner,
             }
         }
     }
+}
+.mainSlide06 {
+    height:100vh;
+    background:url($url + "bg_msec05.jpg")
 }
 @import 'footer';
