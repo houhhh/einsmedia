@@ -30,7 +30,7 @@ section .inner,
 
 .mainSlide01, .mainSlide02, .mainSlide03,
 .mainSlide04, .mainSlide05, .mainSlide04,
-.mainSlide06, .mainSlide07 {
+.mainSlide06, .mainSlide07 .mainSlide05 {
     @include flexCenter;//!. 상하 중심 잡기
     //mainTitle은 플렉스를 먹는순간 width 값이 사라지기때문에 자기가 가진 요소만큼만 나오기때문에 아이템이 되기때문에(width:auto가 사라져서 이게 블럭요소 기본 속성임) max-width:1350px에 width:100%추가
     
@@ -448,6 +448,7 @@ section .inner,
         flex-wrap:wrap;
         width:100%;
         padding-left:40%;
+        margin-top:60px;
         box-sizing:border-box;
         li {
             width:50%;//!.부모가 %이지만 width가 있기때문에 50%가 먹히는것임
@@ -467,7 +468,57 @@ section .inner,
             p {
                 font-size:15px;
                 line-height:28px;
-                
+                // word-break:keep-all; 폰트 사이즈를 줄여서 필요가 없게됐음
+            }
+        }
+    }
+}
+.mainSlide05 {
+    height:100vh;
+    background:url($url + "bg_msec04.jpg") no-repeat center center/cover;
+    color:#fff;
+    .mainTitle {
+        
+        line-height:48px;
+        display:flex;
+        height:100px;
+        align-items:center;
+        h2 {
+            width:60%;
+            font-size:36px;
+            font-weight:700;
+            letter-spacing:-0.035em;
+            position:relative;
+            
+        }
+    }
+    .textList {
+        width:100%;
+        display:flex;
+        li {//Q.패딩이 있어도 inner 에 맞게 맞추던데 어떻게?
+            width:100%;
+            margin-top:80px;
+            padding:30px 55px;
+            h4 {
+                font-size:32px;
+                line-height:48px;
+                font-weight:600;
+                word-break:keep-all;
+            }
+            p {
+                font-size:18px;
+                line-height:32px;
+                font-weight:300;
+                word-break:keep-all;
+
+            }
+            .midLine {
+                display:block;
+                width:60px;
+                height:3px;
+                background-color:#fff;
+                margin:30px 0 30px 3px;
+
             }
         }
     }
