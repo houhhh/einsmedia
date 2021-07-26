@@ -532,6 +532,29 @@ section .inner,
 }
 .mainSlide06 {
     height:100vh;
-    background:url($url + "bg_msec05.jpg")
+    background:url($url + "bg_msec05.jpg") no-repeat center center/cover;
+    color:#fff;
+    .mainTitle {
+        line-height:48px;
+        display:flex;
+        height:100px;
+        align-items:center;
+        h2 {
+            width:60%;
+            font-size:36px;
+            font-weight:700;
+            letter-spacing:-0.035em;
+            position:relative;
+            &:after {
+                content:'';
+                display:block;
+                background-color:red;
+                position:absolute;
+                bottom:11px;
+                right:351px;
+                @include circle(7px);
+            }
+        }
+    }
 }
 @import 'footer';
