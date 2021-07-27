@@ -555,6 +555,14 @@ section .inner,
                 @include circle(7px);
             }
         }
+        
+        
+    }
+    .graph {
+        display:block;
+        max-width:100%;
+        
+        background:url($url + "2021홈페이지_메인_회사연혁2.png") no-repeat center center/contain;
     }
 }
 @import 'footer';
