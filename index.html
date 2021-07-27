@@ -2,18 +2,50 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta htt-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>einsmedia</title>  
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;900&display=swap" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+    <link rel="stylesheet" href="./lib/jquery.fullpage.css">
+    <script src="./js/jquery-1.11.2.min.js"></script><!-- 순서 중요-->
+    <script src="./js/jquery-ui.min.js"></script><!-- 순서 중요-->
+    <script src="./lib/jquery.fullpage.js"></script><!-- 순서 중요-->
     <script src="https://kit.fontawesome.com/9b4d07ff5a.js" crossorigin="anonymous"></script>
+    <script>
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				'verticalCentered': false,
+				'css3': true,
+				// 'sectionsColor': ['#F0F2F4', '#fff', '#fff', '#fff'],
+				'navigation': true,
+				'navigationPosition': 'right',
+				// 'navigationTooltips': ['fullPage.js', 'Powerful', 'Amazing', 'Simple'],
+
+				'afterLoad': function(anchorLink, index){
+					if(index == 2 || index == 4 || index == 7){// 색이 변할 섹션 차례 구역 지정 
+						$('.mainTop').addClass('sticky');
+                        
+					}
+                    if(index == 1 || index == 3 || index == 5 || index == 6) {
+                        $('#fp-nav ul li a span').addClass('white');
+                    }
+				},
+
+				'onLeave': function(index, nextIndex, direction){
+                    if(index == 2 || index == 4 || index == 7){// 색이 변할 섹션 차례 구역 지정 
+						$('.mainTop').removeClass('sticky');
+					}
+                    if(index == 1 || index == 3 || index == 5 || index == 6) {
+                        $('#fp-nav ul li a span').removeClass('white');
+                    }
+				}
+			});
+		});
+	</script>
 </head> 
+
 <body> 
-    <header class="mainTop">
+    <header class="mainTop" lang="en">
         <div class="navBar">
             <h1 class="logo">
                 <a href="#">
@@ -59,13 +91,13 @@
         </div> 
     </header>
 
-
+<div id="fullpage">
     <section class="mainSlide01 section">
         
         <div class="mainTitle">
-            <h2>
+            <h2 lang="en">
                 More than advertising<br>
-                expert 'einsmedia'<!-- 폰트가 조금 다른거 같음-->
+                expert ‘einsmedia’<!-- 폰트가 조금 다른거 같음-->
             </h2>
             <h3>사용자와 클라이언트를 연결해 주는 No1디지털 마케팅 그룹</h3>
         </div>
@@ -252,7 +284,7 @@
             <ul class="solutions">
                 <li>
                     <a href="#" class="solution01">
-                        <h4>로그분석 솔루션<h4>
+                        <h4>로그분석 솔루션</h4>
                         <span class="arrow"></span> <!-- 포지션으로 배치 -->
                         <!-- 바로 아래 여기에 보더라인 만들어야함 -->
                     </a>
@@ -263,7 +295,7 @@
                 </li>
                 <li>
                     <a href="#" class="solution01">
-                        <h4>자동입찰 솔루션<h4>
+                        <h4>자동입찰 솔루션</h4>
                         <span class="arrow"></span> <!-- 포지션으로 배치 -->
                         <!-- 바로 아래 여기에 보더라인 만들어야함 -->
                     </a>
@@ -273,8 +305,8 @@
                     </p>
                 </li>
                 <li>
-                    <a href="#" class="solution01 section">
-                        <h4>커머스 리포트솔루션<h4>
+                    <a href="#" class="solution01">
+                        <h4>커머스 리포트솔루션</h4>
                         <span class="arrow"></span> <!-- 포지션으로 배치 -->
                         <!-- 바로 아래 여기에 보더라인 만들어야함 -->
                     </a>
@@ -285,7 +317,7 @@
                 </li>
                 <li>
                     <a href="#" class="solution01">
-                        <h4>검색 리포트솔루션<h4>
+                        <h4>검색 리포트솔루션</h4>
                         <span class="arrow"></span> <!-- 포지션으로 배치 -->
                         <!-- 바로 아래 여기에 보더라인 만들어야함 -->
                     </a>
@@ -358,7 +390,8 @@
                 </h2>
                 
             </div>
-            <span class="graph"></span>
+            <img src="./images/home_06_graph.png" alt="2021홈페이지_메인_회사연혁2">
+            <!-- <span class="graph"></span> -->
         </div>
     </section> <!-- slide06 end-->
     
@@ -373,7 +406,7 @@
             </div>
         </div>
     </section> <!-- slide07 end-->
-
+</div> 
     <aside class="floatBtn section"> <!--퀵메뉴 같이 지금 보고있는 페이지와 상관없는 것이기때문에 red버튼은 따로 이렇게 둠 그리고 footer.scss에서 짠다-->
         <ul class="subNav"><!--Q.ul이 동그라미가 됨 사실 클릭하는거였으면 어찌되나?-->
             <li>
@@ -399,6 +432,7 @@
         <a href="#" class="btnTop">
             <span class="blind">TOP 으로 가기</span>
         </a>
+      
     </aside> 
-    <!-- bottom red btn end -->
+  <!-- bottom red btn end -->
 </body>

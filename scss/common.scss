@@ -1,13 +1,28 @@
 @charset "utf-8";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
 $url : '../images/';
 @import 'reset', 'mixin'; 
 
 body {
     height:100%;
     min-width:320px;// 바디에는 전체 넓이값이 없는 것 같음
-    font-family: 'Montserrat', sans-serif;//!.font-family 는 css 바디에 쓰기
-    
+    font-family:'Noto sans kr' ,sans-serif;
 }  
+
+[lang=en] {
+    font-family: 'Montserrat' ,sans-serif;
+    
+}
+
+// p[title] {
+
+// }
+
+// img[src^='png']
+
 
 .blankSpace {
     flex:1;
@@ -493,28 +508,42 @@ section .inner,
         }
     }
     .textList {
-        width:100%;
-        display:flex;
         
-        li {//Q.패딩이 있어도 inner 에 맞게 맞추던데 어떻게?
-            width:100%;
-            margin-top:80px;
-            padding:30px 55px;
-            &:nth-child(1) {
-                padding-left:0;
-            }
-            &:nth-child(3) {
-                padding-right:0;
-            }
+        display:flex;
+        justify-content:space-between;
+        margin-top:80px;
+        // @include clearfix;
+        li {//!.list.html를 참고
+
+        
+
+        // li {//Q.패딩이 있어도 inner 에 맞게 맞추던데 어떻게?
+        //     // width:100%;
+        //     // margin-top:80px;
+        //     // padding:30px 55px;
+        //     // &:nth-child(1) {
+        //     //     padding-left:0;
+        //     // }
+        //     // &:nth-child(3) {
+        //     //     padding-right:0;
+        //     // }
+            
+        //     // width:380px;고정값이라 가변이 아니어서힘듬 
+        //     // width:calc( 100% - 200px ) / 3);// 줄어들어서 li크기 고정되지않았기 때문
+        //     // width:calc( 85.186% / 3);
+        //     // float:left;
+            
+            
             h4 {
                 font-size:32px;
-                line-height:48px;
+                // line-height:48px;
+                line-height:1.5;
                 font-weight:600;
                 word-break:keep-all;
             }
             p {
                 font-size:18px;
-                line-height:32px;
+                line-height:1,78;
                 font-weight:300;
                 word-break:keep-all;
 
@@ -551,7 +580,7 @@ section .inner,
                 background-color:red;
                 position:absolute;
                 bottom:11px;
-                right:351px;
+                right:325px;
                 @include circle(7px);
             }
         }
@@ -560,9 +589,8 @@ section .inner,
     }
     .graph {
         display:block;
-        max-width:100%;
         
-        background:url($url + "2021홈페이지_메인_회사연혁2.png") no-repeat center center/contain;
+     
     }
 }
 @import 'footer';
