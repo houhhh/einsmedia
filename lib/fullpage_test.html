@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	 
+	<title>Apple iPhone demo (animations) - fullPage.js</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="./jquery.fullPage.css" />  
+	<style>
+		* { margin:0; padding:0;}
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script  src="./jquery.fullPage.js"></script>
+	<!-- <script type="text/javascript" src="examples.js"></script> -->
+
+	<script>
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				'verticalCentered': false,
+				'css3': true,
+				'sectionsColor': ['#F0F2F4', '#fff', '#fff', '#fff'],
+				'navigation': true,
+				'navigationPosition': 'right',
+				'navigationTooltips': ['fullPage.js', 'Powerful', 'Amazing', 'Simple'],
+
+				// 'afterLoad': function(anchorLink, index){
+				// 	if(index == 2){
+				// 		$('#iphone3, #iphone2, #iphone4').addClass('active');
+				// 	}
+				// },
+
+				// 'onLeave': function(index, nextIndex, direction){
+				// 	if (index == 3 && direction == 'down'){
+				// 		$('.section').eq(index -1).removeClass('moveDown').addClass('moveUp');
+				// 	}
+				// 	else if(index == 3 && direction == 'up'){
+				// 		$('.section').eq(index -1).removeClass('moveUp').addClass('moveDown');
+				// 	}
+
+				// 	$('#staticImg').toggleClass('active', (index == 2 && direction == 'down' ) || (index == 4 && direction == 'up'));
+				// 	$('#staticImg').toggleClass('moveDown', nextIndex == 4);
+				// 	$('#staticImg').toggleClass('moveUp', index == 4 && direction == 'up');
+				// }
+			});
+		});
+	</script>
+
+</head>
+<body> 
+<div id="fullpage">
+	<div class="section">
+		<h2>SECTION 1</h2>
+	</div>
+	<div class="section">
+		<h2>SECTION 2</h2>
+	</div>
+	<div class="section">
+		<h2>SECTION 3</h2>
+	</div>
+	<div class="section">
+		<h2>SECTION 4</h2>
+	</div>
+</div>
+ 
+
+</body>
+</html>

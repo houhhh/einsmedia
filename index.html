@@ -2,18 +2,50 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta htt-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>einsmedia</title>  
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;900&display=swap" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+    <link rel="stylesheet" href="./css/common.css">  
+    <link rel="stylesheet" href="./lib/jquery.fullpage.css">  
+    <script src="./js/jquery-1.11.2.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script src="./lib/jquery.fullpage.js"></script>
     <script src="https://kit.fontawesome.com/9b4d07ff5a.js" crossorigin="anonymous"></script>
+    <script>
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				'verticalCentered': false,
+				'css3': true,
+				// 'sectionsColor': ['#F0F2F4', '#fff', '#fff', '#fff'],
+				'navigation': true,
+				'navigationPosition': 'right',
+				// 'navigationTooltips': ['Home', 'menu2', 'Amazing', 'Simple'],
+
+				'afterLoad': function(anchorLink, index){
+					if(index == 2 || index == 4 || index == 7){
+						$('.mainTop').addClass('sticky');
+					}
+                    
+                    if(index ==1 || index == 3 || index == 5 || index == 6) {
+                        $('#fp-nav ul li a span').addClass('white');
+                    }
+				},
+
+				'onLeave': function(index, nextIndex, direction){
+                    if(index == 2 || index == 4 || index == 7){
+						$('.mainTop').removeClass('sticky');
+					}
+                    if(index ==1 || index == 3 || index == 5 || index == 6) {
+                        $('#fp-nav ul li a span').removeClass('white');
+                    }
+				}
+			});
+		});
+	</script>
 </head> 
 <body> 
-    <header class="mainTop">
+
+    <header class="mainTop" lang="en">
         <div class="navBar">
             <h1 class="logo">
                 <a href="#">
@@ -59,12 +91,13 @@
         </div> 
     </header>
 
-
-    <section class="mainSlide01 section"> 
+<div id="fullpage"> 
+    <section class="mainSlide01 section">
+        
         <div class="mainTitle">
-            <h2>
+            <h2 lang="en">
                 More than advertising<br>
-                expert 'einsmedia'<!-- 폰트가 조금 다른거 같음-->
+                expert ‘einsmedia’<!-- 폰트가 조금 다른거 같음-->
             </h2>
             <h3>사용자와 클라이언트를 연결해 주는 No1디지털 마케팅 그룹</h3>
         </div>
@@ -86,17 +119,15 @@
                 <span class="blind">Naver</span> 
                 </a>    
             </li>
-        </ul> 
-        
+        </ul>  
     </section> <!-- slide01 end -->
 
     <section class="mainSlide02 section">
-
         <div class="inner">
             <div class="mainTitle">
                 <h2>
                      A부터 Z까지 꼼꼼하게<br>
-                    따져볼수록 아인스미디어
+                    따져볼수록 아인스미디어<span class="red">.</span>
                 </h2>
                 <span class=line></span>
                 <p>
@@ -165,8 +196,8 @@
                         <div class="arrow"></div> <!--q.이미지가 들어갈 곳이지만 텍스를 넣었음-->
                     </a>
                 </li>
-            </ul>  
-        </div>
+            </ul> 
+        </div> 
     </section> <!-- slide02 end-->
 
     <section class="mainSlide03 section">
@@ -240,9 +271,9 @@
             <div class="mainTitle">
                 <h2>
                     다양한 솔루션을 통한<br>
-                    정확하고 빠른 분석
+                    정확하고 빠른 분석<span class="red"></span>
                 </h2>
-                <span class="line">...</span>
+                <span class="line"></span>
                 <p>
                     고도의 운영 Know-how와 축적된 데이터 기반의 솔루션을 통해<br>
                     정확하게 분석하고, 빠르게 제안하고, 효율적으로 운영합니다
@@ -251,7 +282,7 @@
             <ul class="solutions">
                 <li>
                     <a href="#" class="solution01">
-                        <h4>로그분석 솔루션<h4>
+                        <h4>로그분석 솔루션</h4>
                         <span class="arrow"></span> <!-- 포지션으로 배치 -->
                         <!-- 바로 아래 여기에 보더라인 만들어야함 -->
                     </a>
@@ -262,7 +293,7 @@
                 </li>
                 <li>
                     <a href="#" class="solution01">
-                        <h4>자동입찰 솔루션<h4>
+                        <h4>자동입찰 솔루션</h4>
                         <span class="arrow"></span> <!-- 포지션으로 배치 -->
                         <!-- 바로 아래 여기에 보더라인 만들어야함 -->
                     </a>
@@ -273,7 +304,7 @@
                 </li>
                 <li>
                     <a href="#" class="solution01">
-                        <h4>커머스 리포트솔루션<h4>
+                        <h4>커머스 리포트솔루션</h4>
                         <span class="arrow"></span> <!-- 포지션으로 배치 -->
                         <!-- 바로 아래 여기에 보더라인 만들어야함 -->
                     </a>
@@ -284,7 +315,7 @@
                 </li>
                 <li>
                     <a href="#" class="solution01">
-                        <h4>검색 리포트솔루션<h4>
+                        <h4>검색 리포트솔루션</h4>
                         <span class="arrow"></span> <!-- 포지션으로 배치 -->
                         <!-- 바로 아래 여기에 보더라인 만들어야함 -->
                     </a>
@@ -298,31 +329,72 @@
     </section> <!-- slide04 end-->
 
     <section class="mainSlide05 section">
-       <div class="inner">
+        <div class="inner">
             <div class="mainTitle">
                 <h2>
-                    More than advertising<br>
-                    expert 'einsmedia'
+                    아인스미디어는 사용자와 클라이언트를 연결해 주는<br>
+                    No.1 디지털 마케팅 그룹입니다.
                 </h2>
-                <h3>사용자와 클라이언트를 연결해 주는 No1디지털 마케팅 그룹</h3>
+                
             </div>
-       </div>
+            <ul class="textList">
+                <li>
+                    <h4>
+                        열정있는 전문가와<br>
+                        함께합니다.
+                    </h4>
+                    <span class="midLine"></span>
+                    <p>
+                        보다 정확하게 분석하고, 보다 빠르게<br>
+                        제안하고, 보다 효율적으로 운영하며 Client의<br>
+                        성과를 최우선으로 생각하는 열정이 넘치는<br>
+                        인재들이 함께 하고 있습니다.
+                    </p>
+                </li>
+                <li>
+                    <h4>
+                        광고의 영역을<br>
+                        계속 확장하고 있습니다.
+                    </h4>
+                    <span class="midLine"></span>
+                    <p>
+                        검색광고를 시작으로 e커머스 광고, SNS광고,<br>
+                        디스플레이 광고까지 온라인 미디어 커버리지를<br>
+                        확장해 왔습니다.
+                    </p>
+                </li>
+                <li>
+                    <h4>
+                        노하우를 토대로<br>
+                        목표에 맞게 제안합니다.
+                    </h4>
+                    <span class="midLine"></span>
+                    <p>
+                        지난 11년간 다수의 광고 캠페인 진행을 통해<br>
+                        축적된 고도의 운영 노하우와 데이터를 토대로<br>
+                        고객님의 목표에 맞는 통합 마케팅을 제안합니다.
+                    </p>
+                </li>
+            </ul>
+        </div>
     </section> <!-- slide05 end-->
 
     <section class="mainSlide06 section">
-       <div class="inner">
+        <div class="inner">
             <div class="mainTitle">
                 <h2>
-                    More than advertising<br>
-                    expert 'einsmedia'
+                    고객의 신뢰를 기반으로 200배에 이르는 폭발적인<br>
+                    매출 성장률을 기록하고 있습니다<span class="red">.</span>
                 </h2>
-                <h3>사용자와 클라이언트를 연결해 주는 No1디지털 마케팅 그룹</h3>
+                
             </div>
-       </div>
+            <!-- <span class="graph"></span> -->
+            <img src="./images/home_06_graph.png" alt="2009년부터 현재까지의 매출성장 그래프">
+        </div>
     </section> <!-- slide06 end-->
     
     <section class="mainSlide07 section">
-       <div class="inner">
+        <div class="inner">
             <div class="mainTitle">
                 <h2>
                     More than advertising<br>
@@ -330,9 +402,9 @@
                 </h2>
                 <h3>사용자와 클라이언트를 연결해 주는 No1디지털 마케팅 그룹</h3>
             </div>
-       </div>
+        </div>
     </section> <!-- slide07 end-->
-
+</div>
     <aside class="floatBtn"> <!--퀵메뉴 같이 지금 보고있는 페이지와 상관없는 것이기때문에 red버튼은 따로 이렇게 둠 그리고 footer.scss에서 짠다-->
         <ul class="subNav"><!--Q.ul이 동그라미가 됨 사실 클릭하는거였으면 어찌되나?-->
             <li>

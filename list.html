@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <style>
+        * {margin:0;padding:0;list-style:none;}
+        .wrap {
+            outline:1px solid red;
+            width:1000px;
+            margin:50px auto;
+            /* justify-content:space-between; */
+        }
+
+        .list {
+
+            display:flex;
+            flex-wrap:wrap;  
+            margin:0 -10px;
+        }
+
+        .list li { 
+            height:200px;
+            width:calc(25% - 20px);
+            margin:10px;
+            background:beige;
+        }
+
+        .list li:nth-child(even) {
+            background-color:coral;
+        }
+
+        /* .list li:nth-child(4n) {
+            margin-right:0;
+        }
+
+        .list li:nth-child(4n-3) {
+            margin-left:0;
+        } */
+       
+    </style>
+</head>
+<body>
+    <div class="wrap"> 
+        <ul class="list">
+            <li>LIST 1</li>
+            <li>LIST 2</li>
+            <li>LIST 3</li>
+            <li>LIST 4</li>
+            <li>LIST 5</li>
+            <li>LIST 6</li>
+            <li>LIST 7</li>
+            <li>LIST 8</li>
+            <li>LIST 9</li>
+            <li>LIST 10</li>
+        </ul>
+    </div>
+</body>
+</html>

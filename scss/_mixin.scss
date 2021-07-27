@@ -119,3 +119,12 @@
     @content; //@content자식요소안의 속성 추가 - css 에서 {}아래에 열어서 속성 넣을수 있음
 
 }
+
+
+@mixin clearfix {
+    &:after {
+        content:'';
+        display:block;
+        clear:both;
+    }
+}
