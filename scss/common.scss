@@ -45,7 +45,7 @@ section .inner,
 
 .mainSlide01, .mainSlide02, .mainSlide03,
 .mainSlide04, .mainSlide05, .mainSlide04,
-.mainSlide06, .mainSlide07, .mainSlide05, .mainSlide06 {
+.mainSlide06, .mainSlide07, .mainSlide05, .mainSlide06, .mainSlide07 {
     @include flexCenter;//!. 상하 중심 잡기
     //mainTitle은 플렉스를 먹는순간 width 값이 사라지기때문에 자기가 가진 요소만큼만 나오기때문에 아이템이 되기때문에(width:auto가 사라져서 이게 블럭요소 기본 속성임) max-width:1350px에 width:100%추가
     
@@ -563,6 +563,7 @@ section .inner,
     height:100vh;
     background:url($url + "bg_msec05.jpg") no-repeat center center/cover;
     color:#fff;
+    
     .mainTitle {
         line-height:48px;
         display:flex;
@@ -599,5 +600,25 @@ section .inner,
         margin-top:30px;
         @include radius(25px);
     }
+}
+
+.mainSlide07 {
+    .inner {
+        .mainTitle {
+            h2 {
+                width:60%;
+                font-weight:700;
+                font-size:44px;
+                font-weight:700;
+                letter-spacing:-0.035em;
+                position:relative;
+                line-height:54px;
+            }
+        }
+        .recruitInfo{
+            display:flex;
+        }
+    }
+
 }
 @import 'footer';
