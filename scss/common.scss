@@ -587,10 +587,17 @@ section .inner,
         
         
     }
-    .graph {
+    .graphInfo {
+        font-size:18px;
         display:block;
-        
-     
+        background:rgba(255,255,255,0.1);
+        text-align:center;
+        max-width:800px;
+        padding:12px 70px;
+        line-height:1.5em;
+        margin:0 auto;
+        margin-top:30px;
+        @include radius(25px);
     }
 }
 @import 'footer';
