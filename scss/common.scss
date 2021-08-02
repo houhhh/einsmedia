@@ -604,6 +604,7 @@ section .inner,
 
 .mainSlide07 {
     .inner {
+        
         .mainTitle {
             h2 {
                 width:60%;
@@ -617,19 +618,30 @@ section .inner,
         }
         .recruitInfo{
             display:flex;
+            margin:0 -30px 0 -30px;
             li {
-                outline:1px solid red;
+                
                 width:25%;
                 padding:30px 30px 0;
                 a {
                     width:100%;
                     display:block;
                     h4 {
-                        font-size:24px;
+                        font-size:26px;
                         border-bottom:3px solid black;
+                        padding-bottom:19px;
+                        font-weight:700;
+                        margin-bottom:25px;
                     }
                 }
             }
+        }
+        .adBar {
+            background:red;
+            height:188px;
+            width:100%;
+            margin-top:50px;
+            box-shadow:0 0 20px 20px rgba(1, 1, 1, 0.1);
         }
     }
 
