@@ -627,11 +627,34 @@ section .inner,
                     width:100%;
                     display:block;
                     h4 {
+                        position:relative;
                         font-size:26px;
                         border-bottom:3px solid black;
                         padding-bottom:19px;
                         font-weight:700;
                         margin-bottom:25px;
+                        &:before {
+                            content:'';
+                            position:absolute;
+                            top:20px;
+                            right:0;
+                            display:block;
+                            background:black;
+                            width:30px;
+                            height:1px;
+                        }
+                        &:after {
+                            content:'';
+                            position:absolute;
+                            display:block;
+                            top:16px;
+                            right:0;
+                            height:7px;
+                            width:7px;
+                            border-right:1px solid black;
+                            border-bottom:1px solid black;
+                            transform:rotate(-45deg);
+                        }
                     }
                 }
             }
@@ -641,7 +664,7 @@ section .inner,
             height:188px;
             width:100%;
             margin-top:50px;
-            box-shadow:0 0 20px 20px rgba(1, 1, 1, 0.1);
+            box-shadow:0 0 40px 10px rgba(1, 1, 1, 0.2);
         }
     }
 
