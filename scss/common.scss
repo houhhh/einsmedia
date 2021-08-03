@@ -665,6 +665,22 @@ section .inner,
             width:100%;
             margin-top:50px;
             box-shadow:0 0 40px 10px rgba(1, 1, 1, 0.2);
+            color:#fff;
+            display:flex;
+            h4 {
+                font-size:26px;
+                font-weight:500;
+            }
+            i {
+                font-size:44px;
+                font-weight:700;
+            }
+            .searchBar {
+                display:block;
+                background:blue;
+                height:80px;
+                width:200px;
+            }
         }
     }
 
