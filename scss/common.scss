@@ -682,9 +682,26 @@ section .inner,
                 width:200px;
             }
             form {
+                position:relative;
+
                 fieldset {
                     width:200px;
-                    border:0px;
+                    input {
+                        height:40px;
+                        width:300px;
+                        border:0;
+                    }
+                }
+                button {
+                    position:absolute;
+                    top:0;
+                    right:0;
+                    display:block;
+                    @include radius(5px);
+                    color:#fff;
+                    border:2px solid #fff;
+                    width:100px;
+                    height:80px;
                 }
             }
         }
