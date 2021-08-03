@@ -681,6 +681,12 @@ section .inner,
                 height:80px;
                 width:200px;
             }
+            form {
+                fieldset {
+                    width:200px;
+                    border:0px;
+                }
+            }
         }
     }
 
