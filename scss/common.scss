@@ -633,7 +633,7 @@ section .inner,
                         padding-bottom:19px;
                         font-weight:700;
                         margin-bottom:25px;
-                        &:before {
+                        &:before {// 화살표를 두번움직이는 것을 못하겠음
                             content:'';
                             position:absolute;
                             top:20px;
@@ -712,7 +712,7 @@ section .inner,
                         display:block;
                         @include radius(5px);
                         color:#fff;
-                        background:transparent;
+                        background:transparent;//background 투명
                         border:2px solid #fff;
                         width:150px;
                         height:102px;
