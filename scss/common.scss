@@ -682,6 +682,7 @@ section .inner,
                 width:100%;
                 max-width:1000px;
                 margin:0 auto;
+                position:relative;
                 .number {
                     width:42%;
                     padding-top:50px;
@@ -716,6 +717,11 @@ section .inner,
                         height:102px;
                         margin-left:20px;
                     }
+                }
+                .check {
+                    position:absolute;
+                    bottom:20px;
+                    left:370px;
                 }
             }
             
