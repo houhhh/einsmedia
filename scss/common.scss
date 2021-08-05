@@ -731,4 +731,10 @@ section .inner,
     }
 
 }
+.footer {
+    height:80vh;
+    position:relative;
+    left:0;
+    background:rgb(27, 27, 27);
+}
 @import 'footer';
