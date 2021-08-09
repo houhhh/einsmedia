@@ -36,7 +36,7 @@ body {
     margin:0 auto;
 }
 
-section .inner, 
+.section .inner, 
 .mainSlide01 .mainTitle {
    @extend .base;//위에 base 에 속성을 넣어놓고 익스텐드를 써서 base를 적으면 아래로 속성들이 들어옴 (섹션클레스의 inner 에 들어가게됨)
    
@@ -748,10 +748,23 @@ section .inner,
     }
 
 }
-.footer {
-    height:80vh;
-    position:relative;
-    left:0;
-    background:rgb(27, 27, 27);
+.fp-auto-height {// inner 중앙정렬은 맨 위에 따로 설정
+    background-color:rgb(34, 34, 34);
+    
+    
+    .guideLine {
+        display:flex;
+        color:#fff;
+        li {
+            margin-right:36px;
+        }
+    }
+    .contact {
+        display:flex;
+        color:#888;
+    }
+    address {
+        color:#888;
+    }
 }
 @import 'footer';
