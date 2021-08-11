@@ -750,11 +750,16 @@ body {
 }
 .fp-auto-height {// inner 중앙정렬은 맨 위에 따로 설정
     background-color:rgb(34, 34, 34);
-    
-    
+    padding:40px 0;
+    .inner {
+        display:flex;
+        justify-content:space-between;
+    }
     .guideLine {
         display:flex;
-        color:#fff;
+        color:#ccc;
+        font-size:14px;
+        font-weight:700;
         li {
             margin-right:36px;
         }
@@ -762,9 +767,40 @@ body {
     .contact {
         display:flex;
         color:#888;
+        margin-top:20px;
+        font-size:14px;
+        li {
+            margin-right:23px;
+            position:relative;
+            &:after {
+                content:'';
+                position:absolute;
+                bottom:3px;
+                right:-14px;
+                display:block;
+                height:10px;
+                width:1px;
+                background-color:#888;
+            }
+            &:last-child {
+                &:after {
+                    content:'';
+                    display:none;
+                }
+            }
+        }
     }
+    .bottomLogo {
+        display:block;
+        background:url($url + "ft_logo.png") no-repeat center center/contain;
+        height:80px;
+        width:200px;
+    }
+    
     address {
         color:#888;
+        margin-top:10px;
+        font-size:14px;
     }
 }
 @import 'footer';
