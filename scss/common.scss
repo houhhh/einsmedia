@@ -813,6 +813,21 @@ body {
         height:100vh;// bottom만 있어도 원래 풀이 되야하는데 header에 있는 height에 밀려서 억지로 height:100%을 줘야하나?
         width:280px;
         background:#fff;
+        .hamHead {
+            display:flex;
+            height:60px;
+            // background:red;
+            .emptyBox {
+                width:75%;
+                background:blue;
+            }
+            .closeBtn {
+                display:block;
+                background-color:yellow;
+                width:25%;
+                
+            }
+        }
         ul {
             display:block;
             color:#111;
@@ -820,14 +835,39 @@ body {
             li {
                 margin-left:0;
                 border-bottom:1px solid #ddd;
-                text-align:center;
+                text-align:left;
+                position:relative;
+                
+                &:before {
+                    content:'';
+                    display:block;
+                    height:3px;
+                    width:18px;
+                    background-color:#aaa;
+                    position:absolute;
+                    top:22px;
+                    right:0;
+                }
+                &:after {
+                    content:'';
+                    display:block;
+                    height:18px;
+                    width:3px;
+                    background-color:#aaa;
+                    position:absolute;
+                    top:15px;
+                    right:7px;
+                }
                 a {
-                    padding:10px 0;
+                    padding:12px 0;
                     font-size:15px;
                     font-weight:700;
                 }
             }
         }
+    }
+    .floatBtn {
+        display:none;
     }
     .mainTop .navBar .btnHam {
         display:none;

@@ -48,6 +48,9 @@
         }
         .mainNav {   
             font-size:18px;  
+            .headHam {
+                display:none;
+            }
             ul {
                 //기본적으로 li 나 li 안의 요소들이 width 값이 정해져 있으면 반응형사이트가 됏을때 줄어들게되면 줄바꿈이 일어나기때문에 width값은 없도록 해서 자연스럽게 줄어들게 만듬
                 @include flex($a:stretch);
