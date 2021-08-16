@@ -952,7 +952,7 @@ body {
         }
         
         .inner {
-            .grayCard {
+            .grayCard {//dkf
                 li {
                     width:calc(( 100% - 50px ) / 2 );
                     &:nth-child(2) ~ li {//2번째 부터 지정선택하기 
@@ -964,7 +964,7 @@ body {
     }
     .mainSlide03 {
         .inner {
-            
+
         }
     }
     
