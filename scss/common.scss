@@ -488,6 +488,31 @@ body {
                     margin-bottom:28px;
                     border-bottom:2.5px solid rgb(0, 0, 0);
                     line-height:1.5em;
+                    position:relative;
+                    &:before {// 화살표를 두번움직이는 것을 못하겠음
+                        content:'';
+                        position:absolute;
+                        top:20px;
+                        right:0;
+                        display:block;
+                        background:black;
+                        width:30px;
+                        height:1px;
+                        
+                    }
+                     
+                    &:after {
+                        content:'';
+                        position:absolute;
+                        display:block;
+                        top:16px;
+                        right:0;
+                        height:7px;
+                        width:7px;
+                        border-right:1px solid black;
+                        border-bottom:1px solid black;
+                        transform:rotate(-45deg); 
+                    }
                 }
             }
             p {
@@ -928,7 +953,7 @@ body {
                 text-align:center;
                 h2 {
                     word-break:keep-all;
-                    font-size:28px;
+                    font-size:25px;
                     width:100%;
                     &:after {
                         display:none;
@@ -969,6 +994,7 @@ body {
                 text-align:center;
                 h2 {
                     width:100%;
+                    font-size:25px;
                     br {
                         display:none;
                     }
@@ -1012,6 +1038,7 @@ body {
                 text-align:center;
                 h2 {
                     width:100%;
+                    font-size:25px;
                     br {
                         display:none;
                     }
@@ -1042,6 +1069,7 @@ body {
                 
                 h2 {
                     width:70%;
+                    font-size:25px;
                     br {
                         display:none;
                     }
@@ -1059,12 +1087,46 @@ body {
                 
                 h2 {
                     width:70%;
+                    font-size:25px;
                     br {
+                        display:none;
+                    }
+                    &:after {
                         display:none;
                     }
                     
                 }
                 
+            }
+
+        }
+    }
+    .mainSlide07 {
+        .inner {
+            .mainTitle {
+                display:block;
+                
+                h2 {
+                    font-size:25px;
+                    width:70%;
+                    br {
+                        display:none;
+                    }
+                    &:after {
+                        display:none;
+                    }
+                    
+                }
+                
+            }
+            .recruitInfo {
+                flex-wrap:wrap;
+                li {
+                    width:calc( 50% - 20px );//calc 안쓰고 계산을 미리하면 더 연산이 빠르고 효율적 
+                    a {
+
+                    }
+                }
             }
 
         }
