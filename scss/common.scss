@@ -933,7 +933,7 @@ body {
                     &:after {
                         display:none;
                     }
-                    br {
+                    br {//br 줄넘김 태그 무효화 하기
                         display:none;
                         
                     }
@@ -964,10 +964,110 @@ body {
     }
     .mainSlide03 {
         .inner {
+            .mainTitle {
+                display:block;
+                text-align:center;
+                h2 {
+                    width:100%;
+                    br {
+                        display:none;
+                    }
+                    &:after {
+                        display:none;
+                    }
+                }
+                p {
+                    padding:0;
+                    br {
+                        display:none;
+                    }
+                    &:before {
+                        display:none;
+                    }
+                }
+            }
+            .slide03List {
+                flex-wrap:wrap;
+                
+                li {
+                    // height:300px;
+                    width:calc( 50% - 2px );//보더때문에 2픽셀을 안빼주면 50퍼센트가 안먹는건가?
+                    
+                    &:nth-child(2) {
+                        border-right:1px solid #6a6865;
+                        
+                    }
+                    a {
+                        padding:50px 28px 0; 
+                        height:330px;
+                    }
+                }
+            }
+        }
+    }
+    .mainSlide04 {
+        .inner {
+            .mainTitle {
+                display:block;
+                text-align:center;
+                h2 {
+                    width:100%;
+                    br {
+                        display:none;
+                    }
+                    &:after {
+                        display:none;
+                    }
+                }
+                p {
+                    padding:0;
+                    br {
+                        display:none;
+                    }
+                    &:before {
+                        display:none;
+                    }
+                }
+            }
+            .solutions {
+                padding-left:0;
+                
+            }
+        }
+    }
+    .mainSlide05 {
+        .inner {
+            .mainTitle {
+                display:block;
+                
+                h2 {
+                    width:70%;
+                    br {
+                        display:none;
+                    }
+                    
+                }
+                
+            }
 
         }
     }
-    
-    
+    .mainSlide06 {
+        .inner {
+            .mainTitle {
+                display:block;
+                
+                h2 {
+                    width:70%;
+                    br {
+                        display:none;
+                    }
+                    
+                }
+                
+            }
+
+        }
+    }
 }
 @import 'footer';
