@@ -23,6 +23,16 @@ body {
 
 // img[src^='png']
 
+.dim {
+    position:fixed;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0,0,0,0.7);
+    z-index:99;
+    display:none;
+}
 
 .blankSpace {
     flex:1;
@@ -563,6 +573,9 @@ body {
     height:100vh;
     background:url($url + "bg_msec05.jpg") no-repeat center center/cover;
     color:#fff;
+    img {//이미지 가변주기
+        max-width:100%;
+    }
     
     .mainTitle {
         line-height:48px;
@@ -619,21 +632,39 @@ body {
         }
         .recruitInfo{
             display:flex;
-            margin:0 -30px 0 -30px;
+            margin-top:50px;
+            // margin:0 -30px 0 -30px;
+            justify-content:space-between;
             li {
                 
-                width:25%;
-                padding:30px 30px 0;
+                // width:calc( ( 100% - 180px ) / 4);
+                width:21.53%;//완전한 가변
+                // padding:30px 30px 0;
                 a {
                     width:100%;
                     display:block;
-                    h4 {
+                    h3 {
                         position:relative;
                         font-size:26px;
                         border-bottom:3px solid black;
                         padding-bottom:19px;
                         font-weight:700;
                         margin-bottom:25px;
+                        &:hover:before {
+                            animation-iteration-count:infinite;
+                            animation-duration:0.5s;
+                            animation-name:arrowLine;
+                            animation-direction:alternate;
+                            animation-fill-mode:both;
+                            
+                        }
+                        &:hover:after {
+                            animation-iteration-count:infinite;
+                            animation-duration:0.5s;
+                            animation-name:arrow;
+                            animation-direction:alternate;
+                            animation-fill-mode:both;
+                        }
                         &:before {// 화살표를 두번움직이는 것을 못하겠음
                             content:'';
                             position:absolute;
@@ -643,7 +674,9 @@ body {
                             background:black;
                             width:30px;
                             height:1px;
+                            
                         }
+                         
                         &:after {
                             content:'';
                             position:absolute;
@@ -654,23 +687,46 @@ body {
                             width:7px;
                             border-right:1px solid black;
                             border-bottom:1px solid black;
-                            transform:rotate(-45deg);
+                            transform:rotate(-45deg); 
+                        }
+                        @keyframes arrow {//animation = moon20210806_B - 37:02 
+                            from {
+                                transform:rotate(-45deg);
+                                
+                            }
+                            to {
+                                
+                                transform:rotate(-45deg);
+                                
+                                
+                            }
+                        }
+                        @keyframes arrowLine {//animation = moon20210806_B - 37:02 
+                            from {
+                                transform:translateX(0);
+                                
+                            }
+                            to {
+                                transform:translateX(-50px);
+                                
+                                
+                            }
                         }
                     }
                 }
+                
             }
         }
         .adBar {
             position:relative;
             top:50px;
-            background:red;
-            height:188px;
-            width:100%;
+            background-color:#e60012;
             margin-top:50px;
             box-shadow:0 0 40px 10px rgba(1, 1, 1, 0.2);
             color:#fff;
             display:flex;
-            h4 {
+            padding:45px 67px 30px;//height대신에 패딩으로 잡은것 
+            h3 {
                 font-size:26px;
                 font-weight:500;
             }
@@ -679,53 +735,55 @@ body {
                 font-weight:700;
                 word-break:keep-all;
             }
+            .number {
+                width:40%;
+                
+            }
+            //form과 fieldset에 css속성값을 넣지말고 div로 감싸서 div에 속성값을 넣어 작업
             .wrap_search {
                 // margin:0 auto;
-                display:flex;
-                width:100%;
-                max-width:1000px;
-                margin:0 auto;
-                position:relative;
-                .number {
-                    width:42%;
-                    padding-top:50px;
-                }
-                form {
-                    width:70%;
+                width:60%;
+                .flex {
                     display:flex;
-                    padding-top:32px;
-                    fieldset {
-                        width:80%;
-                        input {
+                    justify-content:space-between;
+                    height:102px;
+                }
+
+                .left {
+                    width:calc(100% - 184px);//버튼크기와 여백까지 뺀것
+                    
+                    flex-direction:column;//아래위 줄 순서 바꾸기 = 
+                    display:flex;
+                    justify-content:space-between;
+                    input {
+                        &[type=text], &[type=tel] {
                             height:44px;
-                            width:100%;
                             border:0;
                             padding-left:20px;
                             box-sizing:border-box;
+                            display:block;
                             @include radius(5px);
+                            width:100%;
+                            
                         }
-                        .inputFirst {
-                            margin-bottom:14px;
-                        }
-                    }
-                    button {
                         
-                        top:0;
-                        right:-80px;
-                        display:block;
-                        @include radius(5px);
-                        color:#fff;
-                        background:transparent;//background 투명
-                        border:2px solid #fff;
-                        width:150px;
-                        height:102px;
-                        margin-left:20px;
                     }
                 }
-                .check {
-                    position:absolute;
-                    bottom:20px;
-                    left:370px;
+                
+                        
+                button {
+                    
+                    @include radius(5px);
+                    color:#fff;
+                    background:transparent;//background 투명
+                    border:2px solid #fff;
+                    width:150px;
+                    // height:150px; 부모 div에 높이를 주는것이 왼쪽 input이랑 맞아 떨어져보임 
+                    
+                }
+                .agree_check {
+                    margin-top:10px;
+                    font-size:12px;
                 }
             }
             
@@ -805,33 +863,26 @@ body {
 }
 
 @media all and (max-width:970px) {    
-    .mainTop .navBar .on {
+    .mainTop .navBar {
+        padding:0 40px;
+    }
+    .mainTop .navBar .mainNav {
         position:fixed;
-        right:0;
+        right:-300px;
         top:0;
-        bottom:100%;
-        height:100vh;// bottom만 있어도 원래 풀이 되야하는데 header에 있는 height에 밀려서 억지로 height:100%을 줘야하나?
+        bottom:0;
+        //bottom만 있어도 원래 풀이 되야하는데 header에 있는 height에 밀려서 억지로 height:100%을 줘야하나?
         width:280px;
         background:#fff;
-        .hamHead {
-            display:flex;
-            height:60px;
-            // background:red;
-            .emptyBox {
-                width:75%;
-                background:blue;
-            }
-            .closeBtn {
-                display:block;
-                background-color:yellow;
-                width:25%;
-                
-            }
+        z-index:100;
+        .btnClose {
+            display:block;
         }
         ul {
+            margin-top:20px;
             display:block;
             color:#111;
-            padding:0 20px;
+            padding:0 25px;
             li {
                 margin-left:0;
                 border-bottom:1px solid #ddd;
@@ -869,18 +920,54 @@ body {
     .floatBtn {
         display:none;
     }
-    .mainTop .navBar .btnHam {
-        display:none;
-    }
-    // .mainTop .navBar .on ul {
-    //     display:block;
-    //     color:#111;
-    // }
 
-    // .mainTop .navBar .on ul {
-    //     color:#111;
-    //     display:block;
-    //     background:red;
-    // }
+    .mainSlide02 {
+        .inner {  
+            .mainTitle {
+                display:block;
+                text-align:center;
+                h2 {
+                    word-break:keep-all;
+                    font-size:28px;
+                    width:100%;
+                    &:after {
+                        display:none;
+                    }
+                    br {
+                        display:none;
+                        
+                    }
+                }
+                p {
+                    padding:0;
+                    &:before {
+                        display:none;
+                    }
+                    
+                    br {
+                        display:none;
+                    }
+                }
+            }
+        }
+        
+        .inner {
+            .grayCard {
+                li {
+                    width:calc(( 100% - 50px ) / 2 );
+                    &:nth-child(2) ~ li {//2번째 부터 지정선택하기 
+                        margin-top:25px;
+                    }
+                }
+            }
+        }
+    }
+    .mainSlide03 {
+        .inner {
+            
+        }
+    }
+    
+    
 }
 @import 'footer';

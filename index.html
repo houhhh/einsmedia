@@ -10,41 +10,12 @@
     <script src="./js/jquery-1.11.2.min.js"></script><!-- 순서 중요-->
     <script src="./js/jquery-ui.min.js"></script><!-- 순서 중요-->
     <script src="./lib/jquery.fullpage.js"></script><!-- 순서 중요-->
+    <script src="./js/common.js"></script><!-- 순서 중요-->
     <script src="https://kit.fontawesome.com/9b4d07ff5a.js" crossorigin="anonymous"></script>
-    <script>
-		$(document).ready(function() {
-			$('#fullpage').fullpage({
-				'verticalCentered': false,
-				'css3': true,
-				// 'sectionsColor': ['#F0F2F4', '#fff', '#fff', '#fff'],
-				'navigation': true,
-				'navigationPosition': 'right',
-				// 'navigationTooltips': ['fullPage.js', 'Powerful', 'Amazing', 'Simple'],
-
-				'afterLoad': function(anchorLink, index){
-					if(index == 2 || index == 4 || index == 7){// 색이 변할 섹션 차례 구역 지정 
-						$('.mainTop').addClass('sticky');
-                        
-					}
-                    if(index == 1 || index == 3 || index == 5 || index == 6) {
-                        $('#fp-nav ul li a span').addClass('white');
-                    }
-				},
-
-				'onLeave': function(index, nextIndex, direction){
-                    if(index == 2 || index == 4 || index == 7){// 색이 변할 섹션 차례 구역 지정 
-						$('.mainTop').removeClass('sticky');
-					}
-                    if(index == 1 || index == 3 || index == 5 || index == 6) {
-                        $('#fp-nav ul li a span').removeClass('white');
-                    }
-				}
-			});
-		});
-	</script>
 </head> 
 
 <body> 
+    <div class="dim"></div>
     <header class="mainTop" lang="en">
         <div class="navBar">
             <h1 class="logo">
@@ -53,11 +24,12 @@
                 </a>
             </h1>
             <div class="blankSpace"></div> <!-- flex:1 을 써서 중간에 빈공간을 채우기 위한 태그-->
-            <nav class="mainNav on">
-                <div class="hamHead">
-                    <span class="emptyBox"></span>
-                    <a href="#" class="closeBtn"></a>
-                </div>
+            <nav class="mainNav">
+                <a href="javasctipt:void(0);" class="btnClose">
+                    <span class="blind">메뉴닫기</span>
+                    <i></i>
+                    <i></i>
+                </a>
                 <ul>
                     <li>
                         <a href="#">Business</a> <!-- 내부메뉴는 클래스를 어디다 줘야하는가? -->
@@ -413,51 +385,60 @@
             <ul class="recruitInfo">
                 <li>
                     <a href="#">
-                        <h4>아인스피플</h4>
+                        <h3>아인스피플</h3>
                         <p>젊은 감각으로 함께 성장하는 아인스피플</p>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <h4>채용정보</h4>
+                        <h3>채용정보</h3>
                         <p>채용 프로세스 및 관련 정보</p>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <h4>복리후생</h4>
+                        <h3>복리후생</h3>
                         <p>워라벨을 중시하는 혜택과 보상</p>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <h4>인터뷰</h4>
+                        <h3>인터뷰</h3>
                         <p>아인스 선배들의 생생한 인터뷰</p>
                     </a>
                 </li>
             </ul>
             <div class="adBar">
+                
+                <div class="number">
+                    <h3>광고 및 컨설팅 문의</h3>
+                    <i>02-2088-8844</i>
+                </div>
                 <div class="wrap_search">
-                    <div class="number">
-                        <h4>광고 및 컨설팅 문의</h4>
-                        <i>02-2088-8844</i>
-                    </div>
-                    <form> <!-- 20201206_A - 7:21-->
+                    
+                    <form> <!-- 20201206_A - 7:21 form에는 css속성값을 넣어주면 안됨 div로 하기-->
                         <fieldset>
-                            <legend></legend><!--input box 만들기-->
-                            <input class="inputFirst" type="name" placeholder="이름" required>
-                            <input type="number" placeholder="연락처" required>
+                            <legend>무료상담신청</legend><!--input box 만들기 legend안쓸거면 비우기-->
+                            <div class="flex">
+                                <div class=left>
+                                    <input type="text" placeholder="이름" required>
+                                    <input type="tel" placeholder="010-1234-5678" pattern="[0-9{3}-[0-9{4}-[0-9]{4}" required>
+                                </div>
+                                <button type="submit">무료상담신청</button><!--버튼 만들기-->
+                            </div>
                             
     
-                        </fieldset>
-                        <button type="submit">무료상담신청</button><!--버튼 만들기-->
+                        </fieldset><!--버튼을 필드셋에 넣어야 관련성이 있다는걸 의미함-->
                         
+                    
                     </form>
-                    <div class="check"> <!-- 체크박스만들기 = 참고 https://blog.naver.com/didrh31/222136028515-->
-                        <input type="checkbox" name="agreement value="동의서" checked>개인정보수집 및 이용에 동의합니다. <a href="#">(내용보기)</a>
+                    <div class="agree_check"> <!-- 체크박스만들기 = 참고 https://blog.naver.com/didrh31/222136028515-->
+                        <label>
+                            <input type="checkbox" name="agreement">
+                            <span>개인정보수집 및 이용에 동의합니다.</span>
+                        </label>
+                        <a href="#">(내용보기)</a><!--레이블안에 a 태그가 들어 갈 수 없음-->
                     </div>
-                    
-                    
                 </div>
                 
                 
@@ -526,7 +507,7 @@
             </li>
         </ul>
 
-        <a href="#" class="btnTop">
+        <a href="javascript:void(0);" class="btnTop">
             <span class="blind">TOP 으로 가기</span>
         </a>
     </aside> 
