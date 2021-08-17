@@ -4,7 +4,7 @@
 // 말줄임 
 
 // Default 
-@function unitCheck($x) { // 중요
+@function unitCheck($x) { // 중요 - 함수정리 사이트 https://soooprmx.com/sass-%EB%82%B4%EC%9E%A5-%ED%95%A8%EC%88%98-%EC%A0%95%EB%A6%AC/
 
     // 단위체크
     @if(type-of($x)==number) { //type-of 숫자이고 아닌거 감별 unitless뒤에 단위 감별 (단위가 없다면)
