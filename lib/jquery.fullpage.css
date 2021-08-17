@@ -225,3 +225,10 @@ html.fp-enabled,
 #fp-nav ul li a span.white {
     background-color:#f3f3f3;
 }
+
+@media all and (max-width:970px) {
+    #fp-nav {
+        display:none; 
+    }
+}
+

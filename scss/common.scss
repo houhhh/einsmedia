@@ -4,7 +4,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 $url : '../images/';
+$gray : #333, #666, #999, #aaa, #e8e8e8, #f5f5f5;
 @import 'reset', 'mixin'; 
+
+
+
+// .unitChk { //nth 로 순성 지정 색상 조절 
+//     color:nth($gray, 4); 
+// }
+
 
 body {
     height:100%;
@@ -113,11 +121,11 @@ body {
         h2 {
             font-size:86px;
             font-weight:600;
-            height:200px;
-            
+            // height:200px; 블럭요소에는 높이줄때 조심
+            margin-bottom:0.348em;// 30픽셀정도를 em으로 바꾸려면 30px / 86px = 0.348837... 
         }
         h3 {
-            margin-top:34px;
+            
             font-size:24px;
             font-weight:400;
         }
@@ -676,19 +684,21 @@ body {
                         font-weight:700;
                         margin-bottom:25px;
                         &:hover:before {
-                            animation-iteration-count:infinite;
-                            animation-duration:0.5s;
-                            animation-name:arrowLine;
-                            animation-direction:alternate;
-                            animation-fill-mode:both;
+                            animation:arrowLine 0.2s 4 linear alternate both;
+                            // animation-iteration-count:4;
+                            // animation-duration:0.5s;
+                            // animation-name:arrowLine;
+                            // animation-direction:alternate;
+                            // animation-fill-mode:both;
                             
                         }
                         &:hover:after {
-                            animation-iteration-count:infinite;
-                            animation-duration:0.5s;
-                            animation-name:arrow;
-                            animation-direction:alternate;
-                            animation-fill-mode:both;
+                            animation:arrow 0.2s 4 linear alternate both;
+                            // animation-iteration-count:infinite;
+                            // animation-duration:0.5s;
+                            // animation-name:arrow;
+                            // animation-direction:alternate;
+                            // animation-fill-mode:both;
                         }
                         &:before {// 화살표를 두번움직이는 것을 못하겠음
                             content:'';
@@ -716,12 +726,12 @@ body {
                         }
                         @keyframes arrow {//animation = moon20210806_B - 37:02 
                             from {
-                                transform:rotate(-45deg);
+                                transform:translateX(0) rotate(-45deg);
                                 
                             }
                             to {
                                 
-                                transform:rotate(-45deg);
+                                transform:translateX(-50px) rotate(-45deg);
                                 
                                 
                             }
@@ -737,6 +747,7 @@ body {
                                 
                             }
                         }
+                        
                     }
                 }
                 
@@ -887,249 +898,9 @@ body {
     }
 }
 
-@media all and (max-width:970px) {    
-    .mainTop .navBar {
-        padding:0 40px;
-    }
-    .mainTop .navBar .mainNav {
-        position:fixed;
-        right:-300px;
-        top:0;
-        bottom:0;
-        //bottom만 있어도 원래 풀이 되야하는데 header에 있는 height에 밀려서 억지로 height:100%을 줘야하나?
-        width:280px;
-        background:#fff;
-        z-index:100;
-        .btnClose {
-            display:block;
-        }
-        ul {
-            margin-top:20px;
-            display:block;
-            color:#111;
-            padding:0 25px;
-            li {
-                margin-left:0;
-                border-bottom:1px solid #ddd;
-                text-align:left;
-                position:relative;
-                
-                &:before {
-                    content:'';
-                    display:block;
-                    height:3px;
-                    width:18px;
-                    background-color:#aaa;
-                    position:absolute;
-                    top:22px;
-                    right:7px;
-                }
-                &:after {
-                    content:'';
-                    display:block;
-                    height:18px;
-                    width:3px;
-                    background-color:#aaa;
-                    position:absolute;
-                    top:15px;
-                    right:14px;
-                }
-                a {
-                    padding:12px 0;
-                    font-size:15px;
-                    font-weight:700;
-                }
-            }
-        }
-    }
-    .floatBtn {
-        display:none;
-    }
+@import 'footer','media';
 
-    .mainSlide02 {
-        .inner {  
-            .mainTitle {
-                display:block;
-                text-align:center;
-                h2 {
-                    word-break:keep-all;
-                    font-size:25px;
-                    width:100%;
-                    &:after {
-                        display:none;
-                    }
-                    br {//br 줄넘김 태그 무효화 하기
-                        display:none;
-                        
-                    }
-                }
-                p {
-                    padding:0;
-                    &:before {
-                        display:none;
-                    }
-                    
-                    br {
-                        display:none;
-                    }
-                }
-            }
-        }
-        
-        .inner {
-            .grayCard {
-                li {
-                    width:calc(( 100% - 50px ) / 2 );
-                    &:nth-child(2) ~ li {//2번째 부터 지정선택하기 
-                        margin-top:25px;
-                    }
-                }
-            }
-        }
-    }
-    .mainSlide03 {
-        .inner {
-            .mainTitle {
-                display:block;
-                text-align:center;
-                h2 {
-                    width:100%;
-                    font-size:25px;
-                    br {
-                        display:none;
-                    }
-                    &:after {
-                        display:none;
-                    }
-                }
-                p {
-                    padding:0;
-                    br {
-                        display:none;
-                    }
-                    &:before {
-                        display:none;
-                    }
-                }
-            }
-            .slide03List {
-                flex-wrap:wrap;
-                
-                li {
-                    // height:300px;
-                    width:calc( 50% - 2px );//보더때문에 2픽셀을 안빼주면 50퍼센트가 안먹는건가?
-                    
-                    &:nth-child(2) {
-                        border-right:1px solid #6a6865;
-                        
-                    }
-                    a {
-                        padding:50px 28px 0; 
-                        height:330px;
-                    }
-                }
-            }
-        }
-    }
-    .mainSlide04 {
-        .inner {
-            .mainTitle {
-                display:block;
-                text-align:center;
-                h2 {
-                    width:100%;
-                    font-size:25px;
-                    br {
-                        display:none;
-                    }
-                    &:after {
-                        display:none;
-                    }
-                }
-                p {
-                    padding:0;
-                    br {
-                        display:none;
-                    }
-                    &:before {
-                        display:none;
-                    }
-                }
-            }
-            .solutions {
-                padding-left:0;
-                
-            }
-        }
-    }
-    .mainSlide05 {
-        .inner {
-            .mainTitle {
-                display:block;
-                
-                h2 {
-                    width:70%;
-                    font-size:25px;
-                    br {
-                        display:none;
-                    }
-                    
-                }
-                
-            }
-
-        }
-    }
-    .mainSlide06 {
-        .inner {
-            .mainTitle {
-                display:block;
-                
-                h2 {
-                    width:70%;
-                    font-size:25px;
-                    br {
-                        display:none;
-                    }
-                    &:after {
-                        display:none;
-                    }
-                    
-                }
-                
-            }
-
-        }
-    }
-    .mainSlide07 {
-        .inner {
-            .mainTitle {
-                display:block;
-                
-                h2 {
-                    font-size:25px;
-                    width:70%;
-                    br {
-                        display:none;
-                    }
-                    &:after {
-                        display:none;
-                    }
-                    
-                }
-                
-            }
-            .recruitInfo {
-                flex-wrap:wrap;
-                li {
-                    width:calc( 50% - 20px );//calc 안쓰고 계산을 미리하면 더 연산이 빠르고 효율적 
-                    a {
-
-                    }
-                }
-            }
-
-        }
-    }
+.unitChk {
+    // @include fontSize(100, $row:2);
+    @include fontSize(100); // fontSize($size, $row:null)에 row의 초기값이 $row:null 널로 설정되있기때문에 null은 아무것도 지정안함이므로 값이 안들어감
 }
-@import 'footer';

@@ -3,6 +3,78 @@
 
 // 말줄임 
 
+// Default 
+@function unitCheck($x) { // 중요
+
+    // 단위체크
+    @if(type-of($x)==number) { //type-of 숫자이고 아닌거 감별 unitless뒤에 단위 감별 (단위가 없다면)
+        @if(unitless($x)) {
+            @return $x+px;
+        }
+    }
+
+    @return $x;
+}
+
+@mixin media($width) {
+    $width: unitCheck($width);
+    
+    @media all and (max-width:$width) {
+        @content;
+    }
+}
+
+@mixin fontSize($size, $row:null) {
+    $size: $size * 0.9;//글자사이즈를 픽셀로 정하면 좋지만 포토샵의 포인트로 받았을때 사이즈 계산해줌 
+    font-size: $size + px;
+    
+    
+    // @if ($size >=38) { // 글씨가 38 보다 크면 줄여라 
+    //     letter-spacing: -2.4px;
+    // }
+
+    // @else if ($size >=28) {
+    //     letter-spacing: -1px;
+    // }
+
+    // @else if ($size >=18) {
+    //     letter-spacing: -0.5px;
+    // }
+
+    // line-height 설정
+    @if ($row !=null) {// null 없다면 이라는 뜻임   != null 널이 초기값으로 안되어있으면 css 안쓰면 에러 11:44분 ~ 12:22분 moon20210817_B 12:45 moon20210817_C
+        line-height: $row;
+    }
+
+    @include media(970) {
+        $size: $size * 0.5;
+        font-size: $size + px;
+    }
+
+    @include media(600) {
+        $size: $size * 0.15;
+        font-size: $size + vw;
+    }
+
+    @include media(480) {
+        $size: $size * 1.3;
+        font-size: $size + vw;
+    }
+
+    @include media(360) {
+        $size: $size * 1.05;
+        font-size: $size + vw;
+    }
+
+    /*
+    @else {
+        $lineHeight: $size + 10 + px;
+        line-height: $lineHeight;
+    }
+    */
+}
+// 중요 
+
 @mixin abbr($w:100%) {
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -127,3 +199,5 @@
         clear:both;
     }
 }
+
+
