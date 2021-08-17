@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>einsmedia</title>  
-    <link rel="stylesheet" href="./css/common.css">  
-    <link rel="stylesheet" href="./lib/jquery.fullpage.css">  
-    <script src="./js/jquery-1.11.2.min.js"></script>
-    <script src="./js/jquery-ui.min.js"></script>
-    <script src="./lib/jquery.fullpage.js"></script>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./lib/jquery.fullpage.css">
+    <script src="./js/jquery-1.11.2.min.js"></script><!-- 순서 중요-->
+    <script src="./js/jquery-ui.min.js"></script><!-- 순서 중요-->
+    <script src="./lib/jquery.fullpage.js"></script><!-- 순서 중요-->
+    <script src="./js/common.js"></script><!-- 순서 중요-->
     <script src="https://kit.fontawesome.com/9b4d07ff5a.js" crossorigin="anonymous"></script>
     <script>
 		$(document).ready(function() {
@@ -43,8 +44,9 @@
 		});
 	</script>
 </head> 
-<body> 
 
+<body> 
+    <div class="dim"></div>
     <header class="mainTop" lang="en">
         <div class="navBar">
             <h1 class="logo">
@@ -53,7 +55,12 @@
                 </a>
             </h1>
             <div class="blankSpace"></div> <!-- flex:1 을 써서 중간에 빈공간을 채우기 위한 태그-->
-            <nav class="mainNav on">
+            <nav class="mainNav">
+                <a href="javasctipt:void(0);" class="btnClose">
+                    <span class="blind">메뉴닫기</span>
+                    <i></i>
+                    <i></i>
+                </a>
                 <ul>
                     <li>
                         <a href="#">Business</a> <!-- 내부메뉴는 클래스를 어디다 줘야하는가? -->
@@ -91,7 +98,7 @@
         </div> 
     </header>
 
-<div id="fullpage"> 
+<div id="fullpage">
     <section class="mainSlide01 section">
         
         <div class="mainTitle">
@@ -134,6 +141,9 @@
                     광고관리의 노하우와 경험을 통해 최적화 된 광고 전략과<br>
                     솔루션을 제공합니다.
                 </p>
+                <div class="unitChk">
+                    폰트사이즈의 변화 보기
+                </div>
             </div>
             <ul class="grayCard">
                 <li>
@@ -388,24 +398,126 @@
                 </h2>
                 
             </div>
+            <img src="./images/home_06_graph.png" alt="2021홈페이지_메인_회사연혁2">
             <!-- <span class="graph"></span> -->
-            <img src="./images/home_06_graph.png" alt="2009년부터 현재까지의 매출성장 그래프">
+            <span class="graphInfo">아인스미디어는 창립 이래 다수의 고객사와 함께 꾸준한 성장을 이루어 가고 있습니다.</span>
         </div>
+       
     </section> <!-- slide06 end-->
     
     <section class="mainSlide07 section">
         <div class="inner">
             <div class="mainTitle">
                 <h2>
-                    More than advertising<br>
-                    expert 'einsmedia'
+                    고객과 함께 성장하며 최고의 인재로 성장할<br>마케팅 프로페셔널 아인스피플을 찾습니다.
+                    
                 </h2>
-                <h3>사용자와 클라이언트를 연결해 주는 No1디지털 마케팅 그룹</h3>
+                
+            </div>
+            <ul class="recruitInfo">
+                <li>
+                    <a href="#">
+                        <h3>아인스피플</h3>
+                        <p>젊은 감각으로 함께 성장하는 아인스피플</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>채용정보</h3>
+                        <p>채용 프로세스 및 관련 정보</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>복리후생</h3>
+                        <p>워라벨을 중시하는 혜택과 보상</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>인터뷰</h3>
+                        <p>아인스 선배들의 생생한 인터뷰</p>
+                    </a>
+                </li>
+            </ul>
+            <div class="adBar">
+                
+                <div class="number">
+                    <h3>광고 및 컨설팅 문의</h3>
+                    <i>02-2088-8844</i>
+                </div>
+                <div class="wrap_search">
+                    
+                    <form> <!-- 20201206_A - 7:21 form에는 css속성값을 넣어주면 안됨 div로 하기-->
+                        <fieldset>
+                            <legend>무료상담신청</legend><!--input box 만들기 legend안쓸거면 비우기-->
+                            <div class="flex">
+                                <div class=left>
+                                    <input type="text" placeholder="이름" required>
+                                    <input type="tel" placeholder="010-1234-5678" pattern="[0-9{3}-[0-9{4}-[0-9]{4}" required>
+                                </div>
+                                <button type="submit">무료상담신청</button><!--버튼 만들기-->
+                            </div>
+                            
+    
+                        </fieldset><!--버튼을 필드셋에 넣어야 관련성이 있다는걸 의미함-->
+                        
+                    
+                    </form>
+                    <div class="agree_check"> <!-- 체크박스만들기 = 참고 https://blog.naver.com/didrh31/222136028515-->
+                        <label>
+                            <input type="checkbox" name="agreement">
+                            <span>개인정보수집 및 이용에 동의합니다.</span>
+                        </label>
+                        <a href="#">(내용보기)</a><!--레이블안에 a 태그가 들어 갈 수 없음-->
+                    </div>
+                </div>
+                
+                
             </div>
         </div>
+
+        <div class="mapArea">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.6524672799665!2d126.48916471606384!3d33.51041795353361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350cfb3b0ac5bfc5%3A0xedff3343f60bcc67!2z7KCc7KO86rWt7KCc6rO17ZWt!5e0!3m2!1sko!2skr!4v1628213842868!5m2!1sko!2skr" allowfullscreen="" loading="lazy"></iframe>
+        </div>
     </section> <!-- slide07 end-->
-</div>
-    <aside class="floatBtn"> <!--퀵메뉴 같이 지금 보고있는 페이지와 상관없는 것이기때문에 red버튼은 따로 이렇게 둠 그리고 footer.scss에서 짠다-->
+    <div class="section fp-auto-height"><!--footer를 슬라이드에 일정부분 넣기-->
+        <div class="inner">
+            <div class="bottomInfo">
+                <ul class="guideLine">
+                    <li>
+                        <a href="#">광고문의</a>
+                    </li>
+                    <li>
+                        <a href="#">상품안내</a>
+                    </li>
+                    <li>
+                        <a href="#">회사소개서 다운로드</a>
+                    </li>
+                    <li>
+                        <a href="#">개인정보취급방침</a>
+                    </li>
+                </ul>
+                <ul class="contact">
+                    <li>대표이사 : 김중완</li>
+                    <li>개인정보보호책임자 : 홍성일</li>
+                    <li>사업자등록번호 : 109-86-20253</li>
+                    <li>대표전화 : 02-2088-8866</li>
+                    <li>팩스 : 02-2085-7747</li>
+                </ul>
+                <address>서울 금천구 가산디지털1로 168 우림라이온스밸리 B동 907호, 908호, 909호, 910호 (우: 08507)</address>
+            </div>
+            <span class="bottomLogo"></span>
+            
+        </div>
+            
+    </div><!--footer end-->
+    <!-- <section class="footer">
+        
+        
+    </section> -->
+</div> 
+    <aside class="floatBtn section"> <!--퀵메뉴 같이 지금 보고있는 페이지와 상관없는 것이기때문에 red버튼은 따로 이렇게 둠 그리고 footer.scss에서 짠다-->
         <ul class="subNav"><!--Q.ul이 동그라미가 됨 사실 클릭하는거였으면 어찌되나?-->
             <li>
                 <a href="#">
@@ -427,9 +539,11 @@
             </li>
         </ul>
 
-        <a href="#" class="btnTop">
+        <a href="javascript:void(0);" class="btnTop">
             <span class="blind">TOP 으로 가기</span>
         </a>
     </aside> 
-    <!-- bottom red btn end -->
+
+  <!-- bottom red btn end -->
 </body>
+</html>

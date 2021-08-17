@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+    <style>
+        body {
+            background-color:dodgerblue;
+        }
+        .wrap {
+            position:relative;
+            width:80%;
+            margin:50px auto;
+            height:50vh;
+            background-color:rgb(52, 168, 150);
+            
+        }
+        .wrap .bird {
+            position:absolute;
+            left:-100px;
+            top:300px;
+            width:30px;
+            transition:all 2s;
+
+        }
+        .wrap:hover .bird {
+            width:100px;
+            /* transform:translateX(2200px); */
+            left:calc(100% + 100px);
+            /* left:auto; */
+            /* right:-100px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <img src="./images/twitter.png" alt="" class="bird">
+    </div>
+</body>
+</html>

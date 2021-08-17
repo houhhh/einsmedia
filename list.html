@@ -7,43 +7,47 @@
     <title>Document</title> 
     <style>
         * {margin:0;padding:0;list-style:none;}
+        
         .wrap {
             outline:1px solid red;
             width:1000px;
             margin:50px auto;
+            
             /* justify-content:space-between; */
         }
+         
 
         .list {
-
             display:flex;
-            flex-wrap:wrap;  
-            margin:0 -10px;
+            flex-wrap:wrap;
+            margin:0 -10px;/* 마진 마이너스를 줘서 안에 li가 마진을 갖고 있더라도 크기가 넘쳐나지않고 딱맞게됨 물론 보기에는 마진이 넘어가있는것처럼 보임*/
         }
 
-        .list li { 
+
+        .list li {
+            
             height:200px;
             width:calc(25% - 20px);
             margin:10px;
-            background:beige;
-        }
-
-        .list li:nth-child(even) {
-            background-color:coral;
+            
         }
 
         /* .list li:nth-child(4n) {
-            margin-right:0;
+            margin-left:0;
+            
         }
-
         .list li:nth-child(4n-3) {
             margin-left:0;
         } */
+        
+        .list li:nth-child(even) {
+            background-color:coral;
+        }
        
     </style>
 </head>
 <body>
-    <div class="wrap"> 
+    <div class="wrap">
         <ul class="list">
             <li>LIST 1</li>
             <li>LIST 2</li>
@@ -57,5 +61,6 @@
             <li>LIST 10</li>
         </ul>
     </div>
+    
 </body>
 </html>

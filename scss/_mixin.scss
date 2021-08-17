@@ -1,6 +1,66 @@
 @charset "utf-8";
 
 
+// Default 
+@function unitCheck($x) {
+    // 단위체크
+    @if(type-of($x)==number) {
+        @if(unitless($x)) {
+            @return $x+px;
+        }
+    }
+
+    @return $x;
+}
+
+@mixin media($width) {
+    $width: unitCheck($width);
+
+    @media all and (max-width:$width) {
+        @content;
+    }
+}
+
+ 
+
+@mixin fontSize($size, $row:null) {
+    $size: $size * 0.9; // 90
+    font-size: $size + px;
+
+    // line-height 설정
+    @if ($row !=null) {
+        line-height: $row;
+    } 
+ 
+
+    @include media(970) {
+        $size: $size * 0.9; // 81
+        font-size: $size + px;
+    }
+
+    @include media(600) {
+        $size: $size * 0.15; //12.15
+        font-size: $size + vw; // 12.15vw  (식 : 600일때 * 0.1215 = 72.9px )
+        /* 
+
+        360 * 0.1215 = 43.74px;
+        */
+    }
+
+
+    // @include media(480) {
+    //     $size: $size * 1.3;
+    //     font-size: $size + vw;
+    // }
+
+    // @include media(360) {
+    //     $size: $size * 1.05;
+    //     font-size: $size + vw;
+    // } 
+   
+}
+
+
 // 말줄임 
 
 @mixin abbr($w:100%) {
@@ -9,6 +69,8 @@
     overflow: hidden;
     width: $w;
 }
+
+ 
 
 @mixin flex($a:stretch, $j:flex-start, $wrap:nowrap) {
     display: flex;
@@ -37,13 +99,23 @@
 
 }
 
-@mixin circle($size) {
-    // 픽셀로 들어감 px 
+
+ 
+
+@mixin circle($size,$ov:null) { 
+    // $size : 300
+    $size : unitCheck($size); //300px 
+    // $size : 300px 
     width: $size;
     height: $size;
     border-radius: 50%;
     -ms-border-radius: 50%;
-    display: block;
+    display: block;   
+    
+    @if ($ov != null) {
+        overflow:$ov;
+    }    
+   
 }
 
 @mixin navIcon($n, $x, $y, $x2, $y2) {
@@ -120,7 +192,6 @@
 
 }
 
-
 @mixin clearfix {
     &:after {
         content:'';
@@ -128,3 +199,4 @@
         clear:both;
     }
 }
+

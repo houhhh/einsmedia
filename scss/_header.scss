@@ -10,6 +10,7 @@
     left:0;
     color:#f2f2f2;
     z-index:2;
+    transition:all 0.5s;
     .navBar { //!.position:relative를 주면 width가 오토가되기 때문에 width값이 굳이 필요없다. 그런데 relative상태에서 패팅까지 주면 width:auto(100%) + padding값이 되므로 넘치게된다.
         height:80px; // 높이만 주고 가로값은 어디에 기준하는가?
         padding:0 80px;
@@ -48,6 +49,7 @@
         }
         .mainNav {   
             font-size:18px;  
+            
             ul {
                 //기본적으로 li 나 li 안의 요소들이 width 값이 정해져 있으면 반응형사이트가 됏을때 줄어들게되면 줄바꿈이 일어나기때문에 width값은 없도록 해서 자연스럽게 줄어들게 만듬
                 @include flex($a:stretch);
@@ -120,8 +122,42 @@
     }
 }
 
+.mainNav .btnClose {
+    display:none;
+    width:40px;
+    height:40px;
+    outline:1px solid red;
+    position:relative;
+    margin:0 0 0 auto;
+    i {
+        display:block;
+        width:27px;
+        height:2px;
+        background-color:#000;
+        position:absolute;
+        left:10px;
+        &:nth-child(2) {
+            top:10px;
+            transform:rotate(45deg);
+            transform-origin:left top;
+        }
+        &:last-child {
+            bottom:10px;
+            transform:rotate(-45deg);
+            transform-origin:left bottom;
+            
+        }
+    }
+}
 
+.mainNav.open .btnClose { //mainNav에 open이 달렸을때
+    display:block;
+}
 .mainTop.sticky {
     background-color:rgba(0,0,0,0.8);
-    color:#fff; 
+    color:#fff;
+    padding-top:0;
+    
 }
+
+

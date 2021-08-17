@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        body {
+            background-color:dodgerblue;
+        }
+        .wrap {
+            position:relative;
+            width:80%;
+            margin:50px auto;
+            height:50vh;
+            background-color:rgb(52, 168, 150);
+            overflow:hidden;
+            
+        }
+        .wrap p {
+            margin:0;
+            font-size:100px;
+            position:absolute;
+            left:0;
+            top:calc(50% - 50px);
+            color:#fff;
+            text-align:center;
+            width:100%;
+            text-shadow:0 0 10px rgb(14, 90, 77);
+            transition:all 0.5s;
+        }
+        .wrap:hover p {
+            opacity:0;
+            top:-120px;
+        }
+        .wrap:hover .a {
+            top:100px;
+            animation-name:flying1;/* 필수 */
+            animation-duration:2s;/*필수 */
+            animation-iteration-count:infinite;/*infinite = 무한반복 , 숫자 */
+            animation-direction:alternate;
+            animation-delay:1s;
+            animation-fill-mode:both;/*12:10 backwards, forwards */
+            animation-timing-function: cubic-bezier(.43,1.22,.65,.28);/*linear는 플랫하게 속도가 일정 easy-in은 초반에 빠름, easy-in-out
+             -- https://cubic-bezier.com/#.43,1.22,.65,.28*/
+        }
+        .wrap:hover .b {
+            top:50%;
+            animation:flying2 3s infinite alternate both;
+        }
+        .wrap:hover .c {
+            bottom:100px;
+            animation:flying1 3s infinite alternate-reverse both;
+        }
+        .bird {
+            position:absolute;
+            left:-100px;
+            
+        }
+        /* .bird.a {
+            top:100px;
+            animation-name:flying1; 필수 
+            animation-duration:2s;필수 
+            animation-iteration-count:1;/*infinite = 무한반복 , 숫자 
+            animation-direction:alternate
+            animation-delay:1s;
+            animation-fill-mode:both;/*12:10 backwards, forwards 
+            animation-timing-function: cubic-bezier(.43,1.22,.65,.28);/*linear는 플랫하게 속도가 일정 easy-in은 초반에 빠름, easy-in-out
+             -- https://cubic-bezier.com/#.43,1.22,.65,.28
+        } */
+        .bird.b {
+            top:50%;
+            
+        }
+        .bird.c {
+            bottom:100px;
+            
+        }
+
+
+        @keyframes flying1 {
+            from {
+                transform:translateX(0);
+            }
+            
+            to {
+                transform:translateX(2200px);
+            }
+        }
+        @keyframes flying2 {
+            0% {
+                transform:translate(0,0);
+
+            }
+            25% {
+                transform:translate(300px, -100px);
+            }
+            50% {
+                transform:translate(600px, 200px);
+
+            }
+            75% {
+                transform:translate(900px, 0);
+
+            }
+            100% {
+                transform:translate(220px, 0);
+            }
+        }
+        
+        .btnArea {
+            position:absolute;
+            left:0;
+            width:100%;
+            text-align:center;
+            bottom:20px;
+        }
+        .btnArea button {
+            border:0;
+            background-color:#fff;
+            color:#222;
+            border-radius:5px;
+            height:36px;
+            width:100px;
+            margin:0 5px;
+        }
+        /* .wrap:hover .bird {
+            animation-play-state:paused;
+        } 이게있으면 애니메이션 다 멈춤 */
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <img src="./images/twitter.png" alt="" class="bird a">
+        <img src="./images/twitter.png" alt="" class="bird b">
+        <img src="./images/twitter.png" alt="" class="bird c">
+        <p>
+            MOUSE HERE!!
+        </p>
+        <div class="btnArea">
+            <button type="button" class="btnPlay">Play</button>
+            <button type="button" class="btnPause">Pause</button>
+        </div>
+        
+    </div>
+</body>
+</html>

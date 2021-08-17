@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            border:2px solid red;
+            width:500px;
+            height:300px;
+
+        }
+        .box2 {
+            border:none;
+            width:300px;
+            height:300px;
+
+        }
+        .box3 {
+            width:100%;
+            height:50vh;
+            border:none;
+        }
+    </style>
+</head>
+
+<body>
+    <iframe src="./index.html" class="box1"></iframe><!-- 아이프레임은 기본적으로 인라인 요소라 옆으로 배열됨-->
+    <iframe src="./list.html" class="box2"></iframe>
+    <iframe src="https://www.nate.com" class="box3" scrolling="auto"></iframe>
+</body>
+</html>
