@@ -128,7 +128,7 @@
                 p {
                     padding:0;
                     br {
-                        display:none;
+                        display:none; // br태그 제거 https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=sonix&logNo=221367693717
                     }
                     &:before {
                         display:none;
