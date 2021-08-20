@@ -520,6 +520,13 @@ body {
                         border-right:1px solid black;
                         border-bottom:1px solid black;
                         transform:rotate(-45deg); 
+                        
+                    }
+                    &:hover:before {
+                        animation:arrowLine 0.2s 4 alternate both;
+                    }
+                    &:hover:after {
+                        animation:arrow 0.2s 4 alternate both;
                     }
                 }
             }
@@ -726,7 +733,7 @@ body {
                         }
                         @keyframes arrow {//animation = moon20210806_B - 37:02 
                             from {
-                                transform:translateX(0) rotate(-45deg);
+                                transform:translateX(0) rotate(-45deg);//transform rotate 그리고 translate 같이 쓰기
                                 
                             }
                             to {
