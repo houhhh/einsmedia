@@ -62,7 +62,7 @@
 
     .mainSlide01 {
         .mainTitle {
-            h2 {
+            h2 {//h2에는 높이 필요 없음 보통
                 font-size:48px;
             }
         }
@@ -74,6 +74,10 @@
             .mainTitle {
                 display:block;
                 text-align:center;
+                .unitChk {
+                    display:none;//폰트 사즈 변화보려면 none해제
+                    
+                }
                 h2 {
                     word-break:keep-all;
                     font-size:25px;
@@ -96,11 +100,13 @@
                         display:none;
                     }
                 }
+                
             }
         }
         
         .inner {
             .grayCard {
+                padding:0;
                 li {
                     width:calc(( 100% - 50px ) / 2 );
                     &:nth-child(2) ~ li {//2번째 부터 지정선택하기 

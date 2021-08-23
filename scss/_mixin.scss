@@ -4,8 +4,10 @@
 // 말줄임 
 
 // Default 
-@function unitCheck($x) { // 중요 - 함수정리 사이트 https://soooprmx.com/sass-%EB%82%B4%EC%9E%A5-%ED%95%A8%EC%88%98-%EC%A0%95%EB%A6%AC/
-
+@function unitCheck($x) { //2.중요 - 함수정리 사이트 https://soooprmx.com/sass-%EB%82%B4%EC%9E%A5-%ED%95%A8%EC%88%98-%EC%A0%95%EB%A6%AC/
+//@mixin media(@width)의 width로 받은 값은 unitCheck($x)의 x에 들어가게되고 > 아래 type-of($x)로 들어가는데 뜻은 x값이 number숫자인지 확인하고 >
+//만약 if(unitless($x)의 x에 유닛 (px, em 등)과 같은 단위가 안적혀있다면 > 아래 @return $x+px의 x 에 px을 붙여서 돌려줘라 > 그러면 다시 21번째줄의 
+//최종 $width: 값으로 들어가게된다 (ex: $width: 10px;)
     // 단위체크
     @if(type-of($x)==number) { //type-of 숫자이고 아닌거 감별 unitless뒤에 단위 감별 (단위가 없다면)
         @if(unitless($x)) {
@@ -17,11 +19,30 @@
 }
 
 @mixin media($width) {
-    $width: unitCheck($width);
+    $width: unitCheck($width);//1.mixin media($width)에 숫자를 넣으면 > unitCheck($width)에 들어가게되고 < unitCheck($width)는 곧 $width가 된다. 하지만 최종 $width: 값이 되기전에 unitCheck라는 함수를 만들었기때문에 위의 함수를 거친후에 들어온다. $width:에 들어가기전에 위에서 7번줄로간다
     
     @media all and (max-width:$width) {
         @content;
     }
+}
+
+// <script>
+//     function doSum(a,b) {
+//         let total = a + b
+//3.       document.write('더한값은' + total + '입니다.') 
+//     }
+//      여기서 document.write는 출력하라는 명령어임 하지만 화면에는 a + b값은 출력이 안되고 NaN으로 나온다 
+//      (=더한값은 NaN입니다.)그래서 ...
+
+//     doSum(10,20);
+//     이렇게 아래에 쓰면 그제서야 '더한값은' + 30 + '입니다.' = 더한값은 30입니다. 이렇게 나옴
+// </script>
+@mixin circleTest($size,$ov:null) {//null은 있으면 ov값을 비웠을때 그냥 오버플로설정을 아예 안하겠다는 뜻이고 $ov:visible 라적으면 비워뒀을때 visible을 기본값으로한다는 뜻이다. null 과 비슷한 인자로 NaN 이 있음
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    -ms-border-radius: 50%;
+    display:block;
 }
 
 @mixin fontSize($size, $row:null) {
@@ -117,6 +138,8 @@
     -ms-border-radius: 50%;
     display: block;
 }
+
+
 
 @mixin navIcon($n, $x, $y, $x2, $y2) {
     &:nth-child(#{$n}) a {
