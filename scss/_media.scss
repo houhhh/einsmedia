@@ -62,7 +62,7 @@
 
     .mainSlide01 {
         .mainTitle {
-            h2 {//h2에는 높이 필요 없음 보통
+            h2 {//h2에는 높이 필요 없음 보통 여백으로 간격 조절하던지 해야함
                 font-size:48px;
             }
         }
@@ -108,6 +108,7 @@
             .grayCard {
                 padding:0;
                 li {
+                    height:200px;
                     width:calc(( 100% - 50px ) / 2 );
                     &:nth-child(2) ~ li {//2번째 부터 지정선택하기 
                         margin-top:25px;
@@ -260,4 +261,15 @@
 
         }
     }
+    .fp-auto-height {
+        .inner {
+            // justify-content:initial;
+            .bottomLogo {
+                width:100px; //?.로고가 자꾸넘어감 부모쪽 가로넓이에 마진 -50값이 우측에 먹여져있음 
+    
+            }
+        }
+        
+    }
 }
+    

@@ -884,6 +884,7 @@ body {
                 background-color:#888;
             }
             &:last-child {
+                margin-right:0;
                 &:after {
                     content:'';
                     display:none;
@@ -894,7 +895,7 @@ body {
     .bottomLogo {
         display:block;
         background:url($url + "ft_logo.png") no-repeat center center/contain;
-        height:80px;
+        // height:80px;
         width:200px;
     }
     
