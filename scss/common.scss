@@ -5,17 +5,6 @@
 
 $url : '../images/';
 $gray : #333, #666, #999, #aaa, #e8e8e8, #f5f5f5;
-<<<<<<< HEAD
-
-.unitChk {
-    color:nth($gray, 4);
-}
-
-@import 'reset', 'mixin'; 
-
-
-body { 
-=======
 @import 'reset', 'mixin'; 
 
 
@@ -26,7 +15,6 @@ body {
 
 
 body {
->>>>>>> 4248b8f1388683bacab329b5c8e1539050a2cbe9
     height:100%;
     min-width:320px;// 바디에는 전체 넓이값이 없는 것 같음
     font-family:'Noto sans kr' ,sans-serif;
@@ -64,6 +52,7 @@ body {
     max-width:1350px;
     padding:0 25px;
     margin:0 auto;
+    box-sizing:border-box;
 }
 
 .section .inner, 
@@ -71,7 +60,7 @@ body {
    @extend .base;//위에 base 에 속성을 넣어놓고 익스텐드를 써서 base를 적으면 아래로 속성들이 들어옴 (섹션클레스의 inner 에 들어가게됨)
    
 }
- 
+
 
 .mainSlide01, .mainSlide02, 
 .mainSlide04, .mainSlide05,
@@ -81,12 +70,11 @@ body {
     
 }
 
-@import 'header'; 
+@import 'header';
 
-.mainSlide01 {  
+.mainSlide01 { 
     height:100vh;//!.vh는 샤용하는 현재 디바이스의 높이를 말함 (사용하는 디바이스 높이에 맞게 조절됨)
     background:url($url + "mainBG_01.jpg") no-repeat center center/cover;//이미지는 따로 before나 after에 넣을필요없이 mainslide자체에 넣어줌
-   
     // &:before {
     //     content:'';
     //     display:block;
@@ -133,14 +121,9 @@ body {
 
         h2 {
             font-size:86px;
-<<<<<<< HEAD
-            font-weight:600; 
-            margin-bottom:0.348em; /* 30픽셀정도를 em으로 바꾸려면 공식) 30px / 86px  = 0.348837... */
-=======
             font-weight:600;
             // height:200px; 블럭요소에는 높이줄때 조심
             margin-bottom:0.348em;// 30픽셀정도를 em으로 바꾸려면 30px / 86px = 0.348837... 
->>>>>>> 4248b8f1388683bacab329b5c8e1539050a2cbe9
         }
         h3 {
             
@@ -150,31 +133,31 @@ body {
     }
 }
 
-
-
 .mainSlide02 { //!.오리지날 사이트는 안에 컨텐츠를 table-ceel 써서 vertical-align으로 잡아 놨음
     height:100vh;
     background-color:#fff;
-    padding:0 60px; 
+    padding:0 60px;
+    margin:0 auto;
     .mainTitle {
         line-height:48px;
-        display:flex; 
+        display:flex;
+        height:100px;
         align-items:center;
         h2 {
             width:50%;
             font-size:36px;
             font-weight:700;
             letter-spacing:-0.035em;
-            // position:relative;
-            // &:after {
-            //     content:'';
-            //     display:block;
-            //     background-color:red;
-            //     position:absolute;
-            //     bottom:11px;
-            //     right:327px;
-            //     @include circle(7px);
-            // }
+            position:relative;
+            &:after {
+                content:'';
+                display:block;
+                background-color:red;
+                position:absolute;
+                bottom:11px;
+                right:327px;
+                @include circle(7px);
+            }
         }
         p {
             font-size:16.5px;
@@ -204,7 +187,7 @@ body {
         li { //!,flex이론 - https://jeonghwan-kim.github.io/dev/2020/03/09/flex.html
             // padding:4px 10px 0 22px;
             width:calc( ( 100% - 50px ) / 3); ///!.flex참고 - 20201206_B (43:30)
-            height:220px;
+            
             // margin-top:25px;
             box-shadow:0 0 10px 10px rgba(1, 1, 1, 0.2);//!.box-shadow
             position:relative;
@@ -229,28 +212,32 @@ body {
             &:nth-child(3) ~ li { //!.세번째 li 뒤에 있는 모든 li 를 선택하는 것임
                 margin-top:25px;
             }
+           
+            .arrow {
+                position:relative;
+                height:8px; 
 
+                &:before, &:after {
+                    content:'';
+                    display:block;
+                    position:absolute;
+                }
 
-            &:before {
-                content:'';
-                display:block;
-                background-color:black;
-                height:2px;
-                width:43px;
-                position:absolute;
-                left:30px;
-                bottom:40px;
-            }
-            &:after {
-                content:'';
-                display:block;
-                position:absolute;
-                left:73px;
-                bottom:36px;
-                width:0px;
-                height:0px;
-                border:5px solid transparent;//!.화살표 넣기
-                border-left-color:black;//.화살표 넣기
+                &:before { 
+                    height:2px;
+                    width:43px; 
+                    background-color:#000;
+                    left:0;
+                    bottom:2.5px;
+                }
+                &:after { 
+                    left:40px;
+                    bottom:-2.4px;
+                    width:0px;
+                    height:0px;
+                    border:5px solid transparent;//!.화살표 넣기
+                    border-left-color:black;//.화살표 넣기
+                }
             }
             
             .cardList {
@@ -258,6 +245,7 @@ body {
                 width:100%;
                 height:100%;
                 padding:35px 30px;
+                box-sizing:border-box;
                 position:relative;
                 h4 {
                     font-size:18px;
@@ -266,12 +254,13 @@ body {
                 }
                 p {
                     font-size:14px;
+                    margin:2em 0;
                 }
                 .cardIcon {
                     display:block;
                     position:absolute;
-                    top:25px;
-                    right:85px;
+                    top:35px;
+                    right:25px;
                     
                     // &:before {
                     //     content:'';
@@ -311,7 +300,8 @@ body {
     margin:0 auto;
     .mainTitle {
         line-height:48px;
-        display:flex; 
+        display:flex;
+        height:100px;
         align-items:center;
         color:#fff;
         h2 {
@@ -319,16 +309,16 @@ body {
             font-size:36px;
             font-weight:700;
             letter-spacing:-0.035em;
-            // position:relative;
-            // &:after {
-            //     content:'';
-            //     display:block;
-            //     background-color:red;
-            //     position:absolute;
-            //     bottom:11px;
-            //     right:437px;
-            //     @include circle(7px);
-            // }
+            position:relative;
+            &:after {
+                content:'';
+                display:block;
+                background-color:red;
+                position:absolute;
+                bottom:11px;
+                right:437px;
+                @include circle(7px);
+            }
         }
         p {
             font-size:16.5px;
@@ -451,35 +441,30 @@ body {
     }
 }
 
-span.red {
-    color:red;
-}
-
 .mainSlide04 {
     height:100vh;
     background:url($url + "bg_msec03.jpg") no-repeat center center/cover;
     .mainTitle {
         line-height:48px;
-        display:flex; 
+        display:flex;
+        height:100px;
         align-items:center;
         color:black;
-        
         h2 {
             width:50%;
             font-size:36px;
             font-weight:700;
             letter-spacing:-0.035em;
-            // position:relative;
-
-            // &:after {
-            //     content:'';
-            //     display:block;
-            //     background-color:red;
-            //     position:absolute;
-            //     bottom:11px;
-            //     right:407px;
-            //     @include circle(7px);
-            // }
+            position:relative;
+            &:after {
+                content:'';
+                display:block;
+                background-color:red;
+                position:absolute;
+                bottom:11px;
+                right:407px;
+                @include circle(7px);
+            }
         }
         p {
             font-size:16.5px;
@@ -569,7 +554,8 @@ span.red {
     .mainTitle {
         
         line-height:48px;
-        display:flex; 
+        display:flex;
+        height:100px;
         align-items:center;
         h2 {
             width:60%;
@@ -618,7 +604,8 @@ span.red {
                 font-size:18px;
                 line-height:1,78;
                 font-weight:300;
-                word-break:keep-all; 
+                word-break:keep-all;
+
             }
             .midLine {
                 display:block;
@@ -641,7 +628,8 @@ span.red {
     
     .mainTitle {
         line-height:48px;
-        display:flex; 
+        display:flex;
+        height:100px;
         align-items:center;
         h2 {
             width:60%;
@@ -711,9 +699,6 @@ span.red {
                         padding-bottom:19px;
                         font-weight:700;
                         margin-bottom:25px;
-<<<<<<< HEAD
-                       
-=======
                         &:hover:before {
                             animation:arrowLine 0.2s 4 linear alternate both;
                             // animation-iteration-count:4;
@@ -731,7 +716,6 @@ span.red {
                             // animation-direction:alternate;
                             // animation-fill-mode:both;
                         }
->>>>>>> 4248b8f1388683bacab329b5c8e1539050a2cbe9
                         &:before {// 화살표를 두번움직이는 것을 못하겠음
                             content:'';
                             position:absolute;
@@ -756,33 +740,9 @@ span.red {
                             border-bottom:1px solid black;
                             transform:rotate(-45deg); 
                         }
-
-                        &:hover:before {
-                            animation:arrowLine 0.3s linear 4 alternate both;
-                            // animation-iteration-count:4;
-                            // animation-duration:0.5s;
-                            // animation-name:arrowLine;
-                            // animation-direction:alternate;
-                            // animation-fill-mode:both;
-                            
-                        }
-
-
-                        &:hover:after {
-                            animation:arrow 0.3s linear 4 alternate both;
-                            // animation-iteration-count:infinite;
-                            // animation-duration:0.5s;
-                            // animation-name:arrow;
-                            // animation-direction:alternate;
-                            // animation-fill-mode:both;
-                        }
                         @keyframes arrow {//animation = moon20210806_B - 37:02 
                             from {
-<<<<<<< HEAD
-                                transform:translateX(0) rotate(-45deg);
-=======
                                 transform:translateX(0) rotate(-45deg);//transform rotate 그리고 translate 같이 쓰기
->>>>>>> 4248b8f1388683bacab329b5c8e1539050a2cbe9
                                 
                             }
                             to {
@@ -916,6 +876,7 @@ span.red {
     }
     .contact {
         display:flex;
+        flex-wrap:wrap;
         color:#888;
         margin-top:20px;
         font-size:14px;
@@ -959,13 +920,5 @@ span.red {
 
 .unitChk {
     // @include fontSize(100, $row:2);
-<<<<<<< HEAD
-    @include fontSize(100);
-    position:fixed;left:40%;top:300px;
-    background-color:yellow; 
-    @include circle(300); 
-
-=======
     @include fontSize(100); // fontSize($size, $row:null)에 row의 초기값이 $row:null 널로 설정되있기때문에 null은 아무것도 지정안함이므로 값이 안들어감
->>>>>>> 4248b8f1388683bacab329b5c8e1539050a2cbe9
 }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <script src="./script_001.js"></script>
+   
+</head>
+<body>
+    <h1>Hello world</h1>
+    <h1 class="title">Hello world</h1>
+    <hr>
+    <h2>Heading 2 - first</h2>
+    <h2>Heading 2 - second</h2>
+    <hr>
+    <h3>Heading 3 - first</h3>
+    <h3>Heading 3 - second</h3>
+    <h3>Heading 3 - third</h3>
+    <script> 
+        // $('.title').css({
+        //     color : 'red',
+        //     fontSize : '100px',
+        //     backgroundColor : 'beige'
+        // })
+       
+        const a = document.querySelector('.title');
+        console.log(a)
+        a.style.color = 'red';
+        a.style.fontSize = '100px';
+        a.style.backgroundColor = 'beige';
+
+        const b = document.querySelector('h2');
+        console.log(b);
+        b.style.fontStyle = 'italic';
+        b.style.color = 'blue';
+
+        const c = document.querySelectorAll('h3');
+        console.log(c);
+        c[0].style.color = 'coral';
+        c[1].style.color = 'green';
+        c[2].style.color = 'red';
+
+    </script>
+</body>
+</html>

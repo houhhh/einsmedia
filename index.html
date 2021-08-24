@@ -12,37 +12,6 @@
     <script src="./lib/jquery.fullpage.js"></script><!-- 순서 중요-->
     <script src="./js/common.js"></script><!-- 순서 중요-->
     <script src="https://kit.fontawesome.com/9b4d07ff5a.js" crossorigin="anonymous"></script>
-    <script>
-		$(document).ready(function() {
-			$('#fullpage').fullpage({
-				'verticalCentered': false,
-				'css3': true,
-				// 'sectionsColor': ['#F0F2F4', '#fff', '#fff', '#fff'],
-				'navigation': true,
-				'navigationPosition': 'right',
-				// 'navigationTooltips': ['Home', 'menu2', 'Amazing', 'Simple'],
-
-				'afterLoad': function(anchorLink, index){
-					if(index == 2 || index == 4 || index == 7){
-						$('.mainTop').addClass('sticky');
-					}
-                    
-                    if(index ==1 || index == 3 || index == 5 || index == 6) {
-                        $('#fp-nav ul li a span').addClass('white');
-                    }
-				},
-
-				'onLeave': function(index, nextIndex, direction){
-                    if(index == 2 || index == 4 || index == 7){
-						$('.mainTop').removeClass('sticky');
-					}
-                    if(index ==1 || index == 3 || index == 5 || index == 6) {
-                        $('#fp-nav ul li a span').removeClass('white');
-                    }
-				}
-			});
-		});
-	</script>
 </head> 
 
 <body> 
@@ -126,7 +95,9 @@
                 <span class="blind">Naver</span> 
                 </a>    
             </li>
-        </ul>  
+        </ul> 
+        
+        
     </section> <!-- slide01 end -->
 
     <section class="mainSlide02 section">
@@ -134,7 +105,7 @@
             <div class="mainTitle">
                 <h2>
                      A부터 Z까지 꼼꼼하게<br>
-                    따져볼수록 아인스미디어<span class="red">.</span>
+                    따져볼수록 아인스미디어
                 </h2>
                 <span class=line></span>
                 <p>
@@ -144,10 +115,7 @@
                 <div class="unitChk">
                     폰트사이즈의 변화 보기
                 </div>
-<<<<<<< HEAD
-=======
                 <!--폰트사이즈 변화보기-->
->>>>>>> 4248b8f1388683bacab329b5c8e1539050a2cbe9
             </div>
             <ul class="grayCard">
                 <li>
@@ -285,7 +253,7 @@
             <div class="mainTitle">
                 <h2>
                     다양한 솔루션을 통한<br>
-                    정확하고 빠른 분석<span class="red"></span>
+                    정확하고 빠른 분석
                 </h2>
                 <span class="line"></span>
                 <p>
@@ -398,11 +366,11 @@
             <div class="mainTitle">
                 <h2>
                     고객의 신뢰를 기반으로 200배에 이르는 폭발적인<br>
-                    매출 성장률을 기록하고 있습니다<span class="red">.</span>
+                    매출 성장률을 기록하고 있습니다
                 </h2>
                 
             </div>
-            <img src="./images/home_06_graph.png" alt="2021홈페이지_메인_회사연혁2">
+            <img src="./images/home_06_graph.png" alt="2021홈페이지_메인_회사연혁2">
             <!-- <span class="graph"></span> -->
             <span class="graphInfo">아인스미디어는 창립 이래 다수의 고객사와 함께 꾸준한 성장을 이루어 가고 있습니다.</span>
         </div>
