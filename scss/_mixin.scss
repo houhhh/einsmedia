@@ -4,7 +4,7 @@
 // 말줄임 
 
 // Default 
-@function unitCheck($x) { //2.중요 - 함수정리 사이트 https://soooprmx.com/sass-%EB%82%B4%EC%9E%A5-%ED%95%A8%EC%88%98-%EC%A0%95%EB%A6%AC/
+@function unitCheck($x) { //2.중요 - 함수정리 사이트 https://soooprmx.com/ sass-%EB%82%B4%EC%9E%A5-%ED%95%A8%EC%88%98-%EC%A0%95%EB%A6%AC/
 //@mixin media(@width)의 width로 받은 값은 unitCheck($x)의 x에 들어가게되고 > 아래 type-of($x)로 들어가는데 뜻은 x값이 number숫자인지 확인하고 >
 //만약 if(unitless($x)의 x에 유닛 (px, em 등)과 같은 단위가 안적혀있다면 > 아래 @return $x+px의 x 에 px을 붙여서 돌려줘라 > 그러면 다시 21번째줄의 
 //최종 $width: 값으로 들어가게된다 (ex: $width: 10px;)
@@ -36,7 +36,7 @@
 
 //     doSum(10,20);
 //     이렇게 아래에 쓰면 그제서야 '더한값은' + 30 + '입니다.' = 더한값은 30입니다. 이렇게 나옴
-// </script>
+// </script> 여기까지 자바스크립트
 @mixin circleTest($size,$ov:null) {//null은 있으면 ov값을 비웠을때 그냥 오버플로설정을 아예 안하겠다는 뜻이고 $ov:visible 라적으면 비워뒀을때 visible을 기본값으로한다는 뜻이다. null 과 비슷한 인자로 NaN 이 있음
     width: $size;
     height: $size;
