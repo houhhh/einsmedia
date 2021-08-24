@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    ul,li {
+        margin:0;padding:0;list-style:none;
+
+
+    }
+    h1 { text-align:center;margin:20px 0; }
+        
+    
+    .list {
+        max-width:1300px;
+        width:100%;
+        background-color:beige;
+        margin:50px auto;
+        display:flex;
+        justify-content:space-between;
+        height:150px;
+    }
+    li {
+        flex-shrink:0;
+        /* box-sizing:border-box 있는 경우 , 패딩을 신경쓰지 않고 계산 *
+        /* width:calc((1300px - 60px) / 4); */
+        /* width:310px 1300계산식 */
+        /* width:calc( 25% - 15px ); */
+        /* 1300픽셀에서 15픽셀은 1.153846%
+        계산식은 15px / 1300px * 100 = 1.153846... */
+
+        padding:15px;
+        width:23.846154%; /*박스넓이 사이 간격 패딩만 제외하고  다 계산한 답*/
+        box-sizing:border-box; /*패딩을 포함하여 계산안했을때 넣어줌 */
+        /* box-sizing:border-box 없는 경우, 패딩값까지 빼주어야 한다. */
+        /*width:280px; box-sizing을 border-box로 하지 않았을때 */
+        /* width:calc(( 25% - 45px ) / 4); */
+        /*li 사이 여백값 1300픽셀에서 15픽섹은 1.153846% */
+        /*패딩값 30ㅔㅌ 은 1300픽셀에서 2.307692% */
+        /* (여백값 + 패딩값)45픽셀이므로 45px / 1300 * 100 = 3.461538 */
+        /* width:21.538462% */
+        
+    }
+    .list li:nth-child(even) {
+        background-color:dodgerblue;
+        
+        
+    }
+    .list li:nth-child(odd) {
+        background-color:coral;
+        
+
+    }
+</style>
+<body>
+    <h1>
+        list : 1300px;
+        리스트 사이간격은 각 : 20px;
+        리스트 내부여백 : 15px;
+    </h1>
+    <ul class="list">
+        <li>A</li>
+        <li>B</li>
+        <li>c</li>
+        <li>C</li>
+    </ul>
+</body>
+</html>
