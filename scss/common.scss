@@ -5,6 +5,7 @@
 
 $url : '../images/';
 $gray : #333, #666, #999, #aaa, #e8e8e8, #f5f5f5;
+<<<<<<< HEAD
 
 .unitChk {
     color:nth($gray, 4);
@@ -14,6 +15,18 @@ $gray : #333, #666, #999, #aaa, #e8e8e8, #f5f5f5;
 
 
 body { 
+=======
+@import 'reset', 'mixin'; 
+
+
+
+// .unitChk { //nth 로 순성 지정 색상 조절 
+//     color:nth($gray, 4); 
+// }
+
+
+body {
+>>>>>>> 4248b8f1388683bacab329b5c8e1539050a2cbe9
     height:100%;
     min-width:320px;// 바디에는 전체 넓이값이 없는 것 같음
     font-family:'Noto sans kr' ,sans-serif;
@@ -120,8 +133,14 @@ body {
 
         h2 {
             font-size:86px;
+<<<<<<< HEAD
             font-weight:600; 
             margin-bottom:0.348em; /* 30픽셀정도를 em으로 바꾸려면 공식) 30px / 86px  = 0.348837... */
+=======
+            font-weight:600;
+            // height:200px; 블럭요소에는 높이줄때 조심
+            margin-bottom:0.348em;// 30픽셀정도를 em으로 바꾸려면 30px / 86px = 0.348837... 
+>>>>>>> 4248b8f1388683bacab329b5c8e1539050a2cbe9
         }
         h3 {
             
@@ -525,6 +544,13 @@ span.red {
                         border-right:1px solid black;
                         border-bottom:1px solid black;
                         transform:rotate(-45deg); 
+                        
+                    }
+                    &:hover:before {
+                        animation:arrowLine 0.2s 4 alternate both;
+                    }
+                    &:hover:after {
+                        animation:arrow 0.2s 4 alternate both;
                     }
                 }
             }
@@ -685,7 +711,27 @@ span.red {
                         padding-bottom:19px;
                         font-weight:700;
                         margin-bottom:25px;
+<<<<<<< HEAD
                        
+=======
+                        &:hover:before {
+                            animation:arrowLine 0.2s 4 linear alternate both;
+                            // animation-iteration-count:4;
+                            // animation-duration:0.5s;
+                            // animation-name:arrowLine;
+                            // animation-direction:alternate;
+                            // animation-fill-mode:both;
+                            
+                        }
+                        &:hover:after {
+                            animation:arrow 0.2s 4 linear alternate both;
+                            // animation-iteration-count:infinite;
+                            // animation-duration:0.5s;
+                            // animation-name:arrow;
+                            // animation-direction:alternate;
+                            // animation-fill-mode:both;
+                        }
+>>>>>>> 4248b8f1388683bacab329b5c8e1539050a2cbe9
                         &:before {// 화살표를 두번움직이는 것을 못하겠음
                             content:'';
                             position:absolute;
@@ -732,7 +778,11 @@ span.red {
                         }
                         @keyframes arrow {//animation = moon20210806_B - 37:02 
                             from {
+<<<<<<< HEAD
                                 transform:translateX(0) rotate(-45deg);
+=======
+                                transform:translateX(0) rotate(-45deg);//transform rotate 그리고 translate 같이 쓰기
+>>>>>>> 4248b8f1388683bacab329b5c8e1539050a2cbe9
                                 
                             }
                             to {
@@ -753,6 +803,7 @@ span.red {
                                 
                             }
                         }
+                        
                     }
                 }
                 
@@ -882,6 +933,7 @@ span.red {
                 background-color:#888;
             }
             &:last-child {
+                margin-right:0;
                 &:after {
                     content:'';
                     display:none;
@@ -892,7 +944,7 @@ span.red {
     .bottomLogo {
         display:block;
         background:url($url + "ft_logo.png") no-repeat center center/contain;
-        height:80px;
+        // height:80px;
         width:200px;
     }
     
@@ -907,9 +959,13 @@ span.red {
 
 .unitChk {
     // @include fontSize(100, $row:2);
+<<<<<<< HEAD
     @include fontSize(100);
     position:fixed;left:40%;top:300px;
     background-color:yellow; 
     @include circle(300); 
 
+=======
+    @include fontSize(100); // fontSize($size, $row:null)에 row의 초기값이 $row:null 널로 설정되있기때문에 null은 아무것도 지정안함이므로 값이 안들어감
+>>>>>>> 4248b8f1388683bacab329b5c8e1539050a2cbe9
 }

@@ -228,6 +228,13 @@ html.fp-enabled,
 
 @media all and (max-width:970px) {
     #fp-nav {
+<<<<<<< HEAD
         display:none;
     }
 }
+=======
+        display:none; 
+    }
+}
+
+>>>>>>> 4248b8f1388683bacab329b5c8e1539050a2cbe9
