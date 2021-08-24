@@ -263,7 +263,7 @@
     }
     .fp-auto-height {
         .inner {
-            // justify-content:initial;
+            justify-content:flex-start;
             .bottomLogo {
                 width:100px; //?.로고가 자꾸넘어감 부모쪽 가로넓이에 마진 -50값이 우측에 먹여져있음 부모인 inner에도 inner공통값에는 마이너스 값이 없음
     
