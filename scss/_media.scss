@@ -274,3 +274,33 @@
     }
 }
     
+
+@media all and (max-width:480px) {
+    .base {
+        padding:0;
+    }
+    .mainTop {
+        padding-top:10px;
+        .navBar {
+            padding:0 30px;
+        }
+    }
+    .mainSlide01 .mainTitle {
+
+        h2 {
+            font-size:27px;
+        }
+        h3 {
+            font-size:13px;
+        }
+    }
+    .mainSlide01 .sns {
+        width:90px;
+    }
+    .mainSlide02 .grayCard {
+        display:block;
+    }
+    .mainSlide02 .inner .grayCard li {
+        width:100%;
+    }
+}
