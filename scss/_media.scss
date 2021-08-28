@@ -277,7 +277,7 @@
 
 @media all and (max-width:480px) {
     .base {
-        padding:0;
+        padding:0 20px;
     }
     .mainTop {
         padding-top:10px;
@@ -297,20 +297,60 @@
     .mainSlide01 .sns {
         width:90px;
     }
-    .mainSlide02 .grayCard {
-        display:block;
-    }
-    .mainSlide02 .inner .grayCard li {
-        width:100%;
-        height:100%;
-        .cardList {
-            padding:25px 20px;
-            .arrow {
-                display:none;
+    .mainSlide02 {//공통적으로 들어가는 기준 가로 간격 패딩은 공통으로 들어가는 것끼리 모아서 따로 세팅 하는게 좋음 
+        padding:0;//inner 가 기준이고 inner만 패딩갖고 있으면 되기때문에 해제함 mainSlide01만 base자체에 include 로 패딩값 먹여져있음 
+        .grayCard {
+            display:block;
+        }
+        .inner {
+            .mainTitle {
+                h2 {
+                    font-size:20px;
+                }
+                p {
+                    font-size:15px;
+                }
             }
-            p {
-                margin:1em 0;
+            .grayCard {
+                display:block;
+                li {
+                    width:100%;
+                    height:100%;
+                    &:first-child ~ li {
+                        margin-top:10px;
+                    }
+                }
+                .cardList {
+                    padding:25px 20px;
+                    
+                    .arrow {
+                        display:none;
+                    }
+                    p {
+                        margin:0.5em 0 0;
+                    }
+                }
             }
         }
     }
+    .mainSlide03 {
+        .inner {
+            .slide03List {
+                display:block;
+                li {
+                    width:100%;
+                    border-right:1px solid #6a6865;
+                    a {
+                        height:230px;
+                        .midBox {
+                            .listIcon {
+                                font-size:19px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 }
