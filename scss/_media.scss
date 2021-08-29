@@ -340,12 +340,19 @@
                 li {
                     width:100%;
                     border-right:1px solid #6a6865;
+                    @include slide03Icon(1, 51px, 60px, "ic_list_02.png", 6px,  18px, 180px);
+                    @include slide03Icon(2, 49px, 60px, "ic_list_02.png", -45px,  2px, 180px);
+                    @include slide03Icon(3, 43px, 60px, "ic_list_02.png", -90px,  0px, 180px);
+                    @include slide03Icon(4, 50px, 60px, "ic_list_02.png", -133px,  2px, 180px);
                     a {
                         height:230px;
+                        padding:24px 28px;
                         .midBox {
                             .listIcon {
                                 font-size:19px;
+                                margin:10px 0;
                             }
+                            
                         }
                     }
                 }
