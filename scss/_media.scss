@@ -450,4 +450,37 @@
             }
         }
     }
+    .mainSlide07 {
+        .inner {
+            .mainTitle {
+                h2 {//br 줄넘김 위치가 달라졌을때 맞추는 방법은?
+                    width:100%;
+                    padding:0 40px;
+                    box-sizing:border-box;
+                    font-size:20px;
+                    line-height:34px;
+                    text-align:center;
+                    // br {
+                    //     display:none;
+                    // }
+                }
+            }
+            .recruitInfo {
+                display:block;
+                margin-top:10px;
+                li {
+                    width:100%;
+                    padding:13px 0;
+                    
+                    a {
+                        h3 {
+                            font-size:18px;
+                            padding-bottom:11px;
+                            margin-bottom:11px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
