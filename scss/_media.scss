@@ -481,6 +481,42 @@
                     }
                 }
             }
+            .adBar {
+                top:-60px;
+                display:block;
+                padding:25px 67px 80px;
+                .number {
+                    width:100%;
+
+                    i {
+                        font-size:27px;
+                    }
+                }
+                .wrap_search {
+                    width:100%;
+                    .flex {
+                        display:block;
+                        .left {
+                            width:100%;
+                            padding-bottom:30px;
+                            input:nth-of-type(1) {//Q!.li 처럼 순번 지정선택은 안되는가? 마진을 위에input에다가만 넣어야 하는 상황
+                                                //nth-child 는 어떤 부모아래의 모든자식의 수를 카운트해서 몇번째를 가리지만 nth-of-type은 
+                                                //어떤 부모의 자식들중 만약 span을 nth앞에 적어주면 span 요소만 카운팅하여 span요소중에서 몇번째를 가리킨다.
+                                margin-bottom:8px;
+                            }
+                        }
+                        
+                    }
+                    .agree_check {
+                        margin-top:0;
+                    }
+                    button {//Q!. 폼안에 부모구조를 넣으니 오히려 설정이 안먹힘  그냥 wrap_search바로 밑에 해야함
+                        width:100%;
+                        height:40px;
+                    }
+                }
+            }
         }
+        
     }
 }
