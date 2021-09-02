@@ -276,6 +276,12 @@
     
 
 @media all and (max-width:480px) {
+    
+    head {
+        script {
+            display:none;
+        }
+    }
     .base {
         padding:0 20px;
     }
@@ -520,5 +526,53 @@
             }
         }
         
+    }
+    
+    .fp-auto-height {
+        .inner {
+            display:block;
+            .bottomInfo {
+                
+                .guideLine {
+                    // margin:0 auto; flex라서 안먹힘?
+                    justify-content:center;//!. 이건 justify-content로 중앙정렬함
+                    li {
+                        
+                        margin-right:10px;
+                        &:last-child {
+                            margin-right:0;
+                        }
+                    }
+                }
+                .contact { //Q.contact에 flex를 blockd으로 풀고 li를 inline-block으로 하면 text-align 으로 중앙정렬이 되는데 display:flex일경우에는 ? (방법 1)
+
+                    //!!!! 기본적으로 flex는 align-items:center로 수직 justify-content:center 로 수평을 맞춤!!!
+                    width:100%;
+                    // display:flex;
+                    display:block;
+                    text-align:center;
+                    li {
+                        display:inline-block;
+                    }
+
+                    // flex-direction: column; 
+                    // align-items:center;(방법 3) 중앙정렬이 되지만 flex방향흐름을 완전히 수직으로 바꾸기때문에 그상태에서 중앙정렬은 되지만 모든 li가 블락처리되서 아래로 넘어감
+
+                    // justify-content:center; flex 상태에선 justify-content:center를 줘도 중앙정렬된다. (방법 2)
+                    
+                    // li { (방법 1)
+                    //     display:inline-block; 
+                    // }
+                }
+                address {
+                    text-align:center;
+                    margin-bottom:30px;
+                }
+            }
+            .bottomLogo {
+                height:20px;
+                width:100%;
+            }
+        }
     }
 }
