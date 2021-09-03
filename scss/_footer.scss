@@ -71,3 +71,128 @@
         background:url($url + 'top_nav.png') no-repeat center center/contain;
     }
 }
+
+.fp-auto-height {// inner 중앙정렬은 맨 위에 따로 설정
+    background-color:rgb(34, 34, 34);
+    padding:40px 0;
+    .inner {
+        display:flex;
+        justify-content:space-between;
+    }
+    .guideLine {
+        display:flex;
+        color:#ccc;
+        font-size:14px;
+        font-weight:700;
+        li {
+            margin-right:36px;
+        }
+    }
+    .contact {
+        display:flex;
+        color:#888;
+        margin-top:20px;
+        font-size:14px;
+        flex-wrap:wrap;
+        li {
+            margin-right:23px;
+            position:relative;
+            &:after {
+                content:'';
+                position:absolute;
+                bottom:3px;
+                right:-14px;
+                display:block;
+                height:10px;
+                width:1px;
+                background-color:#888;
+            }
+            &:last-child {
+                margin-right:0;
+                &:after {
+                    content:'';
+                    display:none;
+                }
+            }
+        }
+    }
+    .bottomLogo {
+        display:block;
+        background:url($url + "ft_logo.png") no-repeat center center/contain;
+        // height:80px;
+        width:200px;
+    }
+    
+    address {
+        color:#888;
+        margin-top:10px;
+        font-size:14px;
+    }
+}
+
+@media all and (max-width:480px) {
+
+    .fp-auto-height {
+        .inner {
+            //common.scss line 55 참고 푸터 영역 넘치는 문제 
+            justify-content:flex-start;
+            .bottomLogo {
+                width:100px; //?.로고가 자꾸넘어감 부모쪽 가로넓이에 마진 -50값이 우측에 먹여져있음 부모인 inner에도 inner공통값에는 마이너스 값이 없음
+
+            }
+        }
+        
+    }
+}
+@media all and (max-width:480px) {
+
+    .fp-auto-height {
+        .inner {
+            display:block;
+            .bottomInfo {
+                
+                .guideLine {
+                    // margin:0 auto; flex라서 안먹힘?
+                    justify-content:center;//!. 이건 justify-content로 중앙정렬함
+                    li {
+                        
+                        margin-right:10px;
+                        &:last-child {
+                            margin-right:0;
+                        }
+                    }
+                }
+                .contact { //Q.contact에 flex를 blockd으로 풀고 li를 inline-block으로 하면 text-align 으로 중앙정렬이 되는데 display:flex일경우에는 ? (방법 1)
+                    
+                    //!!!! 기본적으로 flex는 align-items:center로 수직 justify-content:center 로 수평을 맞춤!!!
+                    
+                    //(방법.1) flex 방향을 flex-direction:coulmn 으로 바꾸어 중앙정렬 하지만 옆으로 나란히 li가 배열안되기때문에 li를 inline-block으로 바꿔주고 짝대기가 before나 after 로 되있다면 그것도 처리해줘야함
+
+                    display:block; //(방법.2)flex를 풀어서 블락으로 만든후 text-align으로 중앙정렬 단 li가 블락이되니 li도 inline-block으로 만들어줘야 함
+                    text-align:center;
+                    
+                    li {
+                        display:inline-block;
+                    }
+
+                    // flex-direction: column; 
+                    // align-items:center;(방법 3) 중앙정렬이 되지만 flex방향흐름을 완전히 수직으로 바꾸기때문에 그상태에서 중앙정렬은 되지만 모든 li가 블락처리되서 아래로 넘어감
+
+                    //(방법 2)justify-content:center; flex 상태에선 justify-content:center를 줘도 중앙정렬된다. 
+                    
+                    // li { (방법 1)kk
+                    //     display:inline-block; 
+                    // }
+                }
+                address {
+                    text-align:center;
+                    margin-bottom:30px;
+                }
+            }
+            .bottomLogo {
+                height:20px;
+                width:100%;
+            }
+        }
+    }
+}

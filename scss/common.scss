@@ -581,7 +581,7 @@ body {
         
         line-height:48px;
         display:flex;
-        height:100px;
+        // height:100px; 높이가 있으면 오버플로우가 되므로 없앤다
         align-items:center;
         h2 {
             width:60%;
@@ -884,63 +884,7 @@ body {
     }
 
 }
-.fp-auto-height {// inner 중앙정렬은 맨 위에 따로 설정
-    background-color:rgb(34, 34, 34);
-    padding:40px 0;
-    .inner {
-        display:flex;
-        justify-content:space-between;
-    }
-    .guideLine {
-        display:flex;
-        color:#ccc;
-        font-size:14px;
-        font-weight:700;
-        li {
-            margin-right:36px;
-        }
-    }
-    .contact {
-        display:flex;
-        color:#888;
-        margin-top:20px;
-        font-size:14px;
-        flex-wrap:wrap;
-        li {
-            margin-right:23px;
-            position:relative;
-            &:after {
-                content:'';
-                position:absolute;
-                bottom:3px;
-                right:-14px;
-                display:block;
-                height:10px;
-                width:1px;
-                background-color:#888;
-            }
-            &:last-child {
-                margin-right:0;
-                &:after {
-                    content:'';
-                    display:none;
-                }
-            }
-        }
-    }
-    .bottomLogo {
-        display:block;
-        background:url($url + "ft_logo.png") no-repeat center center/contain;
-        // height:80px;
-        width:200px;
-    }
-    
-    address {
-        color:#888;
-        margin-top:10px;
-        font-size:14px;
-    }
-}
+
 
 @import 'footer','media';
 
